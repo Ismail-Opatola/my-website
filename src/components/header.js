@@ -1,33 +1,26 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { Form, Input, Media } from "reactstrap"
+import { MdSearch } from 'react-icons/md'
+import Logo from "../images/icon.png"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+const Header = () => (
+  <header className="header">
+      <div className='header-logo-box inlineBlock'>
+        <Link to="/">
+          <Media src={Logo} alt="Company Logo" className='header-logo'/>
         </Link>
-      </h1>
-    </div>
+      </div>
+      <Form className='header-search-box'>
+      <MdSearch className='header-search-box-logo'/>
+        <Input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search..."
+        />
+      </Form>
   </header>
 )
 
