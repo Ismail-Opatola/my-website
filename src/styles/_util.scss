@@ -1,0 +1,27 @@
+.btn-dark {
+  position: relative;
+  display: block;
+  background: inherit;
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 1em 0;
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled):focus,
+  &:hover {
+    background-color: inherit;
+    border: none;
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.container {
+    max-width: 760; 
+}
+
+.inlineBlock {
+display: inline-block;
+}
