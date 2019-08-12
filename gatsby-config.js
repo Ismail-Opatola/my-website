@@ -1,18 +1,33 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Estatement Partners`,
+    description: `Estatement Partners is a frictional Property Management and Architectural design company. Dummy website was developed using gatsby and markdown`,
+    developer: "Ismail Opatola",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    'gatsby-plugin-sass',
-    'gatsby-plugin-catch-links',
+    "gatsby-plugin-sass",
+    "gatsby-plugin-catch-links",
+    "gatsby-transformer-remark",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `util`,
+        path: `${__dirname}/src/util`,
       },
     },
     `gatsby-transformer-sharp`,
