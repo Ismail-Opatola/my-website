@@ -1,6 +1,6 @@
 ---
 title: 'About Us'
-header: 'Specialists in development and property management'
+header: Specialists in development and property management
 ---
 
 Today's increasingly savvy rental community means that leasing and managing your investment for the maximum price and terms no longger happens by luck. Archeiving an excellent result grequires specialsed planning- and professional presentation.
