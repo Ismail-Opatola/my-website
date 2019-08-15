@@ -76,13 +76,13 @@
       justify-content: center;
       align-items: center;
     }
-    &-slide-details{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: $light-gray;
-        font-size: 1rem;
-        padding: 1rem 0 1rem 0;
+    &-slide-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $light-gray;
+      font-size: 1rem;
+      padding: 1rem 0 1rem 0;
     }
     &--content {
       width: 100%;
@@ -114,6 +114,81 @@
       }
     }
   }
+  &-projects {
+    display: flex;
+    flex-direction: row;
+    padding-top: 12rem;
+    padding-bottom: 1.5rem;
+    height: 100vh;
+    box-sizing: border-box;
+    &-content {
+      margin-right: 9%;
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90%;
+    }
+    // &-list {
+    // }
+    &-item {
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: $light-gray;
+      &:hover {
+        color: $light-chocolate;
+      }
+    }
+    &-detail-heading {
+      text-decoration: underline;
+      color: $light-chocolate;
+    }
+    &-detail {
+      justify-self: center;
+      align-self: end;
+      color: $light-gray;
+    }
+
+    &__image-box {
+      position: relative;
+      width: 80%;
+    //   height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      padding-top: 7rem;
+      padding-right: 10rem;
+    }
+    &__image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    &-track {
+      position: absolute;
+      top: -1rem;
+      right: 0;
+      padding-right: 10rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+      & div {
+        width: 2rem;
+        height: 2rem;
+        background-color: rgba($light-chocolate, 0.3);
+      }
+      & div:first-child {
+        background-color: $light-chocolate;
+      }
+      & div:not(last-child) {
+        margin-right: 10px;
+      }
+      & div:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
 }
 
 // ========================================
@@ -139,3 +214,5 @@ Used style template
 }
 
 */
+// =====================
+// https://learn.shayhowe.com/advanced-html-css/complex-selectors/
