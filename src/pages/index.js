@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 import { Row, Col, Button } from "reactstrap"
 import { MdArrowForward, MdArrowBack } from "react-icons/md"
+import { underline } from "ansi-colors"
 
 const IndexPage = ({ data }) => {
   const {
@@ -21,7 +22,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="box-1">
+      <section className="box-1">
         <Row className="section-showcase main--container">
           <Col className="section-showcase--content">
             <p className="header--size-sm" alt="company name">
@@ -49,9 +50,9 @@ const IndexPage = ({ data }) => {
             />
           </Col>
         </Row>
-      </div>
+      </section>
 
-      <div className="box-2">
+      <section className="box-2">
         <div className="section-services main--container">
           <div className="section-services__image-box">
             <div className="section-services-slide-counter">
@@ -105,7 +106,53 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="box-3">
+        <div className="section-projects main--container">
+          <div className="section-projects-content">
+            <div>
+              <h1 className="header--size-xl header--font-1">Our Projects</h1>
+
+              <hr className="hr--length-md hr--color-gray spacing-bottom spacing-top" />
+
+              <ul className="section-projects-list">
+                {projectData.fields.projects.map(data => (
+                  <li className="section-projects-item">{data.name}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="section-projects-detail">
+              <p className="section-projects-detail-heading">Detail</p>
+              <p>
+                Developed by Estatement Partners and built by Pointcorp Homes,
+                West Quarter in Victoria Garden City consist of 45
+                architecturally designed house and land packages. Every corner
+                of West Quarter has been thoughtfully crafted and
+                architecturally designed
+              </p>
+            </div>
+          </div>
+
+          <div className="section-projects__image-box">
+            <div className="section-projects-track">
+              <div>{""}</div>
+              <div>{""}</div>
+              <div>{""}</div>
+              <div>{""}</div>
+            </div>
+            <Img
+              className="section-projects__image"
+              fluid={showcaseImg.childImageSharp.fluid}
+            />
+            <div className="section-services-slide-details">
+              <p>Banana Estate</p>
+              <p>2010</p>
+              <p>Completed</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }
@@ -210,3 +257,11 @@ export const indexQuery = graphql`
 `
 
 export default IndexPage
+
+// TODO: ANIMATION
+// TODO: SIDEBAR
+// TODO: SERVICES > SLIDE
+// TODO: PROJECT > DETAIL
+// TODO: PROJECT > SLIDE
+// TODO: TEAM
+// TODO: FOOTER
