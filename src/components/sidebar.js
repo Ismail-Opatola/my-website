@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <Button className="btn-dark">
-          <MdMenu className="sidebar-icon"/>
+          <MdMenu className="sidebar-icon sidebar-icon-spacing"/>
       </Button>
       <div>
         <Nav vertical hidden={true}>
