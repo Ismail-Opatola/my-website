@@ -7,20 +7,26 @@
   flex-wrap: nowrap;
   height: 100vh;
   width: 5%;
-  padding: 0.2em;
+  padding: 0.9rem;
   text-align: center;
   justify-content: space-between;
   align-content: center;
   background: $light-chocolate;
   box-sizing: border-box;
+  z-index: 100;
 }
 
 .sidebar-icon {
-  font-size: 4em;
+  font-size: 4rem;
   width: 100%;
   height: inherit;
   color: black;
+  &-spacing {
+    margin-top: 1rem;
+  }
   &:focus, &:hover {
     color: $dark-brown;
   }
 }
+
+
