@@ -13,20 +13,79 @@
   align-content: center;
   background: $light-chocolate;
   box-sizing: border-box;
-  z-index: 100;
+  z-index: 500;
+
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
 }
 
 .sidebar-icon {
   font-size: 4rem;
-  width: 100%;
+  width: 1em;
   height: inherit;
   color: black;
   &-spacing {
     margin-top: 1rem;
   }
-  &:focus, &:hover {
+  &:focus,
+  &:hover {
     color: $dark-brown;
   }
 }
 
+.sidebar:hover {
+  width: 50%;
+}
 
+.sidebar--nav {
+  font-weight: 900;
+  text-shadow: 1rem 1.5rem 3rem;
+  text-transform: uppercase;
+}
+
+.show-nav {
+  display: none;
+  visibility: hidden;
+}
+.sidebar:hover .show-nav {
+  display: block;
+  visibility: visible;
+}
+.show-nav a {
+  font-size: 1.5rem;
+  color: $dark-brown;
+  &:hover {
+    color: $white;
+  }
+}
+
+.show-nav-item {
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s;
+  animation: frantic 5s infinite;
+}
+
+@keyframes frantic {
+  0% {
+    transform: translateX(-2%);
+  }
+  45% {
+    transform: translateX(3%);
+  }
+  55% {
+    transform: translateX(-3%);
+  }
+  60% {
+    transform: translateX(-1%);
+  }
+  65% {
+    transform: translateX(3%);
+  }
+  85% {
+    transform: translateX(1%);
+  }
+  90% {
+    transform: translateX(-3%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
