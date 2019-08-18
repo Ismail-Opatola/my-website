@@ -1,4 +1,7 @@
 .section {
+  // ===========
+  // SHOWCASE
+  // ===============
   &-showcase {
     height: 100vh;
     box-sizing: border-box;
@@ -22,6 +25,9 @@
       height: 100vh;
     }
   }
+  // ===========
+  // SERVICES
+  // ===============
   &-services {
     display: flex;
     flex-direction: row;
@@ -39,10 +45,13 @@
       z-index: 1;
     }
     &__image {
-      max-width: 500px;
+      // max-width: 50rem;
+      max-width: 100%;
       height: 100%;
     }
     &-btn {
+      width: 20%;
+      height: 10%;
       position: absolute;
       z-index: 2;
       &-left {
@@ -55,6 +64,8 @@
       }
       &-left button,
       &-right button {
+        width: 100%;
+        height: 100%;
         background-color: $dark-chocolate;
         border-radius: 0;
         border: none;
@@ -113,12 +124,40 @@
         background: rgba(255, 255, 255, 0.068);
       }
     }
+    &-info-btn {
+      // position: relative;
+      // width: 4rem;
+      // margin-left: 90%;
+      float: right;
+      text-align: center;
+      width: 20%;
+      height: 10%;
+      background: rgba(greenyellow, 0.1);
+      padding: 0.5rem;
+      box-sizing: border-box;
+      transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.9s;
+      &-icon {
+        // position: absolute;
+        width: 25%;
+        height: 15%;
+        border-radius: 0;
+        border: none;
+        color: $dark-gray;
+      }
+      &:hover &-icon {
+        color: $white;
+      }
+    }
   }
+  // ===========
+  // PROJECTS
+  // ===============
   &-projects {
     display: flex;
     flex-direction: row;
     padding-top: 12rem;
     padding-bottom: 1.5rem;
+    padding-right: 5%;
     height: 100vh;
     box-sizing: border-box;
     &-content {
@@ -136,7 +175,12 @@
       font-weight: 400;
       line-height: 1.7;
       color: $light-gray;
+      transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.9s;
       &:hover {
+        color: $light-chocolate;
+        cursor: pointer;
+      }
+      &:focus {
         color: $light-chocolate;
       }
     }
@@ -145,7 +189,7 @@
       color: $light-chocolate;
     }
     &-detail {
-      justify-self: center;
+      justify-self: self-end;
       align-self: end;
       color: $light-gray;
     }
@@ -153,26 +197,26 @@
     &__image-box {
       position: relative;
       width: 80%;
-    //   height: 100%;
+      height: 100%;
 
       display: flex;
       flex-direction: column;
       padding-top: 7rem;
-      padding-right: 10rem;
+      // padding-right: 10rem;
     }
     &__image {
-        max-width: 100%;
-        max-height: 100%;
+      max-width: 100%;
+      height: 100%;
     }
     &-track {
       position: absolute;
       top: -1rem;
       right: 0;
-      padding-right: 10rem;
+      // padding-right: 10rem;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      
+
       & div {
         width: 2rem;
         height: 2rem;
@@ -189,7 +233,126 @@
       }
     }
   }
+  // ===========
+  // TEAM
+  // ===============
+  &-team {
+    display: flex;
+    flex-direction: column;
+    padding-top: 12rem;
+    padding-bottom: 1.5rem;
+    padding-right: 5%;
+    height: 110vh;
+    &-team-content {
+      display: flex;
+      flex-direction: column;
+    }
+    &-cta {
+      display: flex;
+      justify-content: space-between;
+
+      &-header {
+        padding-right: 3%;
+        float: left;
+        flex: 1 1 100%;
+      }
+      & p {
+        flex: 1 1 50%;
+        text-align: end;
+        color: $light-gray;
+        margin-left: 5%;
+      }
+    }
+    &-details {
+      display: flex;
+      flex-direction: column;
+      .paginate {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 2%;
+        &-left,
+        &-right {
+          background-color: $light-chocolate;
+          border-radius: 0;
+          border: none;
+        }
+        &-left {
+          margin-right: 1rem;
+        }
+      }
+    }
+    // ==============
+    // TEAM GALLERY
+    // =============
+    &-gallery {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      flex-flow: row;
+      // width: 100%;
+      height: 100%;
+      color: $white;
+      justify-content: space-between;
+      overflow-x: hidden;
+      // overflow-x: scroll;
+    }
+    // ==============
+    // TEAM GALLERY CARD
+    // =============
+    &-card {
+      max-width: 15rem;
+      // max-width: 30rem;
+      height: 32.3rem;
+
+      flex: 1 1;
+
+      display: flex;
+      flex-wrap: nowrap;
+
+      margin-left: 2%;
+      transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.9s;
+    }
+    &-card--img-box {
+      width: 100%;
+      max-height: 100%;
+      height: auto;
+
+      position: relative;
+    }
+    &-card--details {
+      visibility: hidden;
+      display: none;
+      padding: 1em;
+      background: $light-brown-4;
+    }
+    &-card:hover {
+      // max-width: 30rem;
+      max-width: 45rem;
+    }
+    &-card:hover &-card--img-box,
+    &-card:hover &-card--details {
+      width: 100%;
+      visibility: visible;
+      display: block;
+    }
+    &-card--image {
+      display: block;
+      height: 100%;
+    }
+    &-card--counter {
+      position: absolute;
+      color: $light-brown-3;
+      font-weight: bold;
+      padding: 1em;
+      z-index: 1;
+    }
+  }
 }
+
+// section-team-gallery
 
 // ========================================
 // installed scrollBar-react but never used

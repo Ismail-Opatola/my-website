@@ -61,11 +61,14 @@
   font-weight: 400;
 }
 .box {
-  &-2 {
+  &-2,
+  &-4 {
     background: $lighter-dark-chocolate-i;
   }
 }
-
+.clear {
+  clear: both;
+}
 .btn {
   &--color-brown {
     background: $light-chocolate;
@@ -87,10 +90,7 @@
     width: 20%;
     border-radius: 0;
   }
-  &--arrow-left {
-    width: 3rem;
-    margin-left: 90%;
-  }
+
   transition: all 0.2s;
 }
 
@@ -100,6 +100,9 @@
   }
   &-bottom-sm {
     margin-bottom: 1.5rem;
+  }
+  &-top-sm {
+    margin-top: 1.5rem;
   }
   &-top {
     margin-top: 3rem;
@@ -122,4 +125,10 @@
     transform: scale(1);
     box-shadow: none;
   }
+}
+
+.btn-with-icon {
+  // font-size: 100%;
+  // height: 100%;
+  margin-right: 10%;
 }
