@@ -409,7 +409,7 @@ export const indexQuery = graphql`
     showcaseImg: file(relativePath: { regex: "/property-west-quarter.jpg/" }) {
       id
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 900) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -437,7 +437,7 @@ export const indexQuery = graphql`
       nodes {
         id
         childImageSharp {
-          fluid(maxWidth: 600) {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
           }
         }
