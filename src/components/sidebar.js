@@ -1,12 +1,19 @@
-import React from "react"
+import React, { Component } from 'react'
 import { Nav, NavItem, NavLink, Button } from "reactstrap"
-import { MdArrowDownward, MdMenu } from "react-icons/md"
+import { MdArrowUpward, MdArrowDownward, MdMenu } from "react-icons/md"
 
-const Sidebar = () => {
- 
-  return (
-    <div className="sidebar" id="Sidebar">
 
+class Sidebar extends Component {
+  constructor(props) {
+   super(props)
+   this.state = {
+    show: "down"
+   }
+  }
+  render() {
+    const { show } = this.state
+    return (
+      <div className="sidebar" id="Sidebar">
       <Button className="btn-dark sidebar--btn-menu sidebar-icon-spacing">
         <MdMenu className="sidebar-icon" />
       </Button>
@@ -30,15 +37,31 @@ const Sidebar = () => {
           </NavItem>
         </Nav>
       </div>
-
-      <Button
-        className="btn-dark sidebar--btn-down"
-        style={{ justifySelf: "end" }}
-      >
-        <MdArrowDownward className="sidebar-icon" />
-      </Button>
+      {/* <div> */}
+        <Button
+          className="btn-dark sidebar--btn-down"
+          style={{ justifySelf: "end" }}
+          hidden={show === "up"}
+          onClick={() => {this.setState({show : "up" })}}
+        >
+          <a href={"/#Footer"} alt="Footer">
+            <MdArrowDownward className="sidebar-icon" />
+          </a>
+        </Button>
+        <Button
+          className="btn-dark sidebar--btn-down"
+          style={{ justifySelf: "end" }}
+          hidden={show === "down"}
+          onClick={() => {this.setState({show : "down" }) }}
+        >
+          <a href={"/#Showcase"} alt="Showcase">
+            <MdArrowUpward className="sidebar-icon" />
+          </a>
+        </Button>
+      {/* </div> */}
     </div>
-  )
+    )
+  }
 }
 
 export default Sidebar
