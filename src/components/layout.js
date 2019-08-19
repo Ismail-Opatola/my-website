@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import SideBar from "./sidebar"
 import "../styles/index.scss"
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,15 +31,7 @@ const Layout = ({ children }) => {
       <SideBar />
       <div>
         <main>{children}</main>
-        <footer >
-          © {new Date().getFullYear()}, Built by{" "}
-          <a
-            href="https://www.iodevelopment.com"
-            alt="Ismail Opatola Development"
-          >
-            IoDevelopment
-          </a>
-        </footer>
+      <Footer/>
       </div>
     </Fragment>
   )
