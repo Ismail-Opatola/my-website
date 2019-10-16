@@ -1,3 +1,24 @@
-TODO: ANIMATION
-TODO: MAPS (GOOGLE)
-TODO: MEDIA QUERY
+Tech Stack:
+
+gatsbymaterial-ui --installed
+contentful-source-plugin
+discuss-gatsby-plugin
+sass --installed
+font-awesomeness 
+social-share-btn-plugin
+netlify-hosting
+embed-youtube-source-plugin
+google-analytics-plugin
+
+Todo:
+
+install dependencies 
+initial setup
+create index page
+create blog list page
+create post page
+create 404 page
+create tag page
+social share plugin
+discuss comments plugin
+registered-domain-name

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Estatement Partners`,
-    description: `Estatement Partners is a frictional Property Management and Architectural design company. Dummy website was developed using gatsby and markdown`,
+    title: `Ismail Opatola`,
+    description: `Web Developer | Full Stack React Developer`,
     developer: "Ismail Opatola",
   },
   plugins: [
@@ -9,6 +9,15 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-catch-links",
     "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-plugin-material-ui",
+      // If you want to use styled components you should change the injection order.
+      options: {
+        // stylesProvider: {
+        //   injectFirst: true,
+        // },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
