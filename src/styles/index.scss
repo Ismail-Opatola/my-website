@@ -1,9 +1,17 @@
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import './abstract/mixins';
+@import './abstract/variables';
 
-@import './variables';
-@import './util';
-@import './base';
-@import './header';
-@import './home';
-@import './sidebar';
-@import './footer';
+@import './base/animation';
+@import './base/base';
+@import './base/utilities';
+
+@import './components/form';
+@import './components/project-card';
+
+@import './layout/footer';
+@import './layout/header';
+@import './layout/sidebar';
+
+@import './pages/blog';
+@import './pages/home';
+@import './pages/post';
