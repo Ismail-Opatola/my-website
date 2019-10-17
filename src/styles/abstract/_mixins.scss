@@ -72,3 +72,23 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// fonts
+
+@mixin custom-fonts($font) {
+  @if($font == audio){
+    font-family: $audio-font
+  }
+  @if($font == shadow-into){
+    font-family: $shadow-font
+  }
+  @if($font == source){
+    font-family: $source-sans-pro
+  }
+  @if($font == titillium){
+    font-family: $titillium-font
+  }
+  @if($font == bangers){
+    font-family: $bangers-font
+  }
+}
