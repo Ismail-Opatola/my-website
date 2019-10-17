@@ -9,10 +9,10 @@ import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import SideBar from "./sidebar"
+import Header from "./Header"
+// import SideBar from "./sidebar"
 import "../styles/index.scss"
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,10 +28,10 @@ const Layout = ({ children }) => {
   return (
     <Fragment>
       <Header />
-      <SideBar />
+      {/* <SideBar /> */}
       <div>
         <main>{children}</main>
-      <Footer/>
+      {/* <Footer/> */}
       </div>
     </Fragment>
   )
