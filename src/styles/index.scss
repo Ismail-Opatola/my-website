@@ -1,17 +1,19 @@
-@import './abstract/mixins';
-@import './abstract/variables';
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Bangers|Shadows+Into+Light|Source+Sans+Pro&display=swap');
 
-@import './base/animation';
-@import './base/base';
-@import './base/utilities';
+@import "./abstract/mixins";
+@import "./abstract/variables";
 
-@import './components/form';
-@import './components/project-card';
+@import "./base/animation";
+@import "./base/base";
+@import "./base/utilities";
 
-@import './layout/footer';
-@import './layout/header';
-@import './layout/sidebar';
+@import "./components/form";
+@import "./components/project-card";
 
-@import './pages/blog';
-@import './pages/home';
-@import './pages/post';
+@import "./layout/footer";
+@import "./layout/header";
+@import "./layout/sidebar";
+
+@import "./pages/blog";
+@import "./pages/home";
+@import "./pages/post";
