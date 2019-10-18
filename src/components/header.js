@@ -1,6 +1,6 @@
-import Link from "./Link"
-import PropTypes from "prop-types"
 import React from "react"
+import PropTypes from "prop-types"
+// import Link from "./Link"
 
 import { makeStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
@@ -13,8 +13,10 @@ import CssBaseline from "@material-ui/core/CssBaseline"
 import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 import Slide from "@material-ui/core/Slide"
 
+// import "../styles/index.scss"
+
 const useStyles = makeStyles(theme => ({
-  ...theme,
+  // ...theme,
   root: {
     flexGrow: 1,
   },
@@ -26,8 +28,9 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function HideOnScroll({ children }) {
-  const trigger = useScrollTrigger()
+function HideOnScroll(props) {
+  const trigger = useScrollTrigger(),
+    { children } = props
 
   return (
     <Slide appear={false} direction="down" in={!trigger}>
@@ -36,31 +39,33 @@ function HideOnScroll({ children }) {
   )
 }
 
-const Header = (props) => {
+const Header = props => {
   const classes = useStyles()
 
   return (
-    <header className={classes.root}>
+    <React.Fragment>
       <CssBaseline />
-      <HideOnScroll {...props}>
-        <AppBar position="static" color="primary">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              News
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
-    </header>
+      <header className={classes.root}>
+        <HideOnScroll {...props}>
+          <AppBar position="fixed" className="appbar">
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" className={classes.title}>
+                Ismail Opatola
+              </Typography>
+              <Button color="inherit">Login</Button>
+            </Toolbar>
+          </AppBar>
+        </HideOnScroll>
+      </header>
+    </React.Fragment>
   )
 }
 
@@ -70,7 +75,7 @@ Header.propTypes = {
 
 HideOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
-};
+}
 
 Header.defaultProps = {
   siteTitle: ``,
