@@ -1,0 +1,8 @@
+.appbar {
+    background: $color_blog_404_Home_Text_Black;
+    color: $color_form_Nav_Skills_Text_White;
+}
+
+.logo {
+    @include custom-fonts(audio)
+}
