@@ -81,9 +81,9 @@ const projects = [
   {
     title: "Fit Tracker",
     description: "A Fitness Tracking Mobile App built with React Native.",
-    techStack: ["React", "React-Native", "Expo"],
+    techStack: ["React", "React-Native", "Expo", "Redux"],
     links: {
-      sourceCode: "",
+      sourceCode: "https://github.com/Ismail-Opatola/fit_tracker_app-",
       websiteUrl: "",
       youtubeDemo: "",
     },
