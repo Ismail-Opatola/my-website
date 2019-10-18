@@ -8,11 +8,16 @@
 import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
+import theme from "../util/theme"
 
 import Header from "./Header"
 // import SideBar from "./sidebar"
-import "../styles/index.scss"
 // import Footer from "./Footer";
+
+import Container from "@material-ui/core/Container"
+
+import "../styles/index.scss"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,14 +31,18 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <Fragment>
-      <Header />
-      {/* <SideBar /> */}
-      <div>
-        <main>{children}</main>
-      {/* <Footer/> */}
-      </div>
-    </Fragment>
+    <MuiThemeProvider theme={theme}>
+      <Fragment>
+        <Header />
+        {/* <SideBar /> */}
+        {/* <div> */}
+        {/* <main> */}
+        <Container>{children}</Container>
+        {/* </main> */}
+        {/* <Footer/> */}
+        {/* </div> */}
+      </Fragment>
+    </MuiThemeProvider>
   )
 }
 
