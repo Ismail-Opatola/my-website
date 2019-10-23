@@ -12,6 +12,7 @@ import MenuIcon from "@material-ui/icons/Menu"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 import Slide from "@material-ui/core/Slide"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 // import "../styles/index.scss"
 
@@ -40,7 +41,10 @@ function HideOnScroll(props) {
 }
 
 const Header = props => {
-  const classes = useStyles()
+  const classes = useStyles(),
+    { toggleDrawer } = props
+  const handleSidebar = () =>
+    useMediaQuery("sm") ? toggleDrawer("top", true) : toggleDrawer("left", true)
 
   return (
     <React.Fragment>
@@ -54,6 +58,7 @@ const Header = props => {
                 className={classes.menuButton}
                 color="inherit"
                 aria-label="menu"
+                onClick={handleSidebar()}
               >
                 <MenuIcon />
               </IconButton>
