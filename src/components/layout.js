@@ -8,14 +8,18 @@
 import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
+import {
+  MuiThemeProvider,
+  // createMuiTheme
+} from "@material-ui/core/styles"
 import theme from "../util/theme"
 
 import Header from "./Header"
-// import SideBar from "./sidebar"
+import SideBar from "./Sidebar"
 // import Footer from "./Footer";
 
 import Container from "@material-ui/core/Container"
+import Toolbar from "@material-ui/core/Toolbar"
 
 import "../styles/index.scss"
 
@@ -29,18 +33,40 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+  })
+
+  const toggleDrawer = (side, open) => event => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return
+    }
+
+    setState({ ...state, [side]: open })
+  }
 
   return (
     <MuiThemeProvider theme={theme}>
       <Fragment>
-        <Header />
-        {/* <SideBar /> */}
-        {/* <div> */}
-        {/* <main> */}
-        <Container>{children}</Container>
-        {/* </main> */}
+        <Header
+          topDrawer={state.top}
+          leftDrawer={state.left}
+          toggleDrawer={toggleDrawer}
+          // prop drilling -- useReducer
+        />
+        <SideBar
+          topDrawer={state.top}
+          leftDrawer={state.left}
+          toggleDrawer={toggleDrawer}
+        />
+        <Toolbar />
+        <Container component="main" >{children}</Container>
         {/* <Footer/> */}
-        {/* </div> */}
       </Fragment>
     </MuiThemeProvider>
   )
