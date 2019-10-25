@@ -33,8 +33,8 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
   const [state, setState] = React.useState({
-    top: false,
     left: false,
   })
 
@@ -54,18 +54,12 @@ const Layout = ({ children }) => {
     <MuiThemeProvider theme={theme}>
       <Fragment>
         <Header
-          topDrawer={state.top}
-          leftDrawer={state.left}
           toggleDrawer={toggleDrawer}
           // prop drilling -- useReducer
         />
-        <SideBar
-          topDrawer={state.top}
-          leftDrawer={state.left}
-          toggleDrawer={toggleDrawer}
-        />
+        <SideBar leftDrawer={state.left} toggleDrawer={toggleDrawer} />
         <Toolbar />
-        <Container component="main" >{children}</Container>
+        <Container component="main">{children}</Container>
         {/* <Footer/> */}
       </Fragment>
     </MuiThemeProvider>
