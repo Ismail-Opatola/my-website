@@ -1,22 +1,36 @@
-import { red, blueGrey } from '@material-ui/core/colors';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { red, blueGrey } from "@material-ui/core/colors"
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
+import { fade } from "@material-ui/core/styles/colorManipulator"
+
+import "../styles/index.scss"
 
 // A custom theme for this app
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       main: "#000",
     },
     secondary: {
-      main: '#ccc',
+      main: "#ccc",
     },
-    error: {
-      main: red.A400,
-    },
-    background: {
-      default: '#ffffff',
+    tertiary: {
+      main: fade("#ccc", 0.5),
     },
   },
-});
+  tert: {
+    main: "#483",
+  },
+  typography: {
+    useNextVariants: true,
+  },
+  error: {
+    main: red.A400,
+  },
+  background: {
+    default: "#fff",
+  },
+})
 
-export default theme;
+theme = responsiveFontSizes(theme)
+
+export default theme
