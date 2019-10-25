@@ -1,31 +1,88 @@
 import React from "react"
 import PropTypes from "prop-types"
+import clsx from "clsx"
 // import Link from "./Link"
 
-import { makeStyles } from "@material-ui/core/styles"
+import {
+  makeStyles,
+  createMuiTheme,
+  MuiThemeProvider,
+  responsiveFontSizes,
+} from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import IconButton from "@material-ui/core/IconButton"
-import MenuIcon from "@material-ui/icons/Menu"
 import CssBaseline from "@material-ui/core/CssBaseline"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 import Slide from "@material-ui/core/Slide"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
+import MenuIcon from "@material-ui/icons/Menu"
+import Notes from "@material-ui/icons/Notes"
+import Work from "@material-ui/icons/Work"
 
-// import "../styles/index.scss"
+import "../styles/index.scss"
 
+const logoText = responsiveFontSizes(
+  createMuiTheme({
+    typography: {
+      useNextVariants: true,
+      fontFamily: '"Audiowide", cursive',
+      fontSize: 18,
+      fontWeightLight: 300,
+      fontWeightRegular: 400,
+      fontWeightMedium: 500,
+      color: "#193F4C",
+    },
+  })
+)
 const useStyles = makeStyles(theme => ({
-  // ...theme,
   root: {
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    position: "absolute",
+    backgroundColor: theme.background.default,
+    color: theme.palette.primary,
+    borderRadius: "0px",
+    minheight: "100%",
+    height: "100%",
+    maxWidth: 65,
+    width: "100%",
+    "&:hover": {
+      backgroundColor: theme.background.default,
+    },
+    "&:hover svg": {
+      transform: "rotate(-6deg)",
+    },
   },
   title: {
     flexGrow: 1,
+    color: "#193F4C",
+    "-webkit-text-stroke-width": "1px",
+    "-webkit-text-stroke-color": "#09C4FF",
+    marginLeft: theme.spacing(10),
+  },
+  btn: {
+    flexShrink: 1,
+    fontSize: 8,
+    fontWeight: 900,
+    margin: theme.spacing(1),
+    [theme.breakpoints.up('md')]: {
+      marginRight: theme.spacing(5),
+      fontSize: 10,
+    },
+    [theme.breakpoints.up('lg')]: {
+      marginRight: theme.spacing(10),
+      fontSize: 14,
+      fontWeight: 600,
+    },
+    textWrap: "nowrap",
+    "&:hover": {
+      backgroundColor: theme.background.default,
+      color: theme.palette.primary.main,
+    },
   },
 }))
 
@@ -43,8 +100,11 @@ function HideOnScroll(props) {
 const Header = props => {
   const classes = useStyles(),
     { toggleDrawer } = props
-  const handleSidebar = () =>
-    useMediaQuery("sm") ? toggleDrawer("top", true) : toggleDrawer("left", true)
+  const mixedClasses = clsx(classes.title, "ld", "ldt-float-up-in")
+
+  const handleSidebar = () => toggleDrawer("left", true)
+
+  const matches = useMediaQuery(theme => theme.breakpoints.up('sm'));
 
   return (
     <React.Fragment>
@@ -52,20 +112,28 @@ const Header = props => {
       <header className={classes.root}>
         <HideOnScroll {...props}>
           <AppBar position="fixed" className="appbar">
-            <Toolbar>
+            <Toolbar disableGutters={true}>
               <IconButton
-                edge="start"
                 className={classes.menuButton}
-                color="inherit"
                 aria-label="menu"
                 onClick={handleSidebar()}
               >
-                <MenuIcon />
+                <Notes className={"navIcon"} />
               </IconButton>
-              <Typography variant="h6" className={classes.title}>
-                Ismail Opatola
-              </Typography>
-              <Button color="inherit">Login</Button>
+              <MuiThemeProvider theme={logoText}>
+                <Typography variant="h6" className={mixedClasses}>
+                  ISMAIL OPATOLA
+                </Typography>
+              </MuiThemeProvider>
+              <Button
+                color="secondary"
+                variant="outlined"
+                size="small"
+                className={classes.btn}
+                startIcon={matches ? <Work /> : null}
+              >
+                Hire me
+              </Button>
             </Toolbar>
           </AppBar>
         </HideOnScroll>
@@ -87,3 +155,7 @@ Header.defaultProps = {
 }
 
 export default Header
+
+// ::: :::...:::... (>_<(
+// ...:::...::: ::: Ismail Opatola ::: :::...:::... (&gt;_&lt;(
+// "text-shadow":  `0 0 3px #FF0000, 0 0 5px #0000FF`,
