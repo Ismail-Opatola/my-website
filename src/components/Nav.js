@@ -1,77 +1,219 @@
 import React from "react"
 import Link from "./Link"
-// import { makeStyles } from '@material-ui/core/styles';
-// import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-// import Button from '@material-ui/core/Button';
+import clsx from "clsx"
+import { makeStyles, lighten } from "@material-ui/core/styles"
 import List from "@material-ui/core/List"
 import Divider from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
-// import InboxIcon from "@material-ui/icons/MoveToInbox"
-import MailIcon from "@material-ui/icons/Mail"
+import WorkOutline from "@material-ui/icons/WorkOutline"
+import Person from "@material-ui/icons/PersonPin"
+import FormatTextdirectionRToL from "@material-ui/icons/FormatAlignLeft"
+
 import {
-  // FaTwitter,
   // FaGithub,
   FaMedium,
-  FaHandHolding,
-  //   FaHandHoldingHeart,
+  FaTwitter,
+  FaGithubAlt,
   // FaYoutube,
   // FaLinkedin,
 } from "react-icons/fa"
 import { FiCodesandbox } from "react-icons/fi"
 
-import Person from "@material-ui/icons/PersonOutlined"
-import FormatTextdirectionRToL from "@material-ui/icons/FormatAlignLeft"
+const useStyles = makeStyles(theme => ({
+  list: {
+    maxWidth: "100%",
+    flexDirection: "column",
+    color: "Whitesmoke",
+    flexGrow: 0.5,
+  },
+  listItem: {
+    width: "100%",
+    textDecoration: "none",
+    color: theme.palette.primary.main
+  },
+  ListItemIcon: {
+    color: theme.palette.primary.main,
+  },
+  customFlex: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "nowrap",
+  },
+}))
 
-const Nav = () => {
+const Nav = props => {
+  const classes = useStyles()
+
+  const [state, setState] = React.useState({
+    hover: false,
+    about: false,
+    work: false,
+    blog: false,
+    hire: false,
+    medium: false,
+    twitter: false,
+    github: false,
+  })
+
+  const toggleHover = (s = "") => {
+    if (
+      s === "a" ||
+      s === "w" ||
+      s === "b" ||
+      s === "h" ||
+      s === "m" ||
+      s === "t" ||
+      s === "g"
+    )
+      setState({ [s]: !state.s })
+
+    return
+  }
+
+  const mixedClasses = clsx(classes.listItem, classes.customFlex)
+  const mixedClassesIcon = s => {
+    if (
+      s === "a" ||
+      s === "w" ||
+      s === "b" ||
+      s === "h" ||
+      s === "m" ||
+      s === "t" ||
+      s === "g"
+    ) {
+      return state[s]
+        ? clsx(classes.ListItemIcon, "ld", "ld-bounce")
+        : clsx(classes.ListItemIcon)
+    }
+    return
+  }
+
   return (
-    <List component="ul">
-      <ListItem key={"About"}>
-        <ListItemIcon>
-          <Person />
-        </ListItemIcon>
-        <ListItemText primary={"About"} />
-      </ListItem>
-      <ListItem key={"Work"}>
-        <ListItemIcon>
-          <FiCodesandbox size={16} rotate={30} />
-        </ListItemIcon>
-        <ListItemText primary={"Work"} />
-      </ListItem>
-      <ListItem key={"Blog"}>
-        <ListItemIcon>
-          <FormatTextdirectionRToL />
-        </ListItemIcon>
-        <ListItemText primary={"Blog"} />
-      </ListItem>
-
-      <Divider component="li" />
-
-      <ListItem key={"Medium"}>
+    <List component="ul" className={(classes.customFlex, classes.list)}>
+      <ListItem
+        key={"About"}
+        button
+        className={classes.listItem}
+        onMouseEnter={() => toggleHover("a")}
+        onMouseLeave={() => toggleHover("a")}
+      >
         <Link
-          component={Link}
-          to="https://medium.com/Opatola-Ismail"
-          rel="noopener noreferrer"
-          target="_blank"
+          to="/"
+          className={mixedClasses}
+          style={{ textDecoration: "none" }}
         >
-          <ListItemIcon>
-            <FaMedium size={16} />
+          <ListItemIcon className={mixedClassesIcon("a")}>
+            <Person />
           </ListItemIcon>
-          <ListItemText primary={"Medium"} />
+          <ListItemText primary="About" />
         </Link>
       </ListItem>
-      <ListItem button key={"Hire me"}>
-        <ListItemIcon>
-          <FaHandHolding />
+      <ListItem
+        key={"Work"}
+        button
+        onMouseEnter={() => toggleHover("w")}
+        onMouseLeave={() => toggleHover("w")}
+      >
+        <Link
+          to="/#work"
+          className={mixedClasses}
+          style={{ textDecoration: "none" }}
+        >
+          <ListItemIcon className={mixedClassesIcon("w")}>
+            <FiCodesandbox size={24} />
+          </ListItemIcon>
+          <ListItemText primary="Work" />
+        </Link>
+      </ListItem>
+      <ListItem
+        key={"Blog"}
+        button
+        onMouseEnter={() => toggleHover("b")}
+        onMouseLeave={() => toggleHover("b")}
+      >
+        <Link
+          to="/blog"
+          className={mixedClasses}
+          style={{ textDecoration: "none" }}
+        >
+          <ListItemIcon className={mixedClassesIcon("b")}>
+            <FormatTextdirectionRToL />
+          </ListItemIcon>
+          <ListItemText primary="Blog" />
+        </Link>
+      </ListItem>
+
+      <br />
+      <Divider component="li" style={{ display: "block" }} />
+      <br />
+
+      <ListItem
+        button
+        key={"Hire me"}
+        onMouseEnter={() => toggleHover("h")}
+        onMouseLeave={() => toggleHover("h")}
+      >
+        <ListItemIcon className={mixedClassesIcon("h")}>
+          <WorkOutline />
         </ListItemIcon>
         <ListItemText primary={"Hire me"} />
       </ListItem>
-      <ListItem button key={"Contact"}>
-        <ListItemIcon>
-          <MailIcon />
-        </ListItemIcon>
-        <ListItemText primary={"Contact"} />
+      <ListItem
+        key={"Medium"}
+        button
+        onMouseEnter={() => toggleHover("m")}
+        onMouseLeave={() => toggleHover("m")}
+      >
+        <a
+          href="https://medium.com/@opatolamails"
+          rel="noopener noreferrer"
+          target="_blank"
+          className={mixedClasses}
+        >
+          <ListItemIcon className={mixedClassesIcon("m")}>
+            <FaMedium size={24} />
+          </ListItemIcon>
+          <ListItemText primary={"Medium"} />
+        </a>
+      </ListItem>
+      <ListItem
+        key={"Twitter"}
+        button
+        onMouseEnter={() => toggleHover("t")}
+        onMouseLeave={() => {toggleHover("t")}}
+      >
+        <a
+          href="https://twitter.com/opatolaismail"
+          rel="noopener noreferrer"
+          target="_blank"
+          className={mixedClasses}
+        >
+          <ListItemIcon className={mixedClassesIcon("t")}>
+            <FaTwitter size={24} />
+          </ListItemIcon>
+          <ListItemText primary={"Twitter"} />
+        </a>
+      </ListItem>
+      <ListItem
+        key={"Github"}
+        button
+        onMouseEnter={() => toggleHover("g")}
+        onMouseLeave={() => toggleHover("g")}
+      >
+        <a
+          href="https://github.com/Ismail-Opatola"
+          rel="noopener noreferrer"
+          target="_blank"
+          className={mixedClasses}
+        >
+          <ListItemIcon className={mixedClassesIcon("g")}>
+            <FaGithubAlt size={24} />
+          </ListItemIcon>
+          <ListItemText primary={"Github"} />
+        </a>
       </ListItem>
     </List>
   )
@@ -105,3 +247,17 @@ export default Nav
 // )
 // module.exports = {Nav, Nav2};
 // module.exports = {Nav, Nav2};
+
+/*
+
+// First, create each components in a different file: Staff.js and Employee.js. Export them like this: export { Staff }; and export { Employee };
+
+// Now create another file to handle multiple exports. Let's call it About.js and here is the content:
+
+// export * from './Staff';
+// export * from './Employee';
+// Now just use it as you did:
+
+// import { Staff, Employee } from "./components/About";
+
+*/
