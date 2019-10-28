@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   listItem: {
     width: "100%",
     textDecoration: "none",
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
   },
   ListItemIcon: {
     color: theme.palette.primary.main,
@@ -91,14 +91,36 @@ const Nav = props => {
     return
   }
 
+  const handleHoverA = () => {
+    toggleHover("a")
+  }
+  const handleHoverW = () => {
+    toggleHover("w")
+  }
+  const handleHoverB = () => {
+    toggleHover("b")
+  }
+  const handleHoverH = () => {
+    toggleHover("h")
+  }
+  const handleHoverM = () => {
+    toggleHover("m")
+  }
+  const handleHoverT = () => {
+    toggleHover("t")
+  }
+  const handleHoverG = () => {
+    toggleHover("g")
+  }
+
   return (
     <List component="ul" className={(classes.customFlex, classes.list)}>
       <ListItem
         key={"About"}
         button
         className={classes.listItem}
-        onMouseEnter={() => toggleHover("a")}
-        onMouseLeave={() => toggleHover("a")}
+        onMouseEnter={() => handleHoverA()}
+        onMouseLeave={() => handleHoverA()}
       >
         <Link
           to="/"
@@ -114,8 +136,8 @@ const Nav = props => {
       <ListItem
         key={"Work"}
         button
-        onMouseEnter={() => toggleHover("w")}
-        onMouseLeave={() => toggleHover("w")}
+        onMouseEnter={() => handleHoverW()}
+        onMouseLeave={() => handleHoverW()}
       >
         <Link
           to="/#work"
@@ -131,8 +153,8 @@ const Nav = props => {
       <ListItem
         key={"Blog"}
         button
-        onMouseEnter={() => toggleHover("b")}
-        onMouseLeave={() => toggleHover("b")}
+        onMouseEnter={() => handleHoverB()}
+        onMouseLeave={() => handleHoverB()}
       >
         <Link
           to="/blog"
@@ -153,8 +175,8 @@ const Nav = props => {
       <ListItem
         button
         key={"Hire me"}
-        onMouseEnter={() => toggleHover("h")}
-        onMouseLeave={() => toggleHover("h")}
+        onMouseEnter={() => handleHoverH()}
+        onMouseLeave={() => handleHoverH()}
       >
         <ListItemIcon className={mixedClassesIcon("h")}>
           <WorkOutline />
@@ -164,8 +186,8 @@ const Nav = props => {
       <ListItem
         key={"Medium"}
         button
-        onMouseEnter={() => toggleHover("m")}
-        onMouseLeave={() => toggleHover("m")}
+        onMouseEnter={() => handleHoverM()}
+        onMouseLeave={() => handleHoverM()}
       >
         <a
           href="https://medium.com/@opatolamails"
@@ -182,8 +204,8 @@ const Nav = props => {
       <ListItem
         key={"Twitter"}
         button
-        onMouseEnter={() => toggleHover("t")}
-        onMouseLeave={() => {toggleHover("t")}}
+        onMouseEnter={() => handleHoverT()}
+        onMouseLeave={() => handleHoverT()}
       >
         <a
           href="https://twitter.com/opatolaismail"
@@ -200,8 +222,8 @@ const Nav = props => {
       <ListItem
         key={"Github"}
         button
-        onMouseEnter={() => toggleHover("g")}
-        onMouseLeave={() => toggleHover("g")}
+        onMouseEnter={() => handleHoverG()}
+        onMouseLeave={() => handleHoverG()}
       >
         <a
           href="https://github.com/Ismail-Opatola"
