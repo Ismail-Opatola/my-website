@@ -1,0 +1,10 @@
+.foo {
+  viewBox: "0 0 1920.112 934.207";
+}
+
+.fonty-purple {
+  @include stroke(10, #5E4A6E);
+}
+.fontyII-pink {
+  @include stroke(10, #ef6474);
+}
