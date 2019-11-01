@@ -81,7 +81,7 @@ const useStyles = makeStyles(theme => ({
     textWrap: "nowrap",
     "&:hover": {
       backgroundColor: theme.background.default,
-      color: theme.palette.primary.main,
+      color: "#100E17",
     },
   },
 }))
@@ -100,11 +100,13 @@ function HideOnScroll(props) {
 const Header = props => {
   const classes = useStyles(),
     { toggleDrawer } = props
-  const mixedClasses = clsx(classes.title, "ld", "ldt-float-up-in")
+  const mixedClasses = clsx(classes.title, "ld ldt-float-up-in")
+  const mixedClassesBtn = clsx(classes.btn, "ld ldt-slide-right-in x1")
 
   const handleSidebar = () => toggleDrawer("left", true)
 
   const matches = useMediaQuery(theme => theme.breakpoints.up('sm'));
+  const matches_sm = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
   return (
     <React.Fragment>
@@ -122,14 +124,14 @@ const Header = props => {
               </IconButton>
               <MuiThemeProvider theme={logoText}>
                 <Typography variant="h6" className={mixedClasses}>
-                  ISMAIL OPATOLA
+                   {matches_sm ? "ISMAIL O." : "ISMAIL OPATOLA"}
                 </Typography>
               </MuiThemeProvider>
               <Button
                 color="secondary"
                 variant="outlined"
                 size="small"
-                className={classes.btn}
+                className={mixedClassesBtn}
                 startIcon={matches ? <Work /> : null}
               >
                 Hire me
