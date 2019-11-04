@@ -6,32 +6,26 @@
 
 // You can delete this file if you're not using it
 // const { graphql } = require("gatsby")
-// const projects = require("./src/util/projects")
-// const team = require("./src/util/team")
+const notes = require("./src/util/notes")
 
-// exports.onCreateNode = async ({ node, actions }) => {
-//   try {
-//     const { createNodeField } = actions
+exports.onCreateNode = async ({ node, actions }) => {
+  try {
+    const { createNodeField } = actions
 
-//     if (
-//       node.internal.type === "File" &&
-//       node.internal.mediaType === "application/javascript"
-//     ) {
-//       createNodeField({
-//         node,
-//         name: "projects",
-//         value: projects,
-//       })
-//       createNodeField({
-//         node,
-//         name: "team",
-//         value: team,
-//       })
-//     }
-//   } catch (error) {
-//     if (error) return Promise.reject(error)
-//   }
-// }
+    if (
+      node.internal.type === "File" &&
+      node.internal.mediaType === "application/javascript"
+    ) {
+      createNodeField({
+        node,
+        name: "notes",
+        value: notes,
+      })
+    }
+  } catch (error) {
+    if (error) return Promise.reject(error)
+  }
+}
 
 // exports.onCreateNode = async ({ node, actions }) => {
 //   const { createNodeField } = actions
