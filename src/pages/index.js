@@ -1,5 +1,9 @@
 import React from 'react';
-import { StaticQuery, Link, graphql } from 'gatsby';
+import {
+  // StaticQuery, 
+  // Link,
+  graphql
+} from 'gatsby';
 import Img from 'gatsby-image';
 // import BackgroundImage from "gatsby-background-image"
 import clsx from 'clsx';
@@ -24,10 +28,10 @@ import Paper from '@material-ui/core/Paper';
 // import Button from "@material-ui/core/Button"
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
+// import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+// import ListItem from '@material-ui/core/ListItem';
+// import ListItemText from '@material-ui/core/ListItemText';
 import Button from '@material-ui/core/Button';
 
 import {
@@ -245,8 +249,8 @@ class IndexPage extends React.Component {
                 {' '}
                 <span>Ismail</span>
 . I'm a Frontend / Fullstack React Developer
-                living in bustling Lagos, Nigeria. I enjoy building performant web apps with React,
-                Nodejs and Firebase. What are your formula?
+                living in bustling Lagos, Nigeria. I enjoy building performant mobile & web apps with React,
+                Nodejs and Firebase. What are your formulas?
               </Typography>
             </Box>
 
