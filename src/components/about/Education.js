@@ -122,7 +122,7 @@ hosted on Heroku..
           </ListItem>
           <ListItem className={classes.section3_li}>
             <Typography component="h4">BSc Accounting - 2013</Typography>
-            <Typography paragraph>Yes, I'm an Accounting graduate turned developer !</Typography>
+            <Typography paragraph>Yep, I'm an Accounting graduate turned developer !</Typography>
           </ListItem>
         </List>
       </Box>
