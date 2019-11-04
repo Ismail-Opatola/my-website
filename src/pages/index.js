@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  // StaticQuery, 
+  // StaticQuery,
   // Link,
   graphql
 } from 'gatsby';
@@ -67,7 +67,8 @@ const typoWrapper = responsiveFontSizes(
   createMuiTheme({
     typography: {
       useNextVariants: true,
-      fontFamily: '"Caveat", cursive',
+      // fontFamily: '"Caveat", cursive',
+      fontFamily: '"Caveat", audiowide, "sans-serif"',
       fontSize: 20,
       fontWeight: 900,
     },
