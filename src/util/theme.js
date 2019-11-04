@@ -8,7 +8,8 @@ import "../styles/index.scss"
 let theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#000",
+      main: "#100E17",
+      // main: "#303336",
     },
     secondary: {
       main: "#ccc",
@@ -16,6 +17,9 @@ let theme = createMuiTheme({
     tertiary: {
       main: fade("#ccc", 0.5),
     },
+  },
+  lighteriDark: {
+    main: "#1F2123",
   },
   tert: {
     main: "#483",
