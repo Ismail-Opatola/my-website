@@ -4,7 +4,7 @@ gatsbymaterial-ui --installed
 contentful-source-plugin
 discuss-gatsby-plugin
 sass --installed
-font-awesomeness 
+font-awesomeness
 social-share-btn-plugin
 netlify-hosting
 embed-youtube-source-plugin
@@ -12,7 +12,7 @@ google-analytics-plugin
 
 Todo:
 
-install dependencies 
+install dependencies
 initial setup
 create index page
 create blog list page
@@ -23,3 +23,7 @@ social share plugin
 discuss comments plugin
 registered-domain-name
 sitemap & robot.txt
+
+creating custom typography with MuiThemeProvider in multiple places can affect performance, remember to refactor this by moving those typography custom settings to the root theme in util/theme.js
+
+loading skeleton
