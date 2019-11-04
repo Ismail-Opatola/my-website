@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="SVGRoot" width="1920px" height="1080px" version="1.1" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g>
+  <g className="wavy-top">
+   <path class="a" d="m0.13786 1.8607h1919.8v298.84s-264.98-60.334-200.98 104.08c63.995 164.41-95.992 312.6-255.22 274.44-244.74-72.506-217.82 350.04-548.71 167.91-945.37-520.38-914.92-222.96-914.92-222.96z" fill="#152347" opacity=".93" className="wavy-top-path"/>
+  </g>
+ </g>
+ <g>
+  <path d="m1919.7 281.84c-5.9309-1.363-279.58-50.356-216.32 116.08 63.995 168.36-80.112 310.74-239.34 271.66-244.74-74.25-217.83 358.46-548.71 171.95-860.58-485.09-912.53-276.25-914.92-234.88-0.23616 4.0766 0 6.5564 0 6.5564v466.79h1919.3z" fill="#f3efef" opacity=".93" className="wavy-bottom-path"/>
+ </g>
+</svg>
