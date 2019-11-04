@@ -10,7 +10,7 @@ import {
   MuiThemeProvider,
   responsiveFontSizes,
 } from "@material-ui/core/styles";
-// import useMediaQuery from "@material-ui/core/useMediaQuery"
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 // import Toolbar from "@material-ui/core/Toolbar"
 import Paper from "@material-ui/core/Paper";
@@ -86,6 +86,12 @@ const useStyles = makeStyles((theme) => ({
   },
   li: {
     padding: 0,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 16,
+    },
+  },
+  project_features: {
+    marginBottom: theme.spacing(1)
   },
   project_info_cta: {
     display: "flex",
@@ -103,8 +109,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Project = ({ project, projectImg }) => {
-  console.log("from project component", project);
   const classes = useStyles();
+  const xtra_sm = useMediaQuery((theme) => theme.breakpoints.down('xs'));
+
   return (
     <MuiThemeProvider theme={typoWrapperII}>
       <Box className={classes.project_info_section}>
@@ -124,30 +131,35 @@ const Project = ({ project, projectImg }) => {
           <Grid
             container
             component="aside"
-            spacing={4}
+            spacing={xtra_sm ? 2 : 4}
             direction="row"
             wrap="nowrap"
             justify="flex-start"
+            className={classes.project_features}
           >
-            <Grid item>
+            <Grid item xs={6}>
               <Typography component="h5" display="block">
                 Tech Stack
               </Typography>
               <List>
                 {project.techStack
                   && project.techStack.map((tech) => (
-                    <ListItem className={classes.li} key={tech}>{tech}</ListItem>
+                    <ListItem className={classes.li} key={tech}>
+                      {tech}
+                    </ListItem>
                   ))}
               </List>
             </Grid>
-            <Grid item>
+            <Grid item xs={6}>
               <Typography component="h5" display="block">
                 features
               </Typography>
               <List>
                 {project.features
                   && project.features.map((feature) => (
-                    <ListItem className={classes.li} key={feature}>{feature}</ListItem>
+                    <ListItem className={classes.li} key={feature}>
+                      {feature}
+                    </ListItem>
                   ))}
               </List>
             </Grid>
@@ -173,7 +185,7 @@ const Project = ({ project, projectImg }) => {
                 size="small"
                 color="primary"
                 className="cta-btn"
-                component={"a"}
+                component="a"
                 href={project.links.youtubeDemo}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -187,7 +199,7 @@ const Project = ({ project, projectImg }) => {
                 size="small"
                 color="primary"
                 className="cta-btn"
-                component={"a"}
+                component="a"
                 href={project.links.sourceCode}
                 target="_blank"
                 rel="noopener noreferrer"
