@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import clsx from "clsx"
 
 import SEO from "../components/seo"
@@ -11,14 +11,14 @@ import {
   MuiThemeProvider,
   responsiveFontSizes,
 } from "@material-ui/core/styles"
-import AppBar from "@material-ui/core/AppBar"
+// import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
-import Button from "@material-ui/core/Button"
+// import Button from "@material-ui/core/Button"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-import Grid from "@material-ui/core/Grid"
+// import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 
 import "../styles/index.scss"
@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
     maxHeight: "58.9vh",
     height: "50vh",
     // height: "58.9vh",
-    backgroundColor: "#000",
+    // backgroundColor: "#000",
     color: "#fff",
   },
   box2: {
@@ -119,7 +119,7 @@ const useStyles = makeStyles(theme => ({
 
 const NotFoundPage = props => {
   const classes = useStyles()
-  const mixedClasses = clsx(classes.mainBox, "purple-bg")
+  const mixedClasses = clsx(classes.mainBox)
   const mixedClasses2 = clsx(classes.box2, "p")
   const mixedClasses3 = clsx(classes.f404, "ab-center")
 
