@@ -14,11 +14,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
-// import MenuIcon from "@material-ui/icons/Menu"
 import Notes from '@material-ui/icons/Notes';
 import Work from '@material-ui/icons/Work';
 
@@ -43,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     position: 'absolute',
-    backgroundColor: theme.background.default,
+    backgroundColor: "#fff",
     color: theme.palette.primary,
     borderRadius: '0px',
     minheight: '100%',
@@ -51,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 65,
     width: '100%',
     '&:hover': {
-      backgroundColor: theme.background.default,
+      backgroundColor: "#fff",
     },
     '&:hover svg': {
       transform: 'rotate(-6deg)',
@@ -68,6 +66,8 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 1,
     fontSize: 8,
     fontWeight: 900,
+    color: "#fff",
+    borderColor: "#fff",
     margin: theme.spacing(1),
     [theme.breakpoints.up('md')]: {
       marginRight: theme.spacing(5),
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     },
     textWrap: 'nowrap',
     '&:hover': {
-      backgroundColor: theme.background.default,
+      backgroundColor: "#fff",
       color: '#100E17',
     },
   },
@@ -109,11 +109,9 @@ const Header = (props) => {
   const matches_sm = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   return (
-    <>
-      <CssBaseline />
-      <header className={classes.root}>
+      <header className={clsx(classes.root, "appbar")}>
         <HideOnScroll {...props}>
-          <AppBar position="fixed" className="appbar">
+          <AppBar position="fixed">
             <Toolbar disableGutters>
               <IconButton
                 className={classes.menuButton}
@@ -128,7 +126,7 @@ const Header = (props) => {
                 </Typography>
               </MuiThemeProvider>
               <Button
-                color="secondary"
+                // color="primary"
                 variant="outlined"
                 size="small"
                 className={mixedClassesBtn}
@@ -139,8 +137,8 @@ const Header = (props) => {
             </Toolbar>
           </AppBar>
         </HideOnScroll>
+        <Toolbar id="back-to-top-anchor" />
       </header>
-    </>
   );
 };
 
