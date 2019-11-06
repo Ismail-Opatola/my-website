@@ -1,44 +1,30 @@
 /* eslint-disable quotes */
 import React from "react";
+import MuiLink from '@material-ui/core/Link';
 // import Img from "gatsby-image"
 // import BackgroundImage from "gatsby-background-image"
 import clsx from "clsx";
 
 import {
   makeStyles,
-  createMuiTheme,
-  MuiThemeProvider,
-  responsiveFontSizes,
+  // createMuiTheme,
+  // MuiThemeProvider,
+  // responsiveFontSizes,
 } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-// import Toolbar from "@material-ui/core/Toolbar"
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import List from "@material-ui/core/List";
-// import Divider from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem";
 import Link from "../Link";
-// import ListItemIcon from "@material-ui/core/ListItemIcon"
-// import ListItemText from "@material-ui/core/ListItemText"
 
-const typoWrapperII = responsiveFontSizes(
-  createMuiTheme({
-    typography: {
-      useNextVariants: true,
-      fontFamily: '"Open Sans", sans-serif',
-      fontStyle: "regular",
-      color: "#c5c1b9",
-      fontSize: 19,
-      lineHeight: 1.4,
-      maxWidth: 640,
-      fontWeightLight: 300,
-    },
-  }),
-);
+
+
 const useStyles = makeStyles((theme) => ({
   project_info_section: {
     marginTop: theme.spacing(10),
@@ -58,8 +44,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   project_info_box: {
-    fontFamily: '"Open Sans", sans-serif',
-    fontStyle: "regular",
     color: "#c5c1b9",
     fontSize: 19,
     lineHeight: 1.4,
@@ -91,29 +75,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   project_features: {
-    marginBottom: theme.spacing(1)
-  },
-  project_info_cta: {
-    display: "flex",
-    justifyContent: "flex-start",
-    flexGrow: 1,
-    "& .cta-btn": {
-      marginRight: theme.spacing(4),
-      fontSize: 15,
-      "&:hover": {
-        backgroundColor: "#3f51b5",
-        color: "#c5c1b9",
-      },
-    },
+    marginBottom: theme.spacing(1),
   },
 }));
 
 const Project = ({ project, projectImg }) => {
   const classes = useStyles();
-  const xtra_sm = useMediaQuery((theme) => theme.breakpoints.down('xs'));
+  const xtra_sm = useMediaQuery((theme) => theme.breakpoints.down("xs"));
 
   return (
-    <MuiThemeProvider theme={typoWrapperII}>
+    <>
       <Box className={classes.project_info_section}>
         <Paper className={classes.project_image_box} elevation={5}>
           {/* <Img fluid={projectImg ? projectImg : null} className="project_image" /> */}
@@ -164,14 +135,16 @@ const Project = ({ project, projectImg }) => {
               </List>
             </Grid>
           </Grid>
-          <Box className={classes.project_info_cta}>
+          <ButtonGroup
+            variant="outlined"
+            color="secondary"
+            size="small"
+            // className={classes.project_info_cta}
+          >
             {project.links.websiteUrl && (
               <Button
-                variant="outlined"
-                size="small"
-                color="primary"
-                className="cta-btn"
-                component="a"
+                // className="cta-btn"
+                component={MuiLink}
                 href={project.links.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -181,11 +154,8 @@ const Project = ({ project, projectImg }) => {
             )}
             {project.links.youtubeDemo && (
               <Button
-                variant="outlined"
-                size="small"
-                color="primary"
-                className="cta-btn"
-                component="a"
+                // className="cta-btn"
+                component={MuiLink}
                 href={project.links.youtubeDemo}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -195,11 +165,8 @@ const Project = ({ project, projectImg }) => {
             )}
             {project.links.sourceCode && (
               <Button
-                variant="outlined"
-                size="small"
-                color="primary"
                 className="cta-btn"
-                component="a"
+                component={MuiLink}
                 href={project.links.sourceCode}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -207,10 +174,10 @@ const Project = ({ project, projectImg }) => {
                 Code
               </Button>
             )}
-          </Box>
+          </ButtonGroup>
         </Box>
       </Box>
-    </MuiThemeProvider>
+    </>
   );
 };
 
