@@ -3,9 +3,9 @@ import clsx from 'clsx';
 
 import {
   makeStyles,
-  createMuiTheme,
-  MuiThemeProvider,
-  responsiveFontSizes,
+  // createMuiTheme,
+  // MuiThemeProvider,
+  // responsiveFontSizes,
 } from '@material-ui/core/styles';
 
 import Box from '@material-ui/core/Box';
@@ -16,20 +16,6 @@ import ListItem from '@material-ui/core/ListItem';
 
 import StarRate from '@material-ui/icons/StarRate';
 
-const typoWrapperII = responsiveFontSizes(
-  createMuiTheme({
-    typography: {
-      useNextVariants: true,
-      fontFamily: '"Open Sans", sans-serif',
-      fontStyle: 'regular',
-      color: '#c5c1b9',
-      fontSize: 19,
-      lineHeight: 1.4,
-      maxWidth: 640,
-      fontWeightLight: 300,
-    },
-  }),
-);
 
 const useStyles = makeStyles((theme) => ({
   section4_article: {
@@ -38,14 +24,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(4),
     '& h5': {
       marginBottom: theme.spacing(2),
+      fontStyle: "Bold",
+      fontWeight: 600,
     },
-  },
-  section4_ul: {
-    // display: 'flex',
-    // justifyContent: "space-between",
-    // alignItems: "center",
-    // flexDirection: 'row',
-    // flexWrap: 'wrap',
   },
   section4_li: {
     display: 'inline-block',
@@ -59,7 +40,7 @@ const Skills = ({ skills }) => {
   const classes = useStyles();
 
   return (
-    <MuiThemeProvider theme={typoWrapperII}>
+    <>
       <Box component="article" className={classes.section4_article}>
         <Typography component="h5" className={clsx('fonty-purple')}>
           Programming Skills
@@ -96,7 +77,7 @@ const Skills = ({ skills }) => {
           ))}
         </List>
       </Box>
-    </MuiThemeProvider>
+      </>
   );
 };
 
