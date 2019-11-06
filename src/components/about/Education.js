@@ -14,20 +14,6 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 
-const typoWrapperII = responsiveFontSizes(
-  createMuiTheme({
-    typography: {
-      useNextVariants: true,
-      fontFamily: '"Open Sans", sans-serif',
-      fontStyle: 'regular',
-      color: '#c5c1b9',
-      fontSize: 19,
-      lineHeight: 1.4,
-      maxWidth: 640,
-      fontWeightLight: 300,
-    },
-  }),
-);
 
 const useStyles = makeStyles((theme) => ({
   section3_article1: {
@@ -36,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(8),
     '& h3': {
       marginBottom: theme.spacing(5),
+      fontStyle: "Bold",
+      fontWeight: 600,
     },
   },
   section3_article2: {
@@ -44,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(4),
     '& h3': {
       marginBottom: theme.spacing(4),
+      fontStyle: "Bold",
+      fontWeight: 600,
     },
   },
   section3_ul: {},
@@ -63,7 +53,7 @@ const Education = () => {
   const classes = useStyles();
 
   return (
-    <MuiThemeProvider theme={typoWrapperII}>
+    <>
       <Box component="article" className={classes.section3_article1}>
         <Typography component="h3" className={clsx('fonty-purple')}>
           My journey to the web
@@ -126,7 +116,7 @@ hosted on Heroku..
           </ListItem>
         </List>
       </Box>
-    </MuiThemeProvider>
+    </>
   );
 };
 export default Education;
