@@ -1,96 +1,203 @@
-import React from "react"
+import React from 'react';
+import MuiLink from '@material-ui/core/Link';
+import clsx from 'clsx';
+
 import {
-  FaTwitter,
-  FaGithub,
-  FaMedium,
-  FaYoutube,
-  FaLinkedin,
-} from "react-icons/fa"
+  FaTwitter, FaMedium, FaYoutube, FaLinkedin, FaGithubAlt,
+} from 'react-icons/fa';
 
-const Footer = () => (
-  <div className="site-footer" id="Footer">
-    <div className="main--container">
-      <div>
-        <h4 className="text-center">
-          © {new Date().getFullYear()}, Built by{" "}
-          <a
-            href="https://www.iodevelopment.com"
-            alt="Ismail Opatola Development"
-          >
-            ISMAIL OPATOLA DEVELOPMENT
-          </a>
-        </h4>
-        <p className="text-center">Follow me on social media</p>
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { lighten } from '@material-ui/core/styles/colorManipulator';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import Zoom from '@material-ui/core/Zoom';
+import Link from '../Link';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    position: 'fixed',
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
+  },
+  footer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#c5c1b9',
+    padding: theme.spacing(4, 2, 2, 2),
+  },
+  footer_box1: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexWrap: "wrap",
+  },
+  li: {
+    display: 'inline-block',
+    backgroundColor: lighten("#000", 0.2),
+    width: 'auto',
+    margin: theme.spacing(1),
+    fontSize: 19,
+    '&:hover ': {
+      cursor: 'pointer',
+    },
+    '& .medium': {
+      color: '#ccc',
+    },
+    '& .github': {
+      color: 'rgb(242, 244, 246)',
+    },
+    '& .twitter': {
+      color: 'rgb(56, 161, 243)',
+    },
+    '& .youtube': {
+      color: 'rgb(221, 75, 57)',
+    },
+    '& .linkedin': {
+      color: 'rgb(0, 119, 181)',
+    },
+  },
+  fakeAssThickLine: {
+    height: theme.spacing(0.5),
+    width: theme.spacing(5),
+    backgroundColor: lighten(theme.palette.background.default, 0.1),
+    borderRadius: 30,
+  },
+  span: {
+    '& span': {
+      fontWeight: '900',
+    },
+  },
+}));
+
+function ScrollTop(props) {
+  const { children, window } = props;
+  const classes = useStyles();
+  const trigger = useScrollTrigger();
+
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
+  return (
+    <Zoom in={trigger}>
+      <div onClick={handleClick} role="presentation" className={classes.root}>
+        {children}
       </div>
-      <div className="footer-social-links">
-        <ul className="social-links-list">
-          <li>
-            <a
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="twitter"
-            >
-              <FaTwitter size={20} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="linkedin"
-            >
-              <FaLinkedin size={20} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.medium.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="medium"
-            >
-              <FaMedium size={20} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="youtube"
-            >
-              <FaYoutube size={20} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="github"
-            >
-              <FaGithub size={20} />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-)
+    </Zoom>
+  );
+}
 
-export default Footer
+const Footer = (props) => {
+  const classes = useStyles();
 
-/**
- *<footer >
-    © {new Date().getFullYear()}, Built by{" "}
-    <a
-      href="https://www.iodevelopment.com"
-      alt="Ismail Opatola Development"
-    >
-      IoDevelopment
-    </a>
-  </footer>
- * 
- *   */
+  return (
+    <Box component="footer">
+      <ScrollTop {...props}>
+        <Fab color="primary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
+
+      <Box className={clsx(classes.footer)}>
+        <Box className={classes.fakeAssThickLine} />
+        <Box className={clsx(classes.footer)}>
+          <Typography className={classes.span}>
+            ISMAIL
+            <span>OPATOLA</span>
+            .COM
+          </Typography>
+          <List className={classes.footer_box1}>
+            <ListItem className={classes.li}>
+              <Button color="secondary" size="small" component={Link} to="/">
+                About
+              </Button>
+            </ListItem>
+            <ListItem className={classes.li}>
+              <Button color="secondary" size="small" component={Link} to="/blog">
+                Blog
+              </Button>
+            </ListItem>
+            <ListItem className={classes.li}>
+              <Button color="secondary" size="small">
+                Hire Me
+              </Button>
+            </ListItem>
+          </List>
+        </Box>
+        <Box className={classes.footer}>
+          <Typography>SOCIAL CONNECTS!</Typography>
+          <List>
+            <ListItem className={classes.li}>
+              <MuiLink
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="linkedin"
+              >
+                <FaLinkedin size={23} />
+              </MuiLink>
+            </ListItem>
+            <ListItem className={classes.li}>
+              <MuiLink
+                href="https://twitter.com/opatolaismail"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="twitter"
+              >
+                <FaTwitter size={23} />
+              </MuiLink>
+            </ListItem>
+            <ListItem className={classes.li}>
+              <MuiLink
+                href="https://github.com/Ismail-Opatola"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github"
+              >
+                <FaGithubAlt size={23} />
+              </MuiLink>
+            </ListItem>
+            <ListItem className={classes.li}>
+              <MuiLink
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="youtube"
+              >
+                <FaYoutube size={23} />
+              </MuiLink>
+            </ListItem>
+            <ListItem className={classes.li}>
+              <MuiLink
+                href="https://medium.com/@opatolamails"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="medium"
+              >
+                <FaMedium size={23} />
+              </MuiLink>
+            </ListItem>
+          </List>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+export default Footer;
