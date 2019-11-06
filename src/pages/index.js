@@ -19,6 +19,7 @@ import {
   responsiveFontSizes,
   withStyles,
 } from '@material-ui/core/styles';
+import { lighten } from '@material-ui/core/styles/colorManipulator';
 
 // import useMediaQuery from "@material-ui/core/useMediaQuery"
 
@@ -68,23 +69,9 @@ const typoWrapper = responsiveFontSizes(
     typography: {
       useNextVariants: true,
       // fontFamily: '"Caveat", cursive',
-      fontFamily: '"Caveat", audiowide, "sans-serif"',
+      fontFamily: '"audiowide", "sans-serif"',
       fontSize: 20,
       fontWeight: 900,
-    },
-  }),
-);
-const typoWrapperII = responsiveFontSizes(
-  createMuiTheme({
-    typography: {
-      useNextVariants: true,
-      fontFamily: '"Open Sans", sans-serif',
-      fontStyle: 'regular',
-      color: '#c5c1b9',
-      fontSize: 19,
-      lineHeight: 1.4,
-      maxWidth: 640,
-      fontWeightLight: 300,
     },
   }),
 );
@@ -140,10 +127,7 @@ const useStyles = (theme) => ({
     },
   },
   textIntroII: {
-    fontFamily: '"Open Sans", sans-serif',
-    fontStyle: 'regular',
     fontSize: 19,
-    fontWeightLight: 300,
     lineHeight: 1.4,
     textAlign: 'center',
     color: '#c5c1b9',
@@ -179,13 +163,16 @@ const useStyles = (theme) => ({
     maxWidth: 620,
     marginBottom: theme.spacing(8),
 
-    '&:hover': {
-      backgroundColor: '#3f51b5',
-      color: '#c5c1b9',
+    // '&:hover': {
+      // backgroundColor: '#3f51b5',
+      // color: '#c5c1b9',
+      backgroundColor: lighten('#000', 0.2),
+      color: theme.palette.secondary,
+      // textTransform: 'none'
       "& a" : {
-        color: "inherit"
+        textTransform: 'none'
       }
-    },
+    // },
   },
   section3: {
     maxWidth: 900,
@@ -238,8 +225,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home" />
-        <Toolbar />
-        <MuiThemeProvider theme={typoWrapperII}>
+        <>
           <Box className={classes.section1} component="section">
             <Box className={classes.innerBox1}>
               <Typography className={clsx(classes.textIntro, 'fonty-purple')}>
@@ -288,10 +274,10 @@ class IndexPage extends React.Component {
                 component="a"
                 href="https://github.com/Ismail-Opatola/"
                 target="_blank"
-                rel="noopener noreferer"
+                rel="noopener noreferrer"
                 startIcon={<FaGithubAlt size={45} />}
                 fullWidth
-                color="primary"
+                color="secondary"
               >
                 See GitHub For More
               </Button>
@@ -304,7 +290,7 @@ class IndexPage extends React.Component {
           <Box className={classes.section4} component="section">
             {skills && <Skills skills={skills} />}
           </Box>
-        </MuiThemeProvider>
+        </>
         <Toolbar />
       </Layout>
     );
