@@ -11,14 +11,11 @@ import {
   MuiThemeProvider,
   responsiveFontSizes,
 } from "@material-ui/core/styles"
-// import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
-// import Button from "@material-ui/core/Button"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-// import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 
 import "../styles/index.scss"
@@ -41,8 +38,7 @@ const text1 = responsiveFontSizes(
   createMuiTheme({
     typography: {
       useNextVariants: true,
-      fontFamily: '"Segoe UI", sans-serif',
-      fontSize: 200,
+      fontSize: 170,
       fontWeightLight: 678,
       fontWeightRegular: 678,
       fontWeightMedium: 678,
@@ -50,16 +46,7 @@ const text1 = responsiveFontSizes(
     },
   })
 )
-const text2 = responsiveFontSizes(
-  createMuiTheme({
-    typography: {
-      useNextVariants: true,
-      fontFamily: '"Caveat", cursive',
-      fontSize: 20,
-      fontWeight: 900,
-    },
-  })
-)
+
 
 const useStyles = makeStyles(theme => ({
   mainBox: {
@@ -68,18 +55,16 @@ const useStyles = makeStyles(theme => ({
     height: "100vh",
     boxSizing: "border-box",
     overflow: "hidden",
+    backgroundColor: "#1F2123"
   },
   box1: {
     maxHeight: "58.9vh",
     height: "50vh",
-    // height: "58.9vh",
-    // backgroundColor: "#000",
     color: "#fff",
   },
   box2: {
     maxHeight: "49.1vh",
     height: "50vh",
-    // height: "49.1vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -102,7 +87,7 @@ const useStyles = makeStyles(theme => ({
     color: "#fff",
     "&:hover": {
       textDecoration: "none",
-      color: "yellow",
+      color: theme.palette.secondary.main,
     },
   },
   ul: {
@@ -110,10 +95,10 @@ const useStyles = makeStyles(theme => ({
   },
   f404: {
     letterSpacing: 0,
-    color: "#FFFFFF",
     textShadow: "0px 3px 6px #00000029",
     opacity: 1,
     lineHeight: 0,
+    // TODO: parallex effects
   },
 }))
 
@@ -144,7 +129,6 @@ const NotFoundPage = props => {
                 <Typography className={mixedClasses3}>404</Typography>
               </MuiThemeProvider>
             </div>
-            <MuiThemeProvider theme={text2}>
               <Typography>
                 You just hit a route that doesn&#39;t exist... the sadness.
               </Typography>
@@ -161,7 +145,6 @@ const NotFoundPage = props => {
                   </Link>
                 </ListItem>
               </List>
-            </MuiThemeProvider>
           </Box>
         </div>
       </MuiThemeProvider>
