@@ -1,5 +1,7 @@
 import React from "react"
 import Link from "../Link"
+import MuiLink from '@material-ui/core/Link';
+
 import clsx from "clsx"
 import {
   makeStyles,
@@ -194,7 +196,7 @@ const Nav = props => {
         onMouseEnter={() => handleHoverM()}
         onMouseLeave={() => handleHoverM()}
       >
-        <a
+        <MuiLink
           href="https://medium.com/@opatolamails"
           rel="noopener noreferrer"
           target="_blank"
@@ -204,7 +206,7 @@ const Nav = props => {
             <FaMedium size={24} />
           </ListItemIcon>
           <ListItemText primary={"Medium"} />
-        </a>
+        </MuiLink>
       </ListItem>
       <ListItem
         key={"Twitter"}
@@ -212,7 +214,7 @@ const Nav = props => {
         onMouseEnter={() => handleHoverT()}
         onMouseLeave={() => handleHoverT()}
       >
-        <a
+        <MuiLink
           href="https://twitter.com/opatolaismail"
           rel="noopener noreferrer"
           target="_blank"
@@ -222,7 +224,7 @@ const Nav = props => {
             <FaTwitter size={24} />
           </ListItemIcon>
           <ListItemText primary={"Twitter"} />
-        </a>
+        </MuiLink>
       </ListItem>
       <ListItem
         key={"Github"}
@@ -230,7 +232,7 @@ const Nav = props => {
         onMouseEnter={() => handleHoverG()}
         onMouseLeave={() => handleHoverG()}
       >
-        <a
+        <MuiLink
           href="https://github.com/Ismail-Opatola"
           rel="noopener noreferrer"
           target="_blank"
@@ -240,7 +242,7 @@ const Nav = props => {
             <FaGithubAlt size={24} />
           </ListItemIcon>
           <ListItemText primary={"Github"} />
-        </a>
+        </MuiLink>
       </ListItem>
     </List>
   )
