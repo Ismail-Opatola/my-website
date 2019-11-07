@@ -2,7 +2,7 @@ import React from 'react';
 import {
   // StaticQuery,
   // Link,
-  graphql
+  graphql,
 } from 'gatsby';
 import Img from 'gatsby-image';
 // import BackgroundImage from "gatsby-background-image"
@@ -48,6 +48,7 @@ import SEO from '../components/seo';
 import Project from '../components/about/Project';
 import Education from '../components/about/Education';
 import Skills from '../components/about/Skills';
+import Form from '../components/Form';
 // import ListItemIcon from "@material-ui/core/ListItemIcon"
 
 // import Graduation from "../assets/graduation.svg"
@@ -164,14 +165,14 @@ const useStyles = (theme) => ({
     marginBottom: theme.spacing(8),
 
     // '&:hover': {
-      // backgroundColor: '#3f51b5',
-      // color: '#c5c1b9',
-      backgroundColor: lighten('#000', 0.2),
-      color: theme.palette.secondary,
-      // textTransform: 'none'
-      "& a" : {
-        textTransform: 'none'
-      }
+    // backgroundColor: '#3f51b5',
+    // color: '#c5c1b9',
+    backgroundColor: lighten('#000', 0.2),
+    color: theme.palette.secondary,
+    // textTransform: 'none'
+    '& a': {
+      textTransform: 'none',
+    },
     // },
   },
   section3: {
@@ -181,6 +182,12 @@ const useStyles = (theme) => ({
     padding: theme.spacing(4, 2),
   },
   section4: {
+    maxWidth: 900,
+    color: '#c5c1b9',
+    margin: 'auto',
+    padding: theme.spacing(4, 2),
+  },
+  section5: {
     maxWidth: 900,
     color: '#c5c1b9',
     margin: 'auto',
@@ -236,8 +243,8 @@ class IndexPage extends React.Component {
                 {' '}
                 <span>Ismail</span>
 . I'm a Frontend / Fullstack React Developer
-                living in bustling Lagos, Nigeria. I enjoy building performant mobile & web apps with React,
-                Nodejs and Firebase. What are your formulas?
+                living in bustling Lagos, Nigeria. I enjoy building performant mobile & web apps
+                with React, Nodejs and Firebase. What are your formulas?
               </Typography>
             </Box>
 
@@ -246,7 +253,7 @@ class IndexPage extends React.Component {
             </Paper>
           </Box>
 
-          <Box className={classes.section2} component="section">
+          <Box id="work" className={classes.section2} component="section">
             <MuiThemeProvider theme={typoWrapper}>
               <Typography
                 variant="h3"
@@ -289,6 +296,9 @@ class IndexPage extends React.Component {
           </Box>
           <Box className={classes.section4} component="section">
             {skills && <Skills skills={skills} />}
+          </Box>
+          <Box id="contact-form" className={classes.section5} component="section">
+            <Form />
           </Box>
         </>
         <Toolbar />
