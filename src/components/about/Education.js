@@ -3,15 +3,12 @@ import clsx from 'clsx';
 
 import {
   makeStyles,
-  createMuiTheme,
-  MuiThemeProvider,
-  responsiveFontSizes,
 } from '@material-ui/core/styles';
 
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+// import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 
 
