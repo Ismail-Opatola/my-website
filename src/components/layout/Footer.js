@@ -1,27 +1,30 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 import MuiLink from '@material-ui/core/Link';
+import Link from '../Link';
 import clsx from 'clsx';
+
+import PopupForm from '../PopupForm'
 
 import {
   FaTwitter, FaMedium, FaYoutube, FaLinkedin, FaGithubAlt,
 } from 'react-icons/fa';
 
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import CssBaseline from '@material-ui/core/CssBaseline';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+
 import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
+// import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
-import Link from '../Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ScrollTop(props) {
-  const { children, window } = props;
+  const { children } = props;
   const classes = useStyles();
   const trigger = useScrollTrigger();
 
@@ -105,6 +108,7 @@ function ScrollTop(props) {
 
 const Footer = (props) => {
   const classes = useStyles();
+  const { openFormDialog, handleCloseFormDialog} = props
 
   return (
     <Box component="footer">
@@ -113,6 +117,10 @@ const Footer = (props) => {
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
+
+      <PopupForm
+        openFormDialog={openFormDialog}
+        handleCloseFormDialog={handleCloseFormDialog}/>
 
       <Box className={clsx(classes.footer)}>
         <Box className={classes.fakeAssThickLine} />
