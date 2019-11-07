@@ -1,20 +1,19 @@
-import React from "react"
-import Link from "../Link"
+import React from 'react';
 import MuiLink from '@material-ui/core/Link';
 
-import clsx from "clsx"
+import clsx from 'clsx';
 import {
   makeStyles,
   // lighten
-} from "@material-ui/core/styles"
-import List from "@material-ui/core/List"
-import Divider from "@material-ui/core/Divider"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemIcon from "@material-ui/core/ListItemIcon"
-import ListItemText from "@material-ui/core/ListItemText"
-import WorkOutline from "@material-ui/icons/WorkOutline"
-import Person from "@material-ui/icons/PersonPin"
-import FormatTextdirectionRToL from "@material-ui/icons/FormatAlignLeft"
+} from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import WorkOutline from '@material-ui/icons/WorkOutline';
+import Person from '@material-ui/icons/PersonPin';
+import FormatTextdirectionRToL from '@material-ui/icons/FormatAlignLeft';
 
 import {
   // FaGithub,
@@ -23,36 +22,35 @@ import {
   FaGithubAlt,
   // FaYoutube,
   // FaLinkedin,
-} from "react-icons/fa"
-import { FiCodesandbox } from "react-icons/fi"
+} from 'react-icons/fa';
+import { FiCodesandbox } from 'react-icons/fi';
+import Link from '../Link';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   list: {
-    maxWidth: "100%",
-    flexDirection: "column",
-    color: "Whitesmoke",
+    maxWidth: '100%',
+    flexDirection: 'column',
     flexGrow: 0.5,
-    color: "#ef6474",
-
+    color: '#ef6474',
   },
   listItem: {
-    width: "100%",
-    textDecoration: "none",
-    color: "inherit",
+    width: '100%',
+    textDecoration: 'none',
+    color: 'inherit',
   },
   ListItemIcon: {
-    color: "inherit",
+    color: 'inherit',
   },
   customFlex: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexWrap: "nowrap",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexWrap: 'nowrap',
   },
-}))
+}));
 
-const Nav = props => {
-  const classes = useStyles()
+const Nav = (props) => {
+  const classes = useStyles();
 
   const [state, setState] = React.useState({
     hover: false,
@@ -63,112 +61,78 @@ const Nav = props => {
     medium: false,
     twitter: false,
     github: false,
-  })
+  });
 
-  const toggleHover = (s = "") => {
-    if (
-      s === "a" ||
-      s === "w" ||
-      s === "b" ||
-      s === "h" ||
-      s === "m" ||
-      s === "t" ||
-      s === "g"
-    )
-      setState({ [s]: !state.s })
+  const toggleHover = (s = '') => {
+    if (s === 'a' || s === 'w' || s === 'b' || s === 'h' || s === 'm' || s === 't' || s === 'g') setState({ [s]: !state.s });
+  };
 
-    return
-  }
-
-  const mixedClasses = clsx(classes.listItem, classes.customFlex)
-  const mixedClassesIcon = s => {
-    if (
-      s === "a" ||
-      s === "w" ||
-      s === "b" ||
-      s === "h" ||
-      s === "m" ||
-      s === "t" ||
-      s === "g"
-    ) {
-      return state[s]
-        ? clsx(classes.ListItemIcon, "ld", "ld-bounce")
-        : clsx(classes.ListItemIcon)
+  const mixedClasses = clsx(classes.listItem, classes.customFlex);
+  const mixedClassesIcon = (s) => {
+    if (s === 'a' || s === 'w' || s === 'b' || s === 'h' || s === 'm' || s === 't' || s === 'g') {
+      return state[s] ? clsx(classes.ListItemIcon, 'ld', 'ld-bounce') : clsx(classes.ListItemIcon);
     }
-    return
-  }
+  };
 
   const handleHoverA = () => {
-    toggleHover("a")
-  }
+    toggleHover('a');
+  };
   const handleHoverW = () => {
-    toggleHover("w")
-  }
+    toggleHover('w');
+  };
   const handleHoverB = () => {
-    toggleHover("b")
-  }
+    toggleHover('b');
+  };
   const handleHoverH = () => {
-    toggleHover("h")
-  }
+    toggleHover('h');
+  };
   const handleHoverM = () => {
-    toggleHover("m")
-  }
+    toggleHover('m');
+  };
   const handleHoverT = () => {
-    toggleHover("t")
-  }
+    toggleHover('t');
+  };
   const handleHoverG = () => {
-    toggleHover("g")
-  }
+    toggleHover('g');
+  };
 
   return (
     <List component="ul" className={(classes.customFlex, classes.list)}>
       <ListItem
-        key={"About"}
+        key="About"
         button
         className={classes.listItem}
         onMouseEnter={() => handleHoverA()}
         onMouseLeave={() => handleHoverA()}
       >
-        <Link
-          to="/"
-          className={mixedClasses}
-          style={{ textDecoration: "none" }}
-        >
-          <ListItemIcon className={mixedClassesIcon("a")}>
+        <Link to="/" className={mixedClasses} style={{ textDecoration: 'none' }}>
+          <ListItemIcon className={mixedClassesIcon('a')}>
             <Person />
           </ListItemIcon>
           <ListItemText primary="About" />
         </Link>
       </ListItem>
       <ListItem
-        key={"Work"}
+        key="Work"
         button
         onMouseEnter={() => handleHoverW()}
         onMouseLeave={() => handleHoverW()}
       >
-        <Link
-          to="/#work"
-          className={mixedClasses}
-          style={{ textDecoration: "none" }}
-        >
-          <ListItemIcon className={mixedClassesIcon("w")}>
+        <Link to="/#work" className={mixedClasses} style={{ textDecoration: 'none' }}>
+          <ListItemIcon className={mixedClassesIcon('w')}>
             <FiCodesandbox size={24} />
           </ListItemIcon>
           <ListItemText primary="Work" />
         </Link>
       </ListItem>
       <ListItem
-        key={"Blog"}
+        key="Blog"
         button
         onMouseEnter={() => handleHoverB()}
         onMouseLeave={() => handleHoverB()}
       >
-        <Link
-          to="/blog"
-          className={mixedClasses}
-          style={{ textDecoration: "none" }}
-        >
-          <ListItemIcon className={mixedClassesIcon("b")}>
+        <Link to="/blog" className={mixedClasses} style={{ textDecoration: 'none' }}>
+          <ListItemIcon className={mixedClassesIcon('b')}>
             <FormatTextdirectionRToL />
           </ListItemIcon>
           <ListItemText primary="Blog" />
@@ -176,22 +140,25 @@ const Nav = props => {
       </ListItem>
 
       <br />
-      <Divider component="li" style={{ display: "block" }} />
+      <Divider component="li" style={{ display: 'block' }} />
       <br />
 
       <ListItem
         button
-        key={"Hire me"}
+        key="Hire me"
         onMouseEnter={() => handleHoverH()}
         onMouseLeave={() => handleHoverH()}
       >
-        <ListItemIcon className={mixedClassesIcon("h")}>
-          <WorkOutline />
-        </ListItemIcon>
-        <ListItemText primary={"Hire me"} />
+        <Link className={mixedClasses} to="/#contact-form">
+          <ListItemIcon className={mixedClassesIcon('h')}>
+            <WorkOutline />
+          </ListItemIcon>
+          <ListItemText primary="Hire me" />
+        </Link>
+        {' '}
       </ListItem>
       <ListItem
-        key={"Medium"}
+        key="Medium"
         button
         onMouseEnter={() => handleHoverM()}
         onMouseLeave={() => handleHoverM()}
@@ -202,14 +169,14 @@ const Nav = props => {
           target="_blank"
           className={mixedClasses}
         >
-          <ListItemIcon className={mixedClassesIcon("m")}>
+          <ListItemIcon className={mixedClassesIcon('m')}>
             <FaMedium size={24} />
           </ListItemIcon>
-          <ListItemText primary={"Medium"} />
+          <ListItemText primary="Medium" />
         </MuiLink>
       </ListItem>
       <ListItem
-        key={"Twitter"}
+        key="Twitter"
         button
         onMouseEnter={() => handleHoverT()}
         onMouseLeave={() => handleHoverT()}
@@ -220,14 +187,14 @@ const Nav = props => {
           target="_blank"
           className={mixedClasses}
         >
-          <ListItemIcon className={mixedClassesIcon("t")}>
+          <ListItemIcon className={mixedClassesIcon('t')}>
             <FaTwitter size={24} />
           </ListItemIcon>
-          <ListItemText primary={"Twitter"} />
+          <ListItemText primary="Twitter" />
         </MuiLink>
       </ListItem>
       <ListItem
-        key={"Github"}
+        key="Github"
         button
         onMouseEnter={() => handleHoverG()}
         onMouseLeave={() => handleHoverG()}
@@ -238,16 +205,16 @@ const Nav = props => {
           target="_blank"
           className={mixedClasses}
         >
-          <ListItemIcon className={mixedClassesIcon("g")}>
+          <ListItemIcon className={mixedClassesIcon('g')}>
             <FaGithubAlt size={24} />
           </ListItemIcon>
-          <ListItemText primary={"Github"} />
+          <ListItemText primary="Github" />
         </MuiLink>
       </ListItem>
     </List>
-  )
-}
-export default Nav
+  );
+};
+export default Nav;
 
 // const Nav2 = () => (
 //   <>
