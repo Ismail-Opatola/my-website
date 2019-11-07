@@ -16,6 +16,9 @@ let theme = createMuiTheme({
     background: {
       default: '#1F2123',
     },
+    error: {
+      main: red.A400,
+    },
   },
   typography: {
     useNextVariants: true,
@@ -27,12 +30,6 @@ let theme = createMuiTheme({
     maxWidth: 640,
     fontWeightLight: 300,
   },
-  error: {
-    main: red.A400,
-  },
-  // background: {
-  //   default: '#1F2123',
-  // },
 });
 
 theme = responsiveFontSizes(theme);
