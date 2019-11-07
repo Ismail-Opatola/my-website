@@ -7,7 +7,6 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 // import Box from "@material-ui/core/Box"
 // import im from "../images/sidebar_bg@2x.png"
 import Nav from "./Nav"
-import Copyright from "./Copyright"
 
 const useStyles = makeStyles(theme => ({
   nav: {
@@ -39,9 +38,6 @@ export default function SwipeableTemporaryDrawer({ leftDrawer, toggleDrawer }) {
       onKeyDown={closeDrawer()}
     >
       <Nav />
-      {/*<div>
-        <Copyright />
-      </div>*/}
     </nav>
   )
 
