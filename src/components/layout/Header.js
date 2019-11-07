@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-// import Link from "./Link"
+import {
+  Link,
+} from 'gatsby';
 
 import {
   makeStyles,
@@ -99,7 +101,8 @@ function HideOnScroll(props) {
 
 const Header = (props) => {
   const classes = useStyles();
-  const { toggleDrawer } = props;
+  const { toggleDrawer, handleOpenFormDialog } = props;
+
   const mixedClasses = clsx(classes.title, 'ld ldt-float-up-in');
   const mixedClassesBtn = clsx(classes.btn, 'ld ldt-slide-right-in x1');
 
@@ -127,10 +130,13 @@ const Header = (props) => {
               </MuiThemeProvider>
               <Button
                 // color="primary"
+                component={Link}
                 variant="outlined"
                 size="small"
                 className={mixedClassesBtn}
                 startIcon={matches ? <Work /> : null}
+                to="/#contact-form"
+
               >
                 Hire me
               </Button>
