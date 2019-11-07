@@ -23,7 +23,120 @@ social share plugin
 discuss comments plugin
 registered-domain-name
 sitemap & robot.txt
+// TODO: replace google_form with custom form
 
 creating custom typography with MuiThemeProvider in multiple places can affect performance, remember to refactor this by moving those typography custom settings to the root theme in util/theme.js
 
 loading skeleton
+
+theme api: https://material-ui.com/customization/default-theme/
+
+embedding video: https://scotch.io/tutorials/embedding-videos-in-your-gatsbyjs-sites
+
+There is an alternate way to use google form in order to make the design of your choice.
+
+Here it goes:
+
+Create the template of your choice using HTML5/ Responsive Web design in order to fit in any mobile or tablets.
+Create a google form.
+Check the source code of this form.
+In your original code , write a post function on submit of the button or form(whatever you wish).
+Then do an AJAX call where the url will be something like : https://docs.google.com/forms/d/...BgiRRtEA4d6Ifnvyh6-8/formResponse --- This URL you can find in the source code of the FORM you just created.(try finding with the name docs.google)
+Then the data will be something like this:
+data : {
+
+"entry.341651702" : name,
+
+"entry.2110349582" : mobile,
+
+"entry.475347665" : email,
+
+"entry.270046347" : query
+
+}, --- Search for entry.XXXXXXX and use it as per your form details.
+
+And you are done with your customized google form.
+
+Here is a short example for the same:
+
+HTML Code :
+
+<!-- block for subscription-->
+
+<div style="float:left;width:20%;">
+
+Name
+
+</div>
+
+<input id="name-sub" type="text" placeholder="&nbsp;Name" />
+
+</div>
+
+<div>
+
+<div >
+
+Mobile No
+
+</div>
+
+<input id="mobile-sub" type="text" placeholder="&nbsp;Mobile No." />
+
+</div>
+
+<div>
+
+<div>
+
+Mail Id
+
+</div>
+
+<input id="mail-sub" type="email" placeholder="&nbsp;E-mail />
+
+<br/>
+
+<button class="button subscribe-done btn-success" id="subscribe-submit" onclick="postContactToGoogleSubscribe()" type="button" >
+
+Subscribe
+
+</button>
+
+<button class="button subscribe-done" id="cancel" onclick="" type="button">
+
+Cancel
+
+</button>
+
+Function and AJAX Calling:
+
+function postContactToGoogleSubscribe() {
+
+var email = $('#mail-sub').val();
+
+var name = $('#name-sub').val();
+
+var mobile = $('#mobile-sub').val();
+
+$.ajax({
+
+url : "https://docs.google.com/forms/d/1MIDItVFCO9_2co_UlBgiRRtEA4d6Ifnvyh6-8/formResponse",
+
+data : {
+
+"entry.1238575226" : name,
+
+"entry.1681546984" : mobile,
+
+"entry.679631165" : email
+
+},
+
+type : "POST",
+
+dataType : "xml"
+
+});
+
+Hope it helps.
