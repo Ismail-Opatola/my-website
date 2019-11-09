@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {
+  // useState,
+  // useEffect
+} from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -28,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
     },
   frame: {
     width: '100%',
-    height: '55rem',
+    height: '52.5rem',
+    // height: '25rem',
     border: 'none',
     margin: 'auto',
     overflow: 'visible',
@@ -43,6 +47,17 @@ const useStyles = makeStyles((theme) => ({
 // TODO: replace google_form with custom form
 const Form = () => {
   const classes = useStyles();
+
+  // const [formSub, setFormSub] = useState(false)
+  // useEffect(() => {
+  //   const frameSubmitButton = window.iframe.document.getElementsByClassName(" freebirdFormviewerViewNavigationSubmitButton")
+  //
+  //   console.log(">>>>>>", {frameSubmitButton})
+  //
+  //   frameSubmitButton.addEventListener('click', () => (
+  //     console.log(">>>>>>>>>> clicked me <<<<<<<<<<<<<")
+  //   ))
+  // })
 
   return (
     <Box className={classes.root}>
@@ -68,3 +83,8 @@ Please let me know how I could help
 };
 
 export default Form;
+
+
+/*
+quantumWizButtonEl quantumWizButtonPaperbuttonEl quantumWizButtonPaperbuttonFlat quantumWizButtonPaperbuttonDark quantumWizButtonPaperbutton2El2 freebirdFormviewerViewNavigationSubmitButton isUndragged
+*/

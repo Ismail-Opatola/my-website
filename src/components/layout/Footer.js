@@ -4,7 +4,7 @@ import MuiLink from '@material-ui/core/Link';
 import Link from '../Link';
 import clsx from 'clsx';
 
-import PopupForm from '../PopupForm'
+// import PopupForm from '../PopupForm'
 
 import {
   FaTwitter, FaMedium, FaYoutube, FaLinkedin, FaGithubAlt,
@@ -118,9 +118,9 @@ const Footer = (props) => {
         </Fab>
       </ScrollTop>
 
-      <PopupForm
-        openFormDialog={openFormDialog}
-        handleCloseFormDialog={handleCloseFormDialog}/>
+      {/* <PopupForm
+         openFormDialog={openFormDialog}
+         handleCloseFormDialog={handleCloseFormDialog}/>*/}
 
       <Box className={clsx(classes.footer)}>
         <Box className={classes.fakeAssThickLine} />
