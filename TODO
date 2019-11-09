@@ -1,37 +1,65 @@
-Tech Stack:
+=======
+Notes
+=======
++ theme api: https://material-ui.com/customization/default-theme/
++ embedding video: https://scotch.io/tutorials/embedding-videos-in-your-gatsbyjs-sites
 
-gatsbymaterial-ui --installed
-contentful-source-plugin
-discuss-gatsby-plugin
-sass --installed
-font-awesomeness
-social-share-btn-plugin
-netlify-hosting
-embed-youtube-source-plugin
-google-analytics-plugin
+=======
+TODO
+=======
++ discuss plugin
++ Blog page
++ blog post template
++ seo
++ blog tag page
++ post social share
++ blog paginate
++ registered domain Name
++ generate sitemap, robot.txt file
++ replace google form with custom form
++ embed chat app
++ analytics
++ netlify hosting
++ contentfull
++ embed youtube videos
++ loading mui skeleton
++ try gatsby-remark-responsive-iframe on google_form
 
-Todo:
+=======
+issues
+=======
++ google form on submit response, the frame height remains, leaving gap inside the frame
++ creating custom typography with MuiThemeProvider in multiple places can affect performance, remember to refactor this by moving those typography custom settings to the root theme in util/theme.js
++
 
-install dependencies
-initial setup
-create index page
-create blog list page
-create post page
-create 404 page
-create tag page
-social share plugin
-discuss comments plugin
-registered-domain-name
-sitemap & robot.txt
-// TODO: replace google_form with custom form
 
-creating custom typography with MuiThemeProvider in multiple places can affect performance, remember to refactor this by moving those typography custom settings to the root theme in util/theme.js
 
-loading skeleton
 
-theme api: https://material-ui.com/customization/default-theme/
 
-embedding video: https://scotch.io/tutorials/embedding-videos-in-your-gatsbyjs-sites
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 There is an alternate way to use google form in order to make the design of your choice.
 
