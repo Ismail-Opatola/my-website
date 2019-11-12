@@ -62,6 +62,7 @@ const BlogList = (props) => {
           prevPage={prevPage}
           nextPage={nextPage}
           numPages={numPages}
+          blog_list
         />
       </BlogLayout>
     </Layout>
