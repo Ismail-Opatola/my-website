@@ -6,8 +6,71 @@
 
 // You can delete this file if you're not using it
 // const { graphql } = require("gatsby")
-const notes = require("./src/util/notes")
+const path = require(`path`)
 
+// const notes = require("./src/util/notes")
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+
+
+  // const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  return graphql(
+    `
+      {
+        allContentfulBlogPost(
+          limit: 500
+          sort: { fields: timestamp, order: DESC }
+        ) {
+          nodes {
+            id
+            slug
+            title
+          }
+        }
+      }
+    `
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    // Create blog posts pages.
+    const posts = result.data.allContentfulBlogPost.nodes
+
+    // posts.forEach((post, index) => {
+    //   const previous = index === posts.length - 1 ? null : posts[index + 1]
+    //   const next = index === 0 ? null : posts[index - 1]
+    //
+    //   createPage({
+    //     path: post.slug,
+    //     component: blogPost,
+    //     context: {
+    //       slug: post.slug,
+    //       previous,
+    //       next,
+    //     },
+    //   })
+    // })
+
+    // Create blog post list pages
+    const postsPerPage = 4;
+    const numPages = Math.ceil(posts.length / postsPerPage);
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+        component: path.resolve('./src/templates/blogList.js'),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1
+        },
+      });
+    });
+  })
+}
 exports.onCreateNode = async ({ node, actions }) => {
   try {
     const { createNodeField } = actions
@@ -19,152 +82,10 @@ exports.onCreateNode = async ({ node, actions }) => {
       createNodeField({
         node,
         name: "notes",
-        value: notes,
+        value: require("./src/util/notes"),
       })
     }
   } catch (error) {
     if (error) return Promise.reject(error)
   }
 }
-
-// exports.onCreateNode = async ({ node, actions }) => {
-//   const { createNodeField } = actions
-
-//   if (
-//     node.internal.type === "File" &&
-//     node.internal.mediaType === "application/javascript"
-//   ) {
-//     // projects.map(project => {
-//     //     if (node.relativePath === project.image) {
-//     //         project.image = node.childImageSharp.src
-//     //     }
-//     // })
-
-//     try {
-//       await projects
-//         .map(async project => {
-//           const res = await graphql(customQuery, {
-//             options: () => {
-//               return {
-//                 variables: {
-//                   projImg: project.image,
-//                 },
-//               }
-//             },
-//           })
-// ====================================================
-//           // const res = await graphql(`
-//           //   {
-//           //     file(relativePath: {eq: $projImg }) {
-//           //         childImageSharp {
-//           //             fluid(maxWidth: 600) {
-//           //                 ...GatsbyImageSharpFluid
-//           //             }
-//           //         }
-//           //     }
-//           // }
-//           // `)
-// ====================================================
-
-//           project.image = res.childImageSharp.fluid
-//         })
-//         .then(() => {
-//           createNodeField({
-//             node,
-//             name: "projects",
-//             value: projects,
-//           })
-//           createNodeField({
-//             node,
-//             name: "team",
-//             value: team,
-//           })
-//         })
-//     } catch (error) {
-//       if (error) return Promise.reject(error)
-//     }
-//   }
-// }
-
-// const customQuery = graphql`
-//   query customQuery($projImg: String!) {
-//     file(relativePath: { eq: $projImg }) {
-//       childImageSharp {
-//         fluid(maxWidth: 600) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `
-// ===================================================
-/*
-graphql(getBookQuery, {
-  options: props => {
-    return {
-      variables: {
-        id: props.bookId
-      }
-    };
-  }
-})
-
-const getBookQuery = gql`
-  query($id: ID!) {
-    book(id: $id) {
-      id
-      name
-      genre
-      author{
-        id
-        name
-        age
-        books{
-          name
-          id
-        }
-      }
-    }
-  }
-`;
-
-
-*/
-
-// ====================================================================
-// exports.onCreateNode = async ({ node, actions, graphql }) => {
-//   const { createNodeField } = actions
-
-//   if (
-//     node.internal.type === "File" &&
-//     node.internal.mediaType === "application/javascript"
-//   ) {
-
-//     try {
-//       await graphql(`allFile(filter: {relativePath: {ne: "property"}, extension: {eq: "jpg"}, dir: {regex: "/images/"}}) {
-//     nodes {
-//       id
-//       childImageSharp {
-//         fluid(maxWidth: 600) {
-//           src
-//         }
-//       }
-//     }
-//   }`).then(res => {
-//         console.log(res)
-//         createNodeField({
-//           node,
-//           name: "projects",
-//           value: projects,
-//         })
-//         createNodeField({
-//           node,
-//           name: "team",
-//           value: team,
-//         })
-//       })
-//     } catch (error) {
-//       if (error) return Promise.reject(error)
-//     }
-//   }
-// }
