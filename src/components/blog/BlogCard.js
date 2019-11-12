@@ -26,11 +26,9 @@ import Link from '../Link';
 const useStyles = makeStyles((theme) => ({
   card: {
     display: 'inline-block',
-    margin: theme.spacing(2),
     boxShadow: 'none',
     boxSizing: 'border-box',
     [theme.breakpoints.down('xs')]: {
-      margin: theme.spacing(1, 0),
       maxWidth: '100%',
     },
     '& h2': {
