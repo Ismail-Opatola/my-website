@@ -101,7 +101,10 @@ function HideOnScroll(props) {
 
 const Header = (props) => {
   const classes = useStyles();
-  const { toggleDrawer, handleOpenFormDialog } = props;
+  const {
+    toggleDrawer,
+    // handleOpenFormDialog 
+  } = props;
 
   const mixedClasses = clsx(classes.title, 'ld ldt-float-up-in');
   const mixedClassesBtn = clsx(classes.btn, 'ld ldt-slide-right-in x1');
