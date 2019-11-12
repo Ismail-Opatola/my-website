@@ -1,15 +1,12 @@
 import React from 'react';
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
-
 import Button from '@material-ui/core/Button';
 
 // Pagination component
 
 import { makeStyles } from '@material-ui/core/styles';
-import { lighten, darken, fade } from '@material-ui/core/styles/colorManipulator';
+import { lighten, fade } from '@material-ui/core/styles/colorManipulator';
 import Link from '../Link';
 
 const useStyles = makeStyles((theme) => ({
@@ -43,30 +40,60 @@ function MyButton({
 export default function Paginate(props) {
   const classes = useStyles();
   const {
-    nextPage, currentPage, prevPage, numPages, isLast, isFirst,
+    nextPage,
+    currentPage,
+    prevPage,
+    numPages,
+    isLast,
+    isFirst,
+    blog_list = false,
+    blog_post = false,
+    previousPost,
+    nextPost,
   } = props;
-  return (
-    <ButtonGroup fullWidth size="small" color="secondary" className={classes.button_group}>
-      {!isFirst && (
+
+  if (blog_list) {
+    return (
+      <ButtonGroup fullWidth size="small" color="secondary" className={classes.button_group}>
+        {!isFirst && (
         <Button component={Link} to={`/blog/${prevPage}`} rel="prev">
-          ← Previous Page
+            ← Previous Page
         </Button>
-      )}
-      {Array.from({ length: numPages }, (_, i) => (
-        <MyButton
-          key={`pagination-number${i + 1}`}
-          to={`/blog/${i === 0 ? '' : i + 1}`}
-          i={i}
-          currentPage={currentPage}
-        >
-          {i + 1}
-        </MyButton>
-      ))}
-      {!isLast && (
+        )}
+        {numPages
+          && Array.from({ length: numPages }, (_, i) => (
+            <MyButton
+              key={`pagination-number${i + 1}`}
+              to={`/blog/${i === 0 ? '' : i + 1}`}
+              i={i}
+              currentPage={currentPage}
+            >
+              {i + 1}
+            </MyButton>
+          ))}
+        {!isLast && (
         <Button component={Link} to={`/blog/${nextPage}`} rel="next">
-          Next Page →
+            Next Page →
         </Button>
-      )}
-    </ButtonGroup>
-  );
+        )}
+      </ButtonGroup>
+    );
+  }
+
+  if (blog_post) {
+    return (
+      <ButtonGroup fullWidth size="small" color="secondary" className={classes.button_group}>
+        {previousPost && (
+        <Button component={Link} to={previousPost.slug} rel="prev">
+            ←{' '}{previousPost.title}
+        </Button>
+        )}
+        {nextPost && (
+        <Button component={Link} to={nextPost.slug} rel="nextPost">
+          {nextPost.title}{' '}→
+        </Button>
+        )}
+      </ButtonGroup>
+    );
+  }
 }
