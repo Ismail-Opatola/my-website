@@ -1,4 +1,4 @@
-import { red, blueGrey } from '@material-ui/core/colors';
+import { red } from '@material-ui/core/colors';
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 // import { fade } from "@material-ui/core/styles/colorManipulator"
 
@@ -30,6 +30,9 @@ let theme = createMuiTheme({
     maxWidth: 640,
     fontWeightLight: 300,
   },
+  // MuiLink: {
+  //   color: '#ef6474',
+  // }
 });
 
 theme = responsiveFontSizes(theme);

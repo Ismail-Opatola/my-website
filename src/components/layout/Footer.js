@@ -108,7 +108,7 @@ function ScrollTop(props) {
 
 const Footer = (props) => {
   const classes = useStyles();
-  const { openFormDialog, handleCloseFormDialog} = props
+  // const { openFormDialog, handleCloseFormDialog} = props
 
   return (
     <Box component="footer">
