@@ -15,6 +15,8 @@ Notes
   https://mariohernandez.io/blog/adding-social-share-links-to-gatsby/
 + meta tags for social sharing:
   https://www.johndpotts.com/2018-10-23-meta-tags-for-social-sharing-gatsby-blog/
++ sqip:
+  https://www.contentful.com/blog/2018/05/17/faster-static-site-builds-part-one-process-only-what-you-need/
 
 =======
 TODO
@@ -47,6 +49,43 @@ issues
 +
 
 
+
+======
+snippets
+=========
+{props.data.contentfulBlogPost.youtube && <iframe width="600" height="345" src={props.data.contentfulBlogPost.youtube} frameBorder="0"
+                                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={props.data.contentfulBlogPost.title}/>}
+
+
+                                                            <Helmet
+                                                                    title={props.data.contentfulBlogPost.title}
+                                                                    meta={[
+                                                                      {
+                                                                        property: 'og:image',
+                                                                        content:
+                                                                        `https://aiki-developer.com${ogpImage}`
+                                                                      },
+                                                                      {
+                                                                        property: 'og:url',
+                                                                        content: props.data.contentfulBlogPost.slug
+                                                                      },
+                                                                      {
+                                                                        property: 'og:title',
+                                                                        content: props.data.contentfulBlogPost.title
+                                                                      },
+                                                                      {
+                                                                        property: 'og:description',
+                                                                        content: props.data.contentfulBlogPost.description
+                                                                      },
+                                                                      {
+                                                                        name: 'description',
+                                                                        content: props.data.contentfulBlogPost.description
+                                                                      },
+                                                                      {name: 'twitter:card', content: 'summary_large_image'},
+                                                                      {name: 'twitter:site', content: '@arisa_dev'},
+                                                                      {property: 'fb:app_id', content: '2427104070868143'}
+                                                                    ]}
+                                                                  />
 
 
 
