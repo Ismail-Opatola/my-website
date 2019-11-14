@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     paddingLeft: 0,
     width: 'auto',
-    fontSize: 19,
+    fontSize: theme.typography.fontSize,
   },
 }));
 

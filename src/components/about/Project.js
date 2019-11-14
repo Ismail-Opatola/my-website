@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
   project_info_box: {
     color: "#c5c1b9",
-    fontSize: 19,
+    fontSize: theme.typography.fontSize,
     lineHeight: 1.4,
     maxWidth: 640,
     fontWeightLight: 300,
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
     "& .title": {
       fontFamily: '"Open Sans", sans-serif',
-      fontSize: 19,
+      fontSize: theme.typography.fontSize,
       fontStyle: "Bold",
       fontWeight: 600,
       marginBottom: theme.spacing(3),
@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(3),
     },
     "& h5": {
-      fontSize: 16,
+      fontSize: 14,
       fontStyle: "Bold",
       fontWeight: 600,
     },
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   li: {
     padding: 0,
     [theme.breakpoints.down("xs")]: {
-      fontSize: 16,
+      fontSize: 14,
     },
   },
   project_features: {

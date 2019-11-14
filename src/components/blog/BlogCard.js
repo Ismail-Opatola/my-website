@@ -39,9 +39,12 @@ const useStyles = makeStyles((theme) => ({
       color: '#c5c1b9',
     },
     '& small': {
-      fontSize: 16,
-      fontWeight: 800,
+      fontSize: 14,
+      fontWeight: 600,
     },
+  },
+  small: {
+    color: '#c5c1b9',
   },
   post_link: {
     '&:hover': {
@@ -59,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 300,
       marginRight: theme.spacing(2),
       '& > span > a': {
-        color: theme.palette.secondary.main,
+        color: '#ef6474',
       },
     },
   },
@@ -73,12 +76,18 @@ const useStyles = makeStyles((theme) => ({
   li: {
     display: 'inline-block',
     width: '100%',
-    fontSize: 19,
+    fontSize: theme.typography.fontSize,
     lineHeight: 0,
     textAlign: 'center',
     '&:hover ': {
       cursor: 'pointer',
     },
+    "& > a": {
+      display: "block",
+      margin: 0,
+      padding: "auto",
+      width: "100%"
+    }
   },
   li_twitter: {
     backgroundColor: 'rgb(56, 161, 243)',
@@ -113,6 +122,10 @@ export default function BlogCard({ post }) {
           src={post.blogImage.fluid.src}
         />
         <Typography component="h2">{post.title}</Typography>
+        <Typography gutterBottom component="small" className={classes.small}>
+          {post.timestamp}
+.
+        </Typography>
       </Link>
 
       <CardContent className={classes.cardContent}>
@@ -152,10 +165,6 @@ export default function BlogCard({ post }) {
             </MuiLink>
           </ListItem>
         </List>
-
-        <Typography gutterBottom component="small">
-          {post.timestamp}
-        </Typography>
 
         <Typography gutterBottom color="textSecondary" className={classes.description}>
           {post.description}

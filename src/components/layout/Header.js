@@ -39,7 +39,7 @@ const logoText = responsiveFontSizes(
 );
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    // flexGrow: 1,
   },
   menuButton: {
     position: 'absolute',
@@ -103,7 +103,7 @@ const Header = (props) => {
   const classes = useStyles();
   const {
     toggleDrawer,
-    // handleOpenFormDialog 
+    // handleOpenFormDialog
   } = props;
 
   const mixedClasses = clsx(classes.title, 'ld ldt-float-up-in');
@@ -115,9 +115,9 @@ const Header = (props) => {
   const matches_sm = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   return (
-      <header className={clsx(classes.root, "appbar")}>
+      <>
         <HideOnScroll {...props}>
-          <AppBar position="fixed">
+          <AppBar position="fixed" className={classes.root}>
             <Toolbar disableGutters>
               <IconButton
                 className={classes.menuButton}
@@ -147,7 +147,7 @@ const Header = (props) => {
           </AppBar>
         </HideOnScroll>
         <Toolbar id="back-to-top-anchor" />
-      </header>
+      </>
   );
 };
 

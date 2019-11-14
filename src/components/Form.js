@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '19',
 
     // "& > html > body": {
-    //   fontSize: 19
+    //   fontSize: theme.typography.fontSize
     // }
   },
 }));

@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: lighten("#000", 0.2),
     width: 'auto',
     margin: theme.spacing(1),
-    fontSize: 19,
+    fontSize: theme.typography.fontSize,
     '&:hover ': {
       cursor: 'pointer',
     },

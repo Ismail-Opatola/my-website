@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 // import Img from 'gatsby-image';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 
 // MUI
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,12 +19,13 @@ import Paginate from '../components/blog/Paginate';
 const useStyles = makeStyles((theme) => ({
   section: {
     display: 'Grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
     gridRowGap: theme.spacing(8),
     gridColumnGap: theme.spacing(4),
-    [theme.breakpoints.down('xs')]: {
-      gridTemplateColumns: '1fr',
-    },
+    // gridTemplateColumns: 'repeat(2,  1fr)',
+    // [theme.breakpoints.down('xs')]: {
+    //   gridTemplateColumns: '1fr',
+    // },
     '& > article': {
       backgroundColor: 'inherit',
       color: '#c5c1b9',
