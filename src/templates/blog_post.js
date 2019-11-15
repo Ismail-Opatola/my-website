@@ -27,7 +27,6 @@ import CodeHighlighter from '../components/blog/CodeHighlighter';
 
 // NATIVE COMPONENTS
 
-
 // import Grid from '@material-ui/core/Grid';
 // import CardActions from '@material-ui/core/CardActions';
 // import Button from '@material-ui/core/Button';
@@ -69,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
       marginRight: theme.spacing(2),
       '& > span > a': {
         // color: theme.palette.secondary.main,
-        color: "#ef6474",
+        color: '#ef6474',
       },
     },
   },
@@ -89,12 +88,12 @@ const useStyles = makeStyles((theme) => ({
     '&:hover ': {
       cursor: 'pointer',
     },
-    "& > a": {
-      display: "block",
+    '& > a': {
+      display: 'block',
       margin: 0,
-      padding: "auto",
-      width: "100%"
-    }
+      padding: 'auto',
+      width: '100%',
+    },
   },
   li_twitter: {
     backgroundColor: 'rgb(56, 161, 243)',
@@ -295,7 +294,12 @@ export default function BlogPost(props) {
 
   return (
     <Layout>
-      <SEO title={post.title} />
+      <SEO
+        title={post.title}
+        description={post.description}
+        ogpImage={post.blogImage}
+        slug={post.slug}
+      />
       <BlogLayout {...props}>
         <Box className={classes.root} component="section">
           {' '}

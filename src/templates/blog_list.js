@@ -49,7 +49,10 @@ const BlogList = (props) => {
   console.log(allpost.nodes);
   return (
     <Layout>
-      <SEO title="Blog | Tutorials on Javascript, React, Nodejs, Firebase and more web developments" />
+      <SEO
+        title="Blog | Tutorials on Javascript, React, Nodejs, Firebase and more web developments"
+        slug="https://ismailopatola.io/blog"
+      />
 
       <BlogLayout {...props}>
         <Grid item component="section" className={classes.section}>
