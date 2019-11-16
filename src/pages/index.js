@@ -69,7 +69,6 @@ const typoWrapper = responsiveFontSizes(
   createMuiTheme({
     typography: {
       useNextVariants: true,
-      // fontFamily: '"Caveat", cursive',
       fontFamily: '"audiowide", "sans-serif"',
       fontSize: 20,
       fontWeight: 900,
@@ -83,18 +82,21 @@ const useStyles = (theme) => ({
     height: '100%',
     backgroundColor: lighten('#100E17', .0),
     overflow: 'visible',
-    padding: theme.spacing(10, 4),
+    padding: theme.spacing(10, 2),
   },
   innerBox1: {
     height: 'inherit',
     overflow: 'visible',
+    display: 'grid',
+    gridTemplateColumns: "1fr",
+    position: "relative"
   },
   profile_image_box: {
     display: 'block',
     maxWidth: 240,
-    minWidth: 300,
-    marginTop: theme.spacing(18),
-    marginBottom: theme.spacing(18),
+    // minWidth: 300,
+    marginTop: theme.spacing(10),
+    marginBottom: theme.spacing(10),
     margin: 'auto',
     overflow: 'hidden',
     transition: 'box-shadow 300ms ease',
@@ -103,84 +105,43 @@ const useStyles = (theme) => ({
     boxShadow: "-0 20px 25px -5px #100E17",
     background: "#181a1b",
   },
-  /*
-  profile_image_box: {
-    display: 'block',
-    // maxWidth: 240,
-    height: 300,
-    minWidth: 300,
-    Width: "100%",
-    marginTop: theme.spacing(18),
-    marginBottom: theme.spacing(18),
-    // padding: theme.spacing(8),
-    margin: 'auto',
-    overflow: 'hidden',
-    transition: 'box-shadow 300ms ease',
-    cursor: 'pointer',
-    // border: '.5rem solid #181a1b',
-    boxShadow: "-0 20px 25px -5px #100E17",
-    background: "#181a1b",
 
-    "& .profile_image": {
-      // borderRadius: "50%",
-    }
-  },
-  wavySvg: {
-  //   position: "absolute",
-  //   border: "3px solid red",
-  //   "& .wavy-top": {
-  //     fill: "#152347",
-  //     opacity: ".93",
-  //   },
-  //   "& .wavy-bottom": {
-  //     height: "100%",
-  //     fill: "#f3efef",
-  //   },
-}, */
   textIntro: {
     fontFamily: '"Source Sans Pro", sans-serif',
     fontWeight: 900,
-    // fontStyle: 'Italic',
-    // fontSize: 46,
-    textAlign: 'center',
-
     fontSize: 18,
     color: '#ccc',
     maxWidth: 640,
     margin: 'auto',
-    padding: theme.spacing(2),
-    paddingRight: theme.spacing(4),
+    marginBottom: theme.spacing(2),
+    textAlign: 'center',
     [theme.breakpoints.up('sm')]: {
-      textAlign: 'center',
-      fontSize: 60,
+      fontSize: 30.333,
     },
   },
   textIntroII: {
     fontSize: theme.typography.fontSize,
     lineHeight: 1.4,
     textAlign: 'center',
-    color: '#c5c1b9',
+    // color: '#c5c1b9',
     maxWidth: 640,
     margin: 'auto',
+    padding: theme.spacing(4, 6),
     '& span': {
       color: '#ef6474',
     },
-    [theme.breakpoints.down('sm')]: {
-      // textAlign: 'left',
-    },
   },
   section2: {
-    fontFamily: '"Open Sans", sans-serif',
-    color: '#f3efef',
     maxWidth: 900,
     margin: 'auto',
-    padding: theme.spacing(2),
+    padding: theme.spacing(6, 2),
   },
   section2Heading: {
     margin: 'auto',
     padding: 50,
     maxWidth: 620,
     textAlign: 'center',
+    color: "#f3efef",
   },
   project_box_divider: {
     maxWidth: 620,
@@ -191,33 +152,27 @@ const useStyles = (theme) => ({
     margin: 'auto',
     maxWidth: 620,
     marginBottom: theme.spacing(8),
-
-    // '&:hover': {
-    // backgroundColor: '#3f51b5',
-    // color: '#c5c1b9',
     backgroundColor: lighten('#000', 0.2),
     color: theme.palette.secondary,
-    // textTransform: 'none'
     '& a': {
       textTransform: 'none',
     },
-    // },
   },
   section3: {
     maxWidth: 900,
-    color: '#c5c1b9',
+    // color: '#c5c1b9',
     margin: 'auto',
     padding: theme.spacing(4, 2),
   },
   section4: {
     maxWidth: 900,
-    color: '#c5c1b9',
+    // color: '#c5c1b9',
     margin: 'auto',
     padding: theme.spacing(4, 2),
   },
   section5: {
     maxWidth: 900,
-    color: '#c5c1b9',
+    // color: '#c5c1b9',
     margin: 'auto',
     padding: theme.spacing(4, 2),
   },
@@ -263,7 +218,7 @@ class IndexPage extends React.Component {
         <>
           <Box className={classes.section1} component="section">
             <Box className={classes.innerBox1}>
-              <Typography className={clsx(classes.textIntro)}>
+              <Typography className={clsx(classes.textIntro)} component="q">
                 Long Live The World Wide Web!!!
               </Typography>
               <Typography className={classes.textIntroII} paragraph>
