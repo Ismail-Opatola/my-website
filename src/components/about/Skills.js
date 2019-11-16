@@ -35,7 +35,7 @@ const Skills = ({ skills }) => {
   return (
     <>
       <Box component="article" className={classes.section4_article}>
-        <Typography component="h5" className={clsx('fonty-purple')}>
+        <Typography variant="h5" className={clsx('fonty-purple')}>
           Programming Skills
         </Typography>
         <List className={classes.section4_ul}>
@@ -47,7 +47,7 @@ const Skills = ({ skills }) => {
         </List>
       </Box>
       <Box component="article" className={classes.section4_article}>
-        <Typography component="h5" className={clsx('fonty-purple')}>
+        <Typography variant="h5" className={clsx('fonty-purple')}>
           Tech Stack
         </Typography>
         <List className={classes.section4_ul}>
@@ -59,7 +59,7 @@ const Skills = ({ skills }) => {
         </List>
       </Box>
       <Box component="article" className={classes.section4_article}>
-        <Typography component="h5" className={clsx('fonty-purple')}>
+        <Typography variant="h5" className={clsx('fonty-purple')}>
           Tools
         </Typography>
         <List className={classes.section4_ul}>

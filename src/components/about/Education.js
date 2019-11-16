@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import MuiLink from '@material-ui/core/Link'
 import {
   makeStyles,
 } from '@material-ui/core/styles';
@@ -59,7 +60,7 @@ const Education = () => {
           <q>
             Prior to web development, I worked as a Search Optimization Expert at
             {' '}
-            <a href="/#">Bizcomtec Solutions</a>
+            <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Bizcomtec Solutions</MuiLink>
 , a Lagos based digital marketing company. A part of
             my work required tweaking website architecture for performance. Understanding the source
             code that defines the logic of client apps helped me have an edge
@@ -78,12 +79,12 @@ const Education = () => {
               Learnt React Framework in 2019 after sharing this Udacity Course Material for free
               with a friend. While taking this course I built three capstone projects -
               {' '}
-              <a href="/#">Would-You-Rather app</a>
+              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Would-You-Rather app</MuiLink>
 ,
-              <a href="/#">Fit-Tracker</a>
+              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Fit-Tracker</MuiLink>
 ,
               {' '}
-              <a href="/#">Book-Reads</a>
+              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Book-Reads</MuiLink>
 .
             </Typography>
           </ListItem>
@@ -94,7 +95,7 @@ const Education = () => {
               to how the web works, computer science concepts, programming languages, web
               application security, Relational and Non-relational database. I built a
               {' '}
-              <a href="/#">Campground Express App</a>
+              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Campground Express App</MuiLink>
               {' '}
 hosted on Heroku..
             </Typography>
