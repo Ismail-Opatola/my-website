@@ -128,7 +128,7 @@ const Footer = (props) => {
           <Typography className={classes.span}>
             ISMAIL
             <span>OPATOLA</span>
-            .COM
+            .IO
           </Typography>
           <List className={classes.footer_box1}>
             <ListItem className={classes.li}>
