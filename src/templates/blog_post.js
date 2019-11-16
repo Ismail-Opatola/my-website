@@ -378,15 +378,22 @@ export const BlogPostQuery = graphql`
 BlogPost.propTypes = {
   data: PropTypes.shape({
     post: PropTypes.shape({
-      title: PropTypes.string,
-      slug: PropTypes.string,
-      timestamp: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      timestamp: PropTypes.string.isRequired,
       tags: PropTypes.arrayOf(PropTypes.String),
-      description: PropTypes.string,
+      description: PropTypes.string.isRequired,
       blogImage: PropTypes.object,
-      author: PropTypes.object,
+      author: PropTypes.shape({
+        bio: PropTypes.string,
+        name: PropTypes.string.isRequired,
+        avatar: PropTypes.shape({
+          title: PropTypes.string,
+          fluid: PropTypes.shape(PropTypes.any).isRequired
+        }).isRequired
+      }).isRequired,
       body: PropTypes.shape({
-        json: PropTypes.json
+        json: PropTypes.shape(PropTypes.any).isRequired
       })
     })
   })
