@@ -7,21 +7,45 @@ import Grid from '@material-ui/core/Grid';
 // Blog components
 import Searchbar from '../Searchbar';
 import Tags from '../Tags';
+/**
+xs, extra-small: 0px
+sm, small: 600px
+md, medium: 960px
+lg, large: 1280px
+xl, extra-large: 1920px*/
 
 const useStyles = makeStyles((theme) => ({
   root: {
     color: '#c5c1b9',
-    maxWidth: '1300px',
     margin: 'auto',
     padding: theme.spacing(8, 4),
     display: 'grid',
-    gridTemplateColumns: '2fr 1fr',
     gridRowGap: theme.spacing(8),
     gridColumnGap: theme.spacing(8),
     boxSizing: 'border-box',
+    [theme.breakpoints.up("xl")]: {
+      maxWidth: '1400px',
+      gridTemplateColumns: '2fr 1fr',
+    },
+    [theme.breakpoints.down("xl")]: {
+      maxWidth: '1100px',
+      gridTemplateColumns: '3fr 1fr',
+    },
+    [theme.breakpoints.down("lg")]: {
+      maxWidth: '1000px',
+      gridTemplateColumns: '3fr 1fr',
+    },
     [theme.breakpoints.down('md')]: {
-      maxWidth: '900px',
+      maxWidth: '650px',
       gridTemplateColumns: '1fr',
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '500px',
+      gridTemplateColumns: '1fr',
+    },
+    [theme.breakpoints.down('xs')]: {
+      gridTemplateColumns: '1fr',
+      gridColumnGap: theme.spacing(0),
     },
   },
 

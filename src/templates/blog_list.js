@@ -19,13 +19,13 @@ import Paginate from '../components/blog/Paginate';
 const useStyles = makeStyles((theme) => ({
   section: {
     display: 'Grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))',
+    //@blog_layout xl dowm --
+    // blog_list is 3fr of 1100px = 700, 700/2 = our gridTemplateColumn minmax 350 1fr
+    //@ lg dowm -- 600/2 = 300 1fr
+    // + spacing = 290
     gridRowGap: theme.spacing(8),
     gridColumnGap: theme.spacing(4),
-    // gridTemplateColumns: 'repeat(2,  1fr)',
-    // [theme.breakpoints.down('xs')]: {
-    //   gridTemplateColumns: '1fr',
-    // },
     '& > article': {
       backgroundColor: 'inherit',
       color: '#c5c1b9',
