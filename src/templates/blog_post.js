@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from  'prop-types'
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 // CONTENTFUL
@@ -38,11 +39,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '620px',
     width: '100%',
     margin: 'auto',
+    boxSizing: "border-box",
 
     '& h1': {
-      lineHeight: 1.2,
-      fontSize: 30,
-      fontWeight: 800,
       margin: theme.spacing(0, 0, 1, 0),
       color: '#c5c1b9',
     },
@@ -67,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 300,
       marginRight: theme.spacing(2),
       '& > span > a': {
-        // color: theme.palette.secondary.main,
         color: '#ef6474',
       },
     },
@@ -109,7 +107,6 @@ const useStyles = makeStyles((theme) => ({
   },
   blogImage: {
     maxWidth: 620,
-    // minHeight: 240,
     margin: 'auto',
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(8),
@@ -170,15 +167,6 @@ export default function BlogPost(props) {
     data: { post },
   } = props;
 
-  // const options = {
-  //   renderNode: {
-  //     [BLOCKS.EMBEDDED_ASSET]: (node) => {
-  //       const alt = node.data.target.fields.title['en-US'];
-  //       const { url } = node.data.target.fields.file['en-US'];
-  //       return url && <Img alt={alt} src={url} />;
-  //     },
-  //   },
-  // };
   // determine which prism to render based on tags
 
   let language = 'javascript';
@@ -203,32 +191,32 @@ export default function BlogPost(props) {
     },
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children) => (
-        <Typography component="h1" paragraph>
+        <Typography variant="h1" paragraph>
           {children}
         </Typography>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
-        <Typography component="h2" paragraph>
+        <Typography variant="h2" paragraph>
           {children}
         </Typography>
       ),
       [BLOCKS.HEADING_3]: (node, children) => (
-        <Typography component="h3" paragraph>
+        <Typography variant="h3" paragraph>
           {children}
         </Typography>
       ),
       [BLOCKS.HEADING_4]: (node, children) => (
-        <Typography component="h4" paragraph>
+        <Typography variant="h4" paragraph>
           {children}
         </Typography>
       ),
       [BLOCKS.HEADING_5]: (node, children) => (
-        <Typography component="h5" paragraph>
+        <Typography variant="h5" paragraph>
           {children}
         </Typography>
       ),
       [BLOCKS.HEADING_6]: (node, children) => (
-        <Typography component="h6" paragraph>
+        <Typography variant="h6" paragraph>
           {children}
         </Typography>
       ),
@@ -260,7 +248,7 @@ export default function BlogPost(props) {
       [BLOCKS.LIST_ITEM]: (node, children) => <ListItem>{children}</ListItem>,
       [BLOCKS.HR]: (node, children) => <Divider>{children}</Divider>,
       [BLOCKS.QUOTE]: (node, children) => (
-        <Typography component="quote" paragraph>
+        <Typography component="q" paragraph>
           {children}
         </Typography>
       ),
@@ -303,7 +291,7 @@ export default function BlogPost(props) {
       <BlogLayout {...props}>
         <Box className={classes.root} component="section">
           {' '}
-          <Typography component="h1">{post.title}</Typography>
+          <Typography variant="h1">{post.title}</Typography>
           <Typography component="small">{post.timestamp}</Typography>
           <Box className={classes.author_box}>
             <Typography component="small">
@@ -387,17 +375,22 @@ export const BlogPostQuery = graphql`
   }
 `;
 
-// Blog.propTypes = {
-//   data: PropTypes.shape({
-//     contentfulBlogPost: PropTypes.shape({
-//       title: PropTypes.string,
-//       publishedDate: PropTypes.string,
-//       body: PropTypes.shape({
-//         json: PropTypes.json
-//       })
-//     })
-//   })
-// };
+BlogPost.propTypes = {
+  data: PropTypes.shape({
+    post: PropTypes.shape({
+      title: PropTypes.string,
+      slug: PropTypes.string,
+      timestamp: PropTypes.string,
+      tags: PropTypes.arrayOf(PropTypes.String),
+      description: PropTypes.string,
+      blogImage: PropTypes.object,
+      author: PropTypes.object,
+      body: PropTypes.shape({
+        json: PropTypes.json
+      })
+    })
+  })
+};
 
 // yarn add @madebyconnor/rich-text-to-jsx
 // more flexible alternative to contentful/rich-tesxt
