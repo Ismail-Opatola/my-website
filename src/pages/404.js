@@ -11,6 +11,7 @@ import {
   MuiThemeProvider,
   responsiveFontSizes,
 } from "@material-ui/core/styles"
+import { lighten } from '@material-ui/core/styles/colorManipulator';
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import List from "@material-ui/core/List"
@@ -38,66 +39,66 @@ const text1 = responsiveFontSizes(
   createMuiTheme({
     typography: {
       useNextVariants: true,
-      fontSize: 170,
+      fontSize: 30,
       fontWeightLight: 678,
       fontWeightRegular: 678,
       fontWeightMedium: 678,
       textShadow: "0px 3px 6px #00000029",
     },
+    palette: {
+      text: {
+        primary: "#c5c1b9",
+      }
+    }
   })
 )
 
 
 const useStyles = makeStyles(theme => ({
   mainBox: {
-    position: "relative",
-    maxHeight: "100vh",
     height: "100vh",
-    boxSizing: "border-box",
     overflow: "hidden",
-    backgroundColor: "#1F2123"
-  },
-  box1: {
-    maxHeight: "58.9vh",
-    height: "50vh",
-    color: "#fff",
+    padding: theme.spacing(2),
+    display: "grid",
+    gridTemplateRows: "1fr 4fr",
+    textAlign: "center",
   },
   box2: {
-    maxHeight: "49.1vh",
-    height: "50vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "#fff",
-
-    textAlign: "center"
+    textAlign: "center",
+    display: "grid",
+    gridTemplateRows: "3fr 1fr 3fr",
+    gridTemplateColumns: "1fr",
+    gridRowGap: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
     color: "#193F4C",
     "-webkit-text-stroke-width": "1px",
     "-webkit-text-stroke-color": "#09C4FF",
-    marginLeft: theme.spacing(10),
-    marginRight: theme.spacing(10),
+    margin: theme.spacing(4, 2),
+    margin: "auto"
   },
   link: {
     textDecoration: "none",
-    borderBottom: "2px solid",
-    color: "#fff",
     "&:hover": {
       textDecoration: "none",
-      color: theme.palette.secondary.main,
+      color: lighten(theme.palette.text.primary, 0.5)
     },
   },
   ul: {
-    display: "flex",
+    textAlign: "center",
+    display: "Grid",
+    gridTemplateColumns: "1fr 1fr",
+    padding: "auto",
+    margin: "auto",
+    marginTop: 0,
   },
   f404: {
     letterSpacing: 0,
     textShadow: "0px 3px 6px #00000029",
     opacity: 1,
     lineHeight: 0,
+    margin: theme.spacing(2, 2),
+    margin: "auto"
     // TODO: parallex effects
   },
 }))
@@ -105,43 +106,45 @@ const useStyles = makeStyles(theme => ({
 const NotFoundPage = props => {
   const classes = useStyles()
   const mixedClasses = clsx(classes.mainBox)
-  const mixedClasses2 = clsx(classes.box2, "p")
-  const mixedClasses3 = clsx(classes.f404, "ab-center")
+  const mixedClasses2 = clsx(classes.box2)
+  const mixedClasses3 = clsx(classes.f404)
 
   return (
     <>
       <SEO title="404: Not found" />
       <MuiThemeProvider theme={theme}>
         <div className={mixedClasses}>
-          <Box className={classes.box1}>
+          <Box>
             <Toolbar>
               <MuiThemeProvider theme={logoText}>
                 <Typography variant="h6" className={classes.title}>
-                  ISMAIL OPATOLA
+                  ISMAILOPATOLA.IO
                 </Typography>
               </MuiThemeProvider>
             </Toolbar>
           </Box>
 
           <Box className={mixedClasses2}>
-            <div>
+
               <MuiThemeProvider theme={text1}>
-                <Typography className={mixedClasses3}>404</Typography>
+                <Typography variant="h1" color="textPrimary" className={mixedClasses3}>404</Typography>
               </MuiThemeProvider>
-            </div>
-              <Typography>
+
+              <Typography color="textPrimary" paragraph>
                 You just hit a route that doesn&#39;t exist... the sadness.
               </Typography>
 
               <List component="ul" className={classes.ul}>
                 <ListItem key={"Home"}>
-                  <Link to="/" className={classes.link}>
-                    <ListItemText primary="HOME" />
+                  <Link color="textSecondary" to="/" className={classes.link}>
+                    <ListItemText primary="HOME"/>
+                    <ListItemText primary="←" align="right"/>
                   </Link>
                 </ListItem>
                 <ListItem key={"Blog"}>
-                  <Link to="/blog" className={classes.link}>
-                    <ListItemText primary="BLOG" />
+                  <Link color="textSecondary" to="/blog" className={classes.link}>
+                    <ListItemText primary="BLOG"/>
+                    <ListItemText primary="→"/>
                   </Link>
                 </ListItem>
               </List>
