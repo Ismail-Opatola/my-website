@@ -8,7 +8,8 @@ import '../styles/index.scss';
 let theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#100E17',
+      // main: '#100E17',
+      main: '#1F2123',
     },
     secondary: {
       main: '#ef6474',
@@ -23,6 +24,9 @@ let theme = createMuiTheme({
       primary: '#c5c1b9',
       secondary: '#ef6474',
     },
+    action: {
+      active: '#ef6474',
+    }
   },
   typography: {
     useNextVariants: true,
