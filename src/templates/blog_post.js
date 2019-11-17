@@ -120,10 +120,14 @@ const useStyles = makeStyles((theme) => ({
       height: 'auto',
     },
   },
-  OL_LIST: {
+  LIST: {
     marginBottom: theme.spacing(2),
     fontSize: theme.typography.fontSize,
     backgroundColor: `${darken('#1F2123', 0.1)} !important`,
+  },
+  OL_LIST: { },
+  UL_LIST: {
+    listStyle: 'disc inside none',
   },
   blockCode: {
     '& > pre': {
@@ -240,11 +244,11 @@ export default function BlogPost(props) {
         return <Typography paragraph>{children}</Typography>;
       },
       [BLOCKS.OL_LIST]: (node, children) => (
-        <List className={classes.OL_LIST} component="ol">
+        <List className={classes.LIST} component="ol">
           {children}
         </List>
       ),
-      [BLOCKS.UL_LIST]: (node, children) => <List>{children}</List>,
+      [BLOCKS.UL_LIST]: (node, children) => <List  className={clsx(classes.LIST, classes.UL_LIST)}>{children}</List>,
       [BLOCKS.LIST_ITEM]: (node, children) => <ListItem>{children}</ListItem>,
       [BLOCKS.HR]: (node, children) => <Divider>{children}</Divider>,
       [BLOCKS.QUOTE]: (node, children) => (
