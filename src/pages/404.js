@@ -74,8 +74,8 @@ const useStyles = makeStyles(theme => ({
     color: "#193F4C",
     "-webkit-text-stroke-width": "1px",
     "-webkit-text-stroke-color": "#09C4FF",
-    margin: theme.spacing(4, 2),
-    margin: "auto"
+    padding: theme.spacing(4, 2),
+    margin: "auto",
   },
   link: {
     textDecoration: "none",
@@ -97,7 +97,7 @@ const useStyles = makeStyles(theme => ({
     textShadow: "0px 3px 6px #00000029",
     opacity: 1,
     lineHeight: 0,
-    margin: theme.spacing(2, 2),
+    padding: theme.spacing(2, 2),
     margin: "auto"
     // TODO: parallex effects
   },
