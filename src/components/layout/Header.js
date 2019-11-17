@@ -43,16 +43,12 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     position: 'absolute',
-    backgroundColor: "#fff",
-    color: theme.palette.primary,
+    backgroundColor: theme.palette.background.default,
     borderRadius: '0px',
     minheight: '100%',
     height: '100%',
     maxWidth: 65,
     width: '100%',
-    '&:hover': {
-      backgroundColor: "#fff",
-    },
     '&:hover svg': {
       transform: 'rotate(-6deg)',
     },
@@ -68,8 +64,8 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 1,
     fontSize: 8,
     fontWeight: 900,
-    color: "#fff",
-    borderColor: "#fff",
+    color: theme.palette.text.secondary,
+    borderColor:  theme.palette.text.secondary,
     margin: theme.spacing(1),
     [theme.breakpoints.up('md')]: {
       marginRight: theme.spacing(5),
@@ -81,10 +77,6 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: 600,
     },
     textWrap: 'nowrap',
-    '&:hover': {
-      backgroundColor: "#fff",
-      color: '#100E17',
-    },
   },
 }));
 
@@ -139,7 +131,6 @@ const Header = (props) => {
                 className={mixedClassesBtn}
                 startIcon={matches ? <Work /> : null}
                 to="/#contact-form"
-
               >
                 Hire me
               </Button>
