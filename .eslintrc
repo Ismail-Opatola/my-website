@@ -1,0 +1,13 @@
+{
+ "env": { "node": true, "es6": true, "browser": true },
+ "plugins": ["react"],
+ "extends": ["eslint:recommended", "plugin:react/recommended"],
+ "rules": {
+  "no-unused-vars": 2,
+  "no-undef": 2,
+  "react/display-name": ["off", { "ignoreTranspilerName": false }]
+ },
+ "parserOptions": {
+  "sourceType": "module"
+ }
+}
