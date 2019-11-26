@@ -13,11 +13,11 @@ import Link from "../Link"
 
 const useStyles = makeStyles(theme => ({
  button_group: {
-  display: props => (props.blog_post && "grid") || (props.blog_list && "flex"),
+  display: props => (props.blog_post && "grid") || (!props.blog_post && "flex"),
 
-  // blog_list
+  // blog_list/tag_list
   margin: theme.spacing(6, 0, 4, 0),
-  flexShrink: props => props.blog_list && 1,
+  flexShrink: props => !props.blog_post && 1,
   padding: 0,
 
   // blog_post
@@ -26,11 +26,11 @@ const useStyles = makeStyles(theme => ({
  },
  button: {
   border: props =>
-   (props.blog_list &&
+   (!props.blog_post &&
     `1px solid ${fade(theme.palette.secondary.main, 0.5)}`) ||
    (props.blog_post && `1px solid transparent`),
 
-  // blog_list_number_btn
+  // blog_list/tag_list-number_btn
   color: props =>
    (props.i + 1 === props.currentPage && "#ffffff") ||
    theme.palette.secondary.main,
