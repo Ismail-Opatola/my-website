@@ -6,7 +6,8 @@
 
 // You can delete this file if you're not using it
 // const { graphql } = require("gatsby")
-const path = require(`path`)
+const path = require(`path`);
+// const { slugify } = require("./src/util/utilityFunctions");
 
 // const notes = require("./src/util/notes")
 
@@ -67,7 +68,35 @@ exports.createPages = ({ graphql, actions }) => {
         },
       });
     });
+
   })
+  // .then(() => {
+  // TODO: fetch tags and tag-post-list in graphgql above
+  // TODO: grab tags object result in this callback 
+  //   // =========================
+  //   // Tag 
+  //   // ===================
+  //   let tags = ['react', 'hooks', 'app security'];
+  //   const postsPerPage = 4;
+    
+  //   tags.map((tag) => {
+  //     const numPages = Math.ceil(tag.posts.length / postsPerPage);
+
+  //     Array.from({ length: numPages }).forEach((_, i) => {
+  //       createPage({
+  //         path: i === 0 ? `/tag/${slugify(tag)}}` : `/tag/${slugify(tag)}/${i + 1}`,
+  //         component: path.resolve('./src/templates/tag_post_list.js'),
+  //         context: {
+  //           limit: postsPerPage,
+  //           skip: i * postsPerPage,
+  //           numPages: numPages,
+  //           currentPage: i + 1,
+  //           slug: slugify(tag)
+  //         },
+  //       });
+  //     });
+  //   })
+  // })
 }
 exports.onCreateNode = async ({ node, actions }) => {
   try {
@@ -87,3 +116,12 @@ exports.onCreateNode = async ({ node, actions }) => {
     if (error) return Promise.reject(error)
   }
 }
+
+// tags
+// should goto /tags/<tag>
+// should support pagination /tags/<tag>/<num>
+// process
+// - fetch all contentful tags
+// -- create a page for each tag
+  // each tag page should support pagination
+// --- create a paginated tag_post_list
