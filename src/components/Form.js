@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
   frame: {
     width: '100%',
     height: '52.5rem',
-    // height: '25rem',
     border: 'none',
     margin: 'auto',
     overflow: 'visible',
@@ -66,7 +65,7 @@ const Form = () => {
         <Typography paragraph>
           Are you looking to hire or need a website, mobile application for your businnes?
           {' '}
-          <b>what are you're business requirement?</b>
+          <b>what are you&apos;re business requirement?</b>
           {' '}
 Please let me know how I could help
         </Typography>
