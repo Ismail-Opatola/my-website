@@ -4,8 +4,6 @@ import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
 
 import {
   FaRocket
@@ -17,8 +15,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     width: "100%",
-    // backgroundColor: '#c5c1b9',
-    // marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
   },
   input: {
