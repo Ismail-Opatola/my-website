@@ -93,6 +93,8 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  ogpImage: PropTypes.string,
+  slug: PropTypes.string.isRequired,
 }
 
 export default SEO

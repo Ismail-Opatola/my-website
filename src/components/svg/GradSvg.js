@@ -1,6 +1,6 @@
 import React from "react"
 
-const GradSvg = props => (
+const GradSvg = () => (
   <svg
     width="1980mm"
     height="1080mm"
@@ -11,11 +11,11 @@ const GradSvg = props => (
     <g>
       <g
         transform="matrix(3.0847 0 0 2.271 -249.68 799.27)"
-        stroke-width=".37782"
+        strokeWidth=".37782"
       >
         <g
           transform="matrix(1.417 0 0 1.4516 106.02 92.157)"
-          stroke-width=".26344"
+          strokeWidth=".26344"
         >
           <path
             d="m-17.697-142.14v-163.81h452.98v327.62h-452.98z"

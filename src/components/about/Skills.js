@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import clsx from 'clsx';
 
 import {
@@ -75,3 +76,11 @@ const Skills = ({ skills }) => {
 };
 
 export default Skills;
+
+Skills.propTypes = {
+  skills: PropTypes.shape({
+    programming: PropTypes.arrayOf(PropTypes.string),
+    techStack: PropTypes.arrayOf(PropTypes.string),
+    tools: PropTypes.arrayOf(PropTypes.string)
+  }).isRequired
+}

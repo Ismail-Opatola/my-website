@@ -1,19 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby';
-// import Img from 'gatsby-image';
-// import clsx from 'clsx';
-
 // MUI
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-
 // NATIVE COMPONENTS
 import Layout from '../components/layout/Layout';
 import SEO from '../components/seo';
 import BlogCard from '../components/blog/BlogCard';
 import BlogLayout from '../components/blog/BlogLayout';
-
-// Pagination component
 import Paginate from '../components/blog/Paginate';
 
 const useStyles = makeStyles((theme) => ({
@@ -56,7 +51,7 @@ const BlogList = (props) => {
 
       <BlogLayout {...props}>
         <Grid item component="section" className={classes.section}>
-          {allpost ? allpost.nodes.map((post) => <BlogCard post={post} />) : '...fetching Data'}
+          {allpost ? allpost.nodes.map((post) => <BlogCard post={post} key={post.id} />) : '...fetching Data'}
         </Grid>
 
         <Paginate
@@ -108,3 +103,16 @@ export const BlogListQuery = graphql`
 `;
 
 export default BlogList;
+
+BlogList.propTypes = {
+  classes: PropTypes.object,
+  data: PropTypes.shape({ 
+    allpost: PropTypes.shape({
+      nodes: PropTypes.arrayOf(PropTypes.object)
+    })
+   }),
+  pageContext: PropTypes.shape({ 
+    currentPage: PropTypes.number, 
+    numPages: PropTypes.number 
+  }),
+}

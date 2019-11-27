@@ -1,14 +1,13 @@
 import React from "react"
+import PropTypes from 'prop-types'
 import clsx from "clsx"
 
 import { makeStyles } from "@material-ui/core/styles"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
-// import Grid from "@material-ui/core/Grid"
-// import Box from "@material-ui/core/Box"
-// import im from "../images/sidebar_bg@2x.png"
+
 import Nav from "./Nav"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles( () => ({
   nav: {
     width: "90vw",
     height: "100%",
@@ -17,7 +16,6 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     flexGrow: 1,
     color: "#ef6474",
-    // backgroundColor: "#181A1B",
     backgroundColor: "rgb(24, 26, 27)",
     borderColor: "inherit"
   },
@@ -56,4 +54,9 @@ export default function SwipeableTemporaryDrawer({ leftDrawer, toggleDrawer }) {
       </SwipeableDrawer>
     </>
   )
+}
+
+SwipeableTemporaryDrawer.propTypes = {
+  leftDrawer: PropTypes.bool,
+  toggleDrawer: PropTypes.func
 }

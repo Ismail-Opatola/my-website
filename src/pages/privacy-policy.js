@@ -121,8 +121,8 @@ export default function PrivacyPolicy() {
 
               <Typography paragraph>
                 While using my service, I may ask you to provide me with certain personally
-                identifiable information that can be used to contact or identify you ("Personal
-                Data"). Personally identifiable information may include, but is not limited to:
+                identifiable information that can be used to contact or identify you (&quot;Personal
+                Data&quot;). Personally identifiable information may include, but is not limited to:
               </Typography>
 
               <List dense className={classes.mb1}>
@@ -156,8 +156,8 @@ export default function PrivacyPolicy() {
                 <Typography variant="h4">Usage Data</Typography>
 
                 <Typography paragraph>
-                  I may also collect information how the service is accessed and used ("Usage
-                  Data"). This Usage Data may include information such as your computer's Internet
+                  I may also collect information how the service is accessed and used (&quot;Usage
+                  Data&quot;). This Usage Data may include information such as your computer&apos;s Internet
                   Protocol address (e.g. IP address), browser type, browser version, the pages of my
                   service that you visit, the time and date of your visit, the time spent on those
                   pages, unique device identifiers and other diagnostic data.
@@ -364,8 +364,8 @@ We use Preference Cookies to remember
           <Box component="article">
             <Typography variant="h2">Service Providers</Typography>
             <Typography paragraph>
-              I may employ third party companies and individuals to facilitate my service ("service
-              Providers"), to provide the service on my behalf, to perform service-related services
+              I may employ third party companies and individuals to facilitate my service (&quot;service
+              Providers&quot;), to provide the service on my behalf, to perform service-related services
               or to assist me in analyzing how my service is used.
             </Typography>
             <Typography paragraph>
@@ -378,7 +378,7 @@ We use Preference Cookies to remember
             <Typography variant="h2">Links To Other Sites</Typography>
             <Typography paragraph>
               My service may contain links to other sites that are not operated by me. If you click
-              on a third party link, you will be directed to that third party's site. I strongly
+              on a third party link, you will be directed to that third party&apos;s site. I strongly
               advise you to review the Privacy Policy of every site you visit.
             </Typography>
             <Typography paragraph>
@@ -388,9 +388,9 @@ We use Preference Cookies to remember
           </Box>
 
           <Box component="article">
-            <Typography variant="h2">Children's Privacy</Typography>
+            <Typography variant="h2">Children&apos;s Privacy</Typography>
             <Typography paragraph>
-              my service does not address anyone under the age of 18 ("Children").
+              my service does not address anyone under the age of 18 (&quot;Children&quot;).
             </Typography>
             <Typography paragraph>
               I do not knowingly collect personally identifiable information from anyone under the
@@ -409,7 +409,7 @@ We use Preference Cookies to remember
             </Typography>
             <Typography paragraph>
               I will let you know via email and/or a prominent notice on my service, prior to the
-              change becoming effective and update the "effective date" at the top of this privacy
+              change becoming effective and update the &quot;effective date&quot; at the top of this privacy
               policy.
             </Typography>
             <Typography paragraph>

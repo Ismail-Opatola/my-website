@@ -5,11 +5,9 @@ import MuiLink from '@material-ui/core/Link'
 import {
   makeStyles,
 } from '@material-ui/core/styles';
-
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
-// import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 
 
@@ -42,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
     '& h4': {
       lineHeight: 2,
       textDecorationLine: 'underline',
-      // fontStretch: "ultra-expanded",
     },
   },
 }));
@@ -110,7 +107,7 @@ hosted on Heroku..
           </ListItem>
           <ListItem className={classes.section3_li}>
             <Typography component="h4">BSc Accounting - 2013</Typography>
-            <Typography paragraph>Yep, I'm an Accounting graduate turned developer !</Typography>
+            <Typography paragraph>Yep, I&apos;m an Accounting graduate turned developer !</Typography>
           </ListItem>
         </List>
       </Box>

@@ -26,7 +26,7 @@ import {
 import { FiCodesandbox } from 'react-icons/fi';
 import Link from '../Link';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   list: {
     maxWidth: '100%',
     flexDirection: 'column',
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Nav = (props) => {
+const Nav = () => {
   const classes = useStyles();
 
   const [state, setState] = React.useState({
@@ -216,44 +216,3 @@ const Nav = (props) => {
 };
 export default Nav;
 
-// const Nav2 = () => (
-//   <>
-//     <List>
-//       {["About", "Experience", "Skills", "Potfolio", "Blog"].map((text, index) => (
-//         <ListItem button key={`${text}2`}>
-//           <ListItemIcon>
-//             {index % 2 === 0 ? <FormatTextdirectionRToL /> : <MailIcon />}
-//           </ListItemIcon>
-//           <ListItemText primary={text} />
-//         </ListItem>
-//       ))}
-//     </List>
-//     <Divider />
-//     <List>
-//       {["Medium", "Hire me"].map((text, index) => (
-//         <ListItem button key={`${text}2`}>
-//           <ListItemIcon>
-//             {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-//           </ListItemIcon>
-//           <ListItemText primary={text} />
-//         </ListItem>
-//       ))}
-//     </List>
-//   </>
-// )
-// module.exports = {Nav, Nav2};
-// module.exports = {Nav, Nav2};
-
-/*
-
-// First, create each components in a different file: Staff.js and Employee.js. Export them like this: export { Staff }; and export { Employee };
-
-// Now create another file to handle multiple exports. Let's call it About.js and here is the content:
-
-// export * from './Staff';
-// export * from './Employee';
-// Now just use it as you did:
-
-// import { Staff, Employee } from "./components/About";
-
-*/

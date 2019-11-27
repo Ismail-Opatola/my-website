@@ -10,6 +10,7 @@ import {
   createMuiTheme,
   MuiThemeProvider,
   responsiveFontSizes,
+  darken
 } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -40,6 +41,7 @@ const logoText = responsiveFontSizes(
 const useStyles = makeStyles((theme) => ({
   root: {
     // flexGrow: 1,
+    backgroundColor: darken(theme.palette.background.default, .2),
   },
   menuButton: {
     position: 'absolute',
@@ -144,6 +146,7 @@ const Header = (props) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  toggleDrawer: PropTypes.func
 };
 
 HideOnScroll.propTypes = {
@@ -156,6 +159,4 @@ Header.defaultProps = {
 
 export default Header;
 
-// ::: :::...:::... (>_<(
-// ...:::...::: ::: Ismail Opatola ::: :::...:::... (&gt;_&lt;(
-// "text-shadow":  `0 0 3px #FF0000, 0 0 5px #0000FF`,
+

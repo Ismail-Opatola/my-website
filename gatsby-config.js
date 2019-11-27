@@ -33,16 +33,25 @@ module.exports = {
   siteUrl: "https://www.ismailopatola.io",
  },
  plugins: [
+  {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+     trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
+     head: true,
+     anonymize: true,
+     respectDNT: true,
+     exclude: ["/preview/**"],
+    },
+   },
   "gatsby-plugin-react-helmet",
   "gatsby-plugin-sass",
   "gatsby-plugin-catch-links",
   "gatsby-transformer-remark",
+  "gatsby-plugin-material-ui",
   {
    resolve: "gatsby-plugin-nprogress",
    options: {
-    // Setting a color is optional.
     color: "tomato",
-    // Disable the loading spinner.
     showSpinner: false,
    },
   },
@@ -57,17 +66,6 @@ module.exports = {
    resolve: `gatsby-plugin-disqus`,
    options: {
     shortname: process.env.DISCUS_SHORTNAME,
-   },
-  },
-  {
-   resolve: "gatsby-plugin-material-ui",
-   // If you want to use styled components you should change the injection order.
-   options: {
-    /*
-     * StylesProvider: {
-     *   injectFirst: true,
-     * },
-     */
    },
   },
   {
@@ -190,30 +188,16 @@ module.exports = {
    },
   },
   {
-   resolve: `gatsby-plugin-google-analytics`,
-   options: {
-    trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
-    // Defines where to place the tracking script - `true` in the head and `false` in the body
-    head: false,
-    // // Setting this parameter is optional
-    // anonymize: true,
-    // // Setting this parameter is also optional
-    // respectDNT: true,
-    // // Avoids sending pageview hits from custom paths
-    exclude: ["/preview/**"],
-    // // Delays sending pageview hits on route update (in milliseconds)
-    // pageTransitionDelay: 0,
-    // // Enables Google Optimize using your container Id
-    // // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-    // // // Enables Google Optimize Experiment ID
-    // // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-    // // // Set Variation ID. 0 for original 1,2,3....
-    // // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
-    // // Any additional optional fields
-    // sampleRate: 5,
-    // siteSpeedSampleRate: 10,
-    // cookieDomain: 'aquasar.io',
-   },
-  },
+    resolve: 'gatsby-plugin-eslint',
+    options: {
+      test: /\.js$|\.jsx$/,
+      exclude: /(node_modules|.cache|public)/,
+      stages: ['develop', 'build-javascript'],
+      options: {
+        emitWarning: true,
+        failOnError: false
+      }
+    }
+  }
  ],
 }
