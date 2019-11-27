@@ -16,6 +16,7 @@ let theme = createMuiTheme({
     },
     background: {
       default: '#1F2123',
+      paper: '#1F2123',
     },
     error: {
       main: red.A400,
