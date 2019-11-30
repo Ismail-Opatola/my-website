@@ -26,7 +26,8 @@ Notes
   https://www.gatsbyjs.org/docs/working-with-video/
   https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
   https://alistapart.com/article/creating-intrinsic-ratios-for-video/
-
++ CI
+  https://www.browserstack.com/guide/jenkins-vs-travis-ci-tools
 
 =======
 TODO
@@ -46,7 +47,6 @@ TODO
 + install axe extension for assessibility testing - done
 + embed youtube videos, gif -- postpone, use -- img & video files - done
 + meta tags for social sharing - remain fb, reddit -- 90% done
-+ schema markup / structured micro data -- remain og:linkedIn -- 90% done
 + generate sitemap, robot.txt file -- revisit @ deployment, -- 90% done
 
 + blog search, tag result page -- 50%  done
@@ -56,6 +56,7 @@ TODO
 + netlify hosting
 + axe-core assessibility checks before final deployment
 
++ add cypress, Travis CI - Continuous Integration 
 + remove email verification requirement on disqus
 + footer youtube link is not pointing to my account
 + Read.md documentation
