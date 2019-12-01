@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Link from "./Link"
-import { slugify } from '../util/utilityFunctions'
 
 // Mui
 import { makeStyles } from "@material-ui/core/styles"
@@ -27,19 +26,24 @@ const useStyles = makeStyles(theme => ({
  },
 }))
 
-export default function Tags({ tag }) {
+export default function Tags({ tag: { slug, name, id }}) {
  const classes = useStyles()
 
  return (
-  <Button variant="outlined" size="small" className={classes.root} component={Link} to={`/tag/${slugify(tag)}`} alt={`${tag}-tag-page`}>
+  <Button variant="outlined" size="small" className={classes.root} component={Link} 
+  to={`/tag/${slug}`} alt={`${slug}-tag-page`} key={id}>
    <Typography color="secondary" className={classes.text}>
-    {tag}
+    {name}
    </Typography>
   </Button>
  )
 }
 
 Tags.propTypes = {
- tag: PropTypes.string,
+ tag: PropTypes.shape({
+    id: PropTypes.string,
+    slug: PropTypes.string,
+    name: PropTypes.string,
+ }),
  handleClick: PropTypes.func,
 }

@@ -1,11 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
 // MUI
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 // NATIVE COMPONENTS
 // import Searchbar from "../Searchbar"
 import Tags from "../Tags"
+import Typography from "@material-ui/core/Typography"
 
 /**
 xs, extra-small: 0px
@@ -48,7 +50,9 @@ const useStyles = makeStyles(theme => ({
    gridColumnGap: theme.spacing(0),
   },
  },
-
+ h4: {
+   marginBottom: theme.spacing(2),
+ },
  aside: {
   position: "relative",
  },
@@ -56,6 +60,21 @@ const useStyles = makeStyles(theme => ({
 
 export default function BlogLayout({ children }) {
  const classes = useStyles()
+ const data = useStaticQuery(graphql`
+  query {
+   allTags: allContentfulTag {
+    nodes {
+     id
+     name
+     slug
+     blog_post {
+      id
+     }
+    }
+   }
+  }
+ `)
+ 
 
  return (
   <Grid className={classes.root} component="section">
@@ -63,14 +82,21 @@ export default function BlogLayout({ children }) {
 
    <Grid component="aside" className={classes.aside}>
     {/* <Searchbar /> */}
-    {["React", "Node", "Firebase", "app security"].map(tag => (
-     <Tags tag={tag} key={tag} />
-    ))}
+    <Typography variant="h4" align={"center"} className={classes.h4}>Filter by categories</Typography>
+    {data.allTags.nodes.map(
+     tag => tag.blog_post !== null && <Tags tag={tag} />
+    )}
+    {/* only show tags that has at least a post linked to it */}
    </Grid>
   </Grid>
  )
 }
 
 BlogLayout.propTypes = {
-  children: PropTypes.node.isRequired,
+ children: PropTypes.node.isRequired,
+ data: PropTypes.shape({
+  allTags: PropTypes.shape({
+   nodes: PropTypes.arrayOf(PropTypes.object),
+  }),
+ }),
 }

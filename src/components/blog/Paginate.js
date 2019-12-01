@@ -82,6 +82,7 @@ export default function Paginate(props) {
   numPages,
   isLast,
   isFirst,
+  tag_slug,
   tag_list = false,
   blog_list = false,
   blog_post = false,
@@ -103,7 +104,7 @@ export default function Paginate(props) {
      {!isFirst && (
       <Button
        component={Link}
-       to={blog_list ? `/blog/${prevPage}` : `/tag/${prevPage}`}
+       to={blog_list ? `/blog/${prevPage}` : `/tag/${tag_slug}/${prevPage}`}
        rel="prev"
       >
        ← Previous Page
@@ -116,7 +117,7 @@ export default function Paginate(props) {
         to={
          blog_list
           ? `/blog/${i === 0 ? "" : i + 1}`
-          : `/tag/${i === 0 ? "" : i + 1}`
+          : `/tag/${tag_slug}/${i === 0 ? "" : i + 1}`
         }
         i={i}
         currentPage={currentPage}
@@ -127,7 +128,7 @@ export default function Paginate(props) {
      {!isLast && (
       <Button
        component={Link}
-       to={blog_list ? `/blog/${nextPage}` : `/tag/${nextPage}`}
+       to={blog_list ? `/blog/${nextPage}` : `/tag/${tag_slug}/${nextPage}`}
        rel="next"
       >
        Next Page →
@@ -181,6 +182,7 @@ Paginate.propTypes = {
  numPages: PropTypes.number,
  isLast: PropTypes.bool,
  isFirst: PropTypes.bool,
+ tag_slug: PropTypes.string,
  tag_list: PropTypes.bool,
  blog_list: PropTypes.bool,
  blog_post: PropTypes.bool,
