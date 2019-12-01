@@ -46,12 +46,12 @@ TODO
 + add linting - done
 + install axe extension for assessibility testing - done
 + embed youtube videos, gif -- postpone, use -- img & video files - done
++ blog-post-video/iframe-card -- done
++ blog filter by tag result page -- done
 + meta tags for social sharing - remain fb, reddit -- 90% done
 + generate sitemap, robot.txt file -- revisit @ deployment, -- 90% done
 
-+ blog search, tag result page -- 50%  done
-+ blog-post-video/iframe-card
-
++ upload-project-videos-to-youtube
 + registered domain Name
 + netlify hosting
 + axe-core assessibility checks before final deployment
@@ -60,7 +60,7 @@ TODO
 + remove email verification requirement on disqus
 + footer youtube link is not pointing to my account
 + Read.md documentation
-+ replace google form with custom form
++ replace google form with netlify-custom-form
 + embed chat app
 + analytics
 + try gatsby-remark-responsive-iframe on google_form
@@ -78,5 +78,4 @@ issues
 ======
 snippets
 =========
----
-{props.data.contentfulBlogPost.youtube && <iframe width="600" height="345" src={props.data.contentfulBlogPost.youtube} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={props.data.contentfulBlogPost.title}/>}
+
