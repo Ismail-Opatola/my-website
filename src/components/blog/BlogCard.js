@@ -5,7 +5,7 @@ import clsx from "clsx"
 import { FaTwitter, FaLinkedin, FaRedditAlien } from "react-icons/fa"
 // MUI
 import { makeStyles } from "@material-ui/core/styles"
-import { lighten, darken } from "@material-ui/core/styles/colorManipulator"
+import { lighten } from "@material-ui/core/styles/colorManipulator"
 import MuiLink from "@material-ui/core/Link"
 import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
@@ -87,14 +87,9 @@ const useStyles = makeStyles(theme => ({
   },
  },
  li_twitter: {
-    background: `#41b7d8`,
-    background: `-webkit-gradient(linear, left top, left bottom, from(#41b7d8), to(#2bacd0))`,
-    background: `-webkit-linear-gradient(top, #41b7d8 0%, #2bacd0 100%)`,
     background: `linear-gradient(to bottom, #41b7d8 0%, #2bacd0 100%)`,
     borderColor: `#238caa`,
   "&:hover ": {
-    background: `-webkit-gradient(linear, left top, left bottom, from(#2bacd0), to(#2bacd0))`,
-    background: `-webkit-linear-gradient(top, #2bacd0 0%, #2bacd0 100%)`,
     background: `linear-gradient(to bottom, #2bacd0 0%, #2bacd0 100%)`,
   },
   "&:active":{
@@ -102,14 +97,9 @@ const useStyles = makeStyles(theme => ({
   }
  },
  li_reddit: {
-    background: `#ff5700`,
-    background: `-webkit-gradient(linear, left top, left bottom, from(#ff5700), to(#e04b00))`,
-    background: `-webkit-linear-gradient(top, #ff5700 0%, #e04b00 100%)`,
     background: `linear-gradient(to bottom, #ff5700 0%, #e04b00 100%)`,
     borderColor: `#b33b00`,
   "&:hover ": {
-    background: `-webkit-gradient(linear, left top, left bottom, from(#e04b00), to(#e04b00))`,
-    background: `-webkit-linear-gradient(top, #e04b00 0%, #e04b00 100%)`,
     background: `linear-gradient(to bottom, #e04b00 0%, #e04b00 100%)`,
   },
   "&:active": {

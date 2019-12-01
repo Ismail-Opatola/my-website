@@ -70,8 +70,7 @@
     "lint": "eslint src/**/*.js --ignore-pattern node_modules/",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "cy:run": "cypress run"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
     "type": "git",

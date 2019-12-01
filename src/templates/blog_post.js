@@ -87,14 +87,9 @@ const useStyles = makeStyles(theme => ({
   },
  },
  li_twitter: {
-  background: `#41b7d8`,
-  background: `-webkit-gradient(linear, left top, left bottom, from(#41b7d8), to(#2bacd0))`,
-  background: `-webkit-linear-gradient(top, #41b7d8 0%, #2bacd0 100%)`,
   background: `linear-gradient(to bottom, #41b7d8 0%, #2bacd0 100%)`,
   borderColor: `#238caa`,
 "&:hover ": {
-  background: `-webkit-gradient(linear, left top, left bottom, from(#2bacd0), to(#2bacd0))`,
-  background: `-webkit-linear-gradient(top, #2bacd0 0%, #2bacd0 100%)`,
   background: `linear-gradient(to bottom, #2bacd0 0%, #2bacd0 100%)`,
 },
 "&:active":{
@@ -102,14 +97,9 @@ const useStyles = makeStyles(theme => ({
 }
 },
 li_reddit: {
-  background: `#ff5700`,
-  background: `-webkit-gradient(linear, left top, left bottom, from(#ff5700), to(#e04b00))`,
-  background: `-webkit-linear-gradient(top, #ff5700 0%, #e04b00 100%)`,
   background: `linear-gradient(to bottom, #ff5700 0%, #e04b00 100%)`,
   borderColor: `#b33b00`,
 "&:hover ": {
-  background: `-webkit-gradient(linear, left top, left bottom, from(#e04b00), to(#e04b00))`,
-  background: `-webkit-linear-gradient(top, #e04b00 0%, #e04b00 100%)`,
   background: `linear-gradient(to bottom, #e04b00 0%, #e04b00 100%)`,
 },
 "&:active": {
@@ -385,19 +375,20 @@ export default function BlogPost(props) {
 
  console.log(props)
 
- // determine which prism to render based on tags
-
+ //@determine which prism to render based on tags
  let language = "javascript"
 
- if (post.tags.includes("ruby")) {
-  language = "ruby"
- }
- if (post.tags.includes("java")) {
-  language = "java"
- }
- if (post.tags.includes("c++")) {
-  language = "c++"
- }
+ post.tags.map(tag => {
+   if (tag.slug === "ruby") {
+    language = "ruby"
+   }
+   if (tag.slug === "java") {
+    language = "java"
+   }
+   if (tag.slug === "c++") {
+    language = "c++"
+   }
+ })
 
  const options = {
   renderMark: {
@@ -539,7 +530,10 @@ export const BlogPostQuery = graphql`
    title
    timestamp(formatString: "MMMM Do YYYY")
    description
-   tags
+   tags {
+    id
+    slug
+   }
    blogImage {
     fluid {
      ...GatsbyContentfulFluid
