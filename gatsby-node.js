@@ -6,115 +6,128 @@
 
 // You can delete this file if you're not using it
 // const { graphql } = require("gatsby")
-const path = require(`path`);
+const path = require(`path`)
 // const { slugify } = require("./src/util/utilityFunctions");
 
 // const notes = require("./src/util/notes")
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+ const { createPage } = actions
 
-  return graphql(
-    `
-      {
-        allContentfulBlogPost(
-          limit: 500
-          sort: { fields: timestamp, order: DESC }
-        ) {
-          nodes {
-            id
-            slug
-            title
-          }
-        }
-      }
-    `
-  ).then(result => {
-    if (result.errors) {
-      throw result.errors
+ return graphql(
+  `
+   {
+    allPosts: allContentfulBlogPost(
+     limit: 500
+     sort: { fields: timestamp, order: DESC }
+    ) {
+     nodes {
+      id
+      slug
+      title
+     }
     }
+    allTags: allContentfulTag(limit: 50) {
+     nodes {
+      slug
+      blog_post {
+       id
+      }
+     }
+    }
+   }
+  `
+ )
+  .then(res => {
+   if (res.errors) {
+    throw res.errors
+   }
 
-    // Create blog posts pages.
-    const posts = result.data.allContentfulBlogPost.nodes
+   //@create-blog-posts-pages.
+   const posts = res.data.allPosts.nodes
 
-    posts.forEach((post, index) => {
-      const previousPost = index === posts.length - 1 ? null : posts[index + 1]
-      const nextPost = index === 0 ? null : posts[index - 1]
+   posts.forEach((post, index) => {
+    const previousPost = index === posts.length - 1 ? null : posts[index + 1]
+    const nextPost = index === 0 ? null : posts[index - 1]
 
-      createPage({
-        path: post.slug,
-        component: path.resolve(`./src/templates/blog_post.js`),
-        context: {
-          slug: post.slug,
-          previousPost,
-          nextPost,
-        },
-      })
+    createPage({
+     path: post.slug,
+     component: path.resolve(`./src/templates/blog_post.js`),
+     context: {
+      slug: post.slug,
+      previousPost,
+      nextPost,
+     },
     })
+   })
 
-    // Create blog post list pages
-    const postsPerPage = 4;
-    const numPages = Math.ceil(posts.length / postsPerPage);
+   //@create-blog-post-list-pages
+   const postsPerPage = 4
+   const numPages = Math.ceil(posts.length / postsPerPage)
+
+   Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+     path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+     component: path.resolve("./src/templates/blog_list.js"),
+     context: {
+      limit: postsPerPage,
+      skip: i * postsPerPage,
+      numPages,
+      currentPage: i + 1,
+     },
+    })
+   })
+
+   return res.data.allTags.nodes
+  })
+  .then(tags => {
+   //@create-tag-pages
+   if (!tags) {
+    return
+   }
+   const postsPerPage = 4
+
+   tags.map(tag => {
+    //@only create pages for tags that has at least post linked to it
+    if (!tag.blog_post) {
+     return
+    }
+    const numPages = Math.ceil(tag.blog_post.length / postsPerPage)
 
     Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-        component: path.resolve('./src/templates/blog_list.js'),
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1
-        },
-      });
-    });
-
+     createPage({
+      path: i === 0 ? `/tag/${tag.slug}` : `/tag/${tag.slug}/${i + 1}`,
+      component: path.resolve("./src/templates/tag_post_list.js"),
+      context: {
+       limit: postsPerPage,
+       skip: i * postsPerPage,
+       numPages: numPages,
+       currentPage: i + 1,
+       slug: tag.slug,
+       name: tag.name
+      },
+     })
+    })
+   })
   })
-  // .then(() => {
-  // TODO: fetch tags and tag-post-list in graphgql above
-  // TODO: grab tags object result in this callback 
-  //   // =========================
-  //   // Tag 
-  //   // ===================
-  //   let tags = ['react', 'hooks', 'app security'];
-  //   const postsPerPage = 4;
-    
-  //   tags.map((tag) => {
-  //     const numPages = Math.ceil(tag.posts.length / postsPerPage);
-
-  //     Array.from({ length: numPages }).forEach((_, i) => {
-  //       createPage({
-  //         path: i === 0 ? `/tag/${slugify(tag)}}` : `/tag/${slugify(tag)}/${i + 1}`,
-  //         component: path.resolve('./src/templates/tag_post_list.js'),
-  //         context: {
-  //           limit: postsPerPage,
-  //           skip: i * postsPerPage,
-  //           numPages: numPages,
-  //           currentPage: i + 1,
-  //           slug: slugify(tag)
-  //         },
-  //       });
-  //     });
-  //   })
-  // })
 }
 exports.onCreateNode = async ({ node, actions }) => {
-  try {
-    const { createNodeField } = actions
+ try {
+  const { createNodeField } = actions
 
-    if (
-      node.internal.type === "File" &&
-      node.internal.mediaType === "application/javascript"
-    ) {
-      createNodeField({
-        node,
-        name: "notes",
-        value: require("./src/util/notes"),
-      })
-    }
-  } catch (error) {
-    if (error) return Promise.reject(error)
+  if (
+   node.internal.type === "File" &&
+   node.internal.mediaType === "application/javascript"
+  ) {
+   createNodeField({
+    node,
+    name: "notes",
+    value: require("./src/util/notes"),
+   })
   }
+ } catch (error) {
+  if (error) return Promise.reject(error)
+ }
 }
 
 // tags
@@ -123,5 +136,5 @@ exports.onCreateNode = async ({ node, actions }) => {
 // process
 // - fetch all contentful tags
 // -- create a page for each tag
-  // each tag page should support pagination
+// each tag page should support pagination
 // --- create a paginated tag_post_list
