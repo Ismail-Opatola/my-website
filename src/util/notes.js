@@ -80,7 +80,7 @@ const projects = [
   {
    title: "WUR",
    description:
-    "Would-You-Rather App. A project Inspired by Udacity's React Developer Nano Degree programe. This app was part of the course capstone project..",
+    "Would-You-Rather App. A project Inspired by Udacity's React Developer Nano Degree programe. This app was part of the capstone projects.",
    techStack: [
     "Firebase Auth",
     "React",
