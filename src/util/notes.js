@@ -149,6 +149,24 @@ const projects = [
    gifSrcUrl: "",
    videoSrcUrl: "",
   },
+  {
+   title: "MyReads",
+   description:
+    "A Book listing app which pulls data from Google Books API. A project Inspired by Udacity's React Developer Nano Degree programe. This app was part of the capstone projects.",
+   techStack: [
+    "React",
+    "Google Books API",
+    "Netlify",
+   ],
+   features: ["Book Search", "Book list Categories", "Book Search filter", "Responsive UI", "SEO", "LazyLoad Image", "API-Request"],
+   links: {
+    sourceCode: "https://github.com/Ismail-Opatola/react-project-myreads-app",
+    websiteUrl: "https://dazzling-ride-c69f41.netlify.com/",
+    youtubeDemo: "",
+   },
+   gifSrcUrl: "",
+   videoSrcUrl: "",
+  },
  ],
  skills = {
   programming: ["Javascript 100%", "Typescripts 60%", "HTML 100%", "CSS 100%"],
