@@ -1,35 +1,4 @@
 =======
-Notes
-=======
-+ theme-api:
-  https://material-ui.com/customization/default-theme/
-+ embedding video:
-  https://scotch.io/tutorials/embedding-videos-in-your-gatsbyjs-sites
-+ blog image sizing:
-  https://blog.hubspot.com/customers/size-images-blog-content
-+ social media image sizing:
-  https://buffer.com/library/ideal-image-sizes-social-media-posts
-+ structured data markup:
-  https://www.semrush.com/blog/schema-markup-for-company-corporations/
-+ social share:
-  https://mariohernandez.io/blog/adding-social-share-links-to-gatsby/
-+ meta tags for social sharing:
-  https://www.johndpotts.com/2018-10-23-meta-tags-for-social-sharing-gatsby-blog/
-+ sqip:
-  https://www.contentful.com/blog/2018/05/17/faster-static-site-builds-part-one-process-only-what-you-need/
-+ Detect-ads-blocker:
-  https://stackoverflow.com/questions/4869154/how-to-detect-adblock-on-my-website
-+ gif:
-  https://www.gatsbyjs.org/docs/working-with-gifs/
-  https://ezgif.com/
-+ video:
-  https://www.gatsbyjs.org/docs/working-with-video/
-  https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
-  https://alistapart.com/article/creating-intrinsic-ratios-for-video/
-+ CI
-  https://www.browserstack.com/guide/jenkins-vs-travis-ci-tools
-
-=======
 TODO
 =======
 + discuss plugin
@@ -52,6 +21,7 @@ TODO
 + generate sitemap, robot.txt file -- revisit @ deployment, -- 90% done
 
 + upload-project-videos-to-youtube
++ upload-project-gif
 + registered domain Name
 + netlify hosting
 + axe-core assessibility checks before final deployment
@@ -79,3 +49,18 @@ issues
 snippets
 =========
 
+=====
+Temp TODO
+====
+1 - List selected projects
+  - and properties
+2 - update project dependencies
+  - adjust project screen responsiveness
+3 - Screen record projects
+4 - upload video to youtube
+5 - add videUrl to my-website project
+6 - deploy my-website to netlify
+7 - my-website documentation
+8 - write a blog post per week
+9 - learn node
+10 - next-project: Firebase cms 
