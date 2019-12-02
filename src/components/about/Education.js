@@ -76,12 +76,12 @@ const Education = () => {
               Learnt React Framework in 2019 after sharing this Udacity Course Material for free
               with a friend. While taking this course I built three capstone projects -
               {' '}
-              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Would-You-Rather app</MuiLink>
+              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="https://would-you-rather-app-c5895.firebaseapp.com">Would-You-Rather app</MuiLink>
 ,
               <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Fit-Tracker</MuiLink>
 ,
               {' '}
-              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Book-Reads</MuiLink>
+              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="https://myreads-app-v0.netlify.com/">Book-Reads</MuiLink>
 .
             </Typography>
           </ListItem>
