@@ -44,7 +44,7 @@ function SEO({ description, lang, meta, title, ogpImage, slug }) {
     },
     {
      name: `image`,
-     content: ogpImage ? ogpImage : site.site.siteMetadata.image,
+     content: ogpImage ? ogpImage : site.siteMetadata.image,
     },
     {
      name: `author`,
