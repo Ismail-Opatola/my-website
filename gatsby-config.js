@@ -128,7 +128,7 @@ module.exports = {
      * See: https://github.com/isaacs/minimatch
      * The example below will exclude the single `path/to/page` and all routes beginning with `category`
      */
-    exclude: ["/category/*", "/path/to/page"],
+    exclude: ["/category/*", "/path/*"],
     query: `
         {
             site {
@@ -164,7 +164,7 @@ module.exports = {
           }
         }`,
     host: ({ site }) => `${site.siteMetadata.siteUrl}`,
-    sitemap: ({ site }) => `${site.siteMetadata.siteUrl}/sitemap.xml`,
+    // sitemap: ({ site }) => `${site.siteMetadata.siteUrl}/sitemap.xml`,
     // ResolveEnv: () => process.env.GATSBY_ENV,
     resolveEnv: () => NETLIFY_ENV,
     env: {
