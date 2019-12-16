@@ -179,7 +179,7 @@ li_reddit: {
 // ========================================
 
 export function Post(props) {
- const { post, options, loading = false } = props
+ const { post, options, siteUrl, loading = false } = props
  const classes = useStyles()
 
  return loading ? (
@@ -211,14 +211,14 @@ export function Post(props) {
      <MuiLink
       target="_blank"
       rel="noopener noreferrer"
-      href={`https://www.linkedin.com/shareArticle?mini=true&url=https://ismailopatola.io/${post.slug}&title=${post.title}&source=${post.title}`}
+      href={`https://www.linkedin.com/shareArticle?mini=true&url=${siteUrl}/${post.slug}&title=${post.title}&source=${post.title}`}
      >
       <FaLinkedin size={23} color="#fff" />
      </MuiLink>
     </ListItem>
     <ListItem className={clsx(classes.li, classes.li_twitter)} key="twitter">
      <MuiLink
-      href={`https://twitter.com/intent/tweet/?text=${post.title}&url=https://ismailopatola.io/${post.slug}%2F&via=opatolaismail`}
+      href={`https://twitter.com/intent/tweet/?text=${post.title}&url=${siteUrl}/${post.slug}%2F&via=opatolaismail`}
       rel="noopener noreferrer"
       target="_blank"
      >
@@ -227,7 +227,7 @@ export function Post(props) {
     </ListItem>
     <ListItem className={clsx(classes.li, classes.li_reddit)} key="reddit">
      <MuiLink
-      href={`http://reddit.com/submit?url=https://ismailopatola.io/${post.slug}&title=${post.title}`}
+      href={`http://reddit.com/submit?url=${siteUrl}/${post.slug}&title=${post.title}`}
       rel="noopener noreferrer"
       target="_blank"
      >
@@ -344,14 +344,15 @@ Post.propTypes = {
    bio: PropTypes.string,
    name: PropTypes.string.isRequired,
    avatar: PropTypes.shape({
-    title: PropTypes.string,
-    fluid: PropTypes.shape(PropTypes.any).isRequired,
-   }).isRequired,
+     title: PropTypes.string,
+     fluid: PropTypes.shape(PropTypes.any).isRequired,
+    }).isRequired,
   }).isRequired,
   body: PropTypes.shape({
-   json: PropTypes.shape(PropTypes.any).isRequired,
+    json: PropTypes.shape(PropTypes.any).isRequired,
   }),
- }),
+}),
+ siteUrl: PropTypes.string,
  options: PropTypes.object.isRequired,
  loading: PropTypes.bool.isRequired,
 }
@@ -500,7 +501,7 @@ export default function BlogPost(props) {
     slug={post.slug}
    />
    <BlogLayout {...props}>
-    <Post post={post} options={options} loading />
+    <Post post={post} options={options} loading siteUrl={siteUrl} />
     <Paginate previousPost={previousPost} nextPost={nextPost} blog_post />
     <Box>
      <Comment

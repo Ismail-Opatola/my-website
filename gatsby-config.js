@@ -30,19 +30,19 @@ module.exports = {
   developer: "Ismail Opatola",
   image: "src/assets/me.jpg",
   twitterUsername: "@opatolaismail",
-  siteUrl: "https://www.ismailopatola.io",
+  siteUrl: siteUrl,
  },
  plugins: [
   {
-    resolve: `gatsby-plugin-google-analytics`,
-    options: {
-     trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
-     head: true,
-     anonymize: true,
-     respectDNT: true,
-     exclude: ["/preview/**"],
-    },
+   resolve: `gatsby-plugin-google-analytics`,
+   options: {
+    trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_ID,
+    head: true,
+    anonymize: true,
+    respectDNT: true,
+    exclude: ["/preview/**"],
    },
+  },
   "gatsby-plugin-react-helmet",
   "gatsby-plugin-sass",
   "gatsby-plugin-catch-links",
@@ -188,16 +188,16 @@ module.exports = {
    },
   },
   {
-    resolve: 'gatsby-plugin-eslint',
+   resolve: "gatsby-plugin-eslint",
+   options: {
+    test: /\.js$|\.jsx$/,
+    exclude: /(node_modules|.cache|public)/,
+    stages: ["develop", "build-javascript"],
     options: {
-      test: /\.js$|\.jsx$/,
-      exclude: /(node_modules|.cache|public)/,
-      stages: ['develop', 'build-javascript'],
-      options: {
-        emitWarning: true,
-        failOnError: false
-      }
-    }
-  }
+     emitWarning: true,
+     failOnError: false,
+    },
+   },
+  },
  ],
 }

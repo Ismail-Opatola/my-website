@@ -1,5 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
+import { useStaticQuery, graphql } from "gatsby"
+
 // MUI
 import { makeStyles } from '@material-ui/core/styles';
 import MuiLink from '@material-ui/core/Link';
@@ -62,13 +64,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function PrivacyPolicy() {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            siteUrl
+          }
+        }
+      }
+    `
+  )
   const classes = useStyles();
   const mb_block = clsx(classes.mb1, classes.block);
   return (
     <Layout>
       <SEO
         title="Privacy Policy"
-        slug="https://ismailopatola.io/privacy-policy"
+        slug={`privacy-policy`}
         description="Information about copyrights, terms & conditions of my website, mobile developer services"
       />
 

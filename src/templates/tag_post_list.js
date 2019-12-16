@@ -29,7 +29,12 @@ const TagPage = props => {
  const classes = useStyles()
 
  const {
-  data: { allRelatedPosts },
+  data: {
+   allRelatedPosts,
+   site: {
+    siteMetadata: { siteUrl },
+   },
+  },
   pageContext: { currentPage, numPages, slug, name },
  } = props
 
@@ -38,22 +43,24 @@ const TagPage = props => {
  const prevPage = currentPage - 1 === 1 ? `/` : (currentPage - 1).toString()
  const nextPage = (currentPage + 1).toString()
 
-//  console.log(allRelatedPosts.nodes)
+ //  console.log(allRelatedPosts.nodes)
  return (
   <Layout>
    <SEO
     title={`Tag — ${name}`}
     description={`Related tutorials, articles on ${slug} and more web developments`}
-    slug={`https://ismailopatola.io/tag/${slug}`}
+    slug={`tag/${slug}`}
    />
 
    <BlogLayout {...props}>
     <Grid item component="section" className={classes.section}>
-     {allRelatedPosts
-      ? allRelatedPosts.nodes.map(post => (
-         <BlogCard post={post} key={post.id} />
-        ))
-      : <Typography>...fetching Data</Typography>}
+     {allRelatedPosts ? (
+      allRelatedPosts.nodes.map(post => (
+       <BlogCard post={post} key={post.id} siteUrl={siteUrl} />
+      ))
+     ) : (
+      <Typography>...fetching Data</Typography>
+     )}
     </Grid>
 
     <Paginate
@@ -72,38 +79,43 @@ const TagPage = props => {
 }
 
 export const TagQuery = graphql`
-  query tagQuery($skip: Int!, $limit: Int!, $slug: String!) {
-    allRelatedPosts: allContentfulBlogPost(
-      limit: $limit
-      skip: $skip
-      sort: { fields: timestamp, order: DESC }
-      filter: {tags: {elemMatch: {slug: {eq: $slug}}}}
-    ) {
-      nodes {
-        id
-        slug
-        title
-        timestamp(formatString: "MMMM Do YYYY")
-        description
-        blogImage {
-          title
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-        author {
-          bio
-          name
-          avatar {
-            title
-            fluid {
-            ...GatsbyContentfulFluid       
-            }
-          }
-        }
-      }
+ query tagQuery($skip: Int!, $limit: Int!, $slug: String!) {
+  allRelatedPosts: allContentfulBlogPost(
+   limit: $limit
+   skip: $skip
+   sort: { fields: timestamp, order: DESC }
+   filter: { tags: { elemMatch: { slug: { eq: $slug } } } }
+  ) {
+   nodes {
+    id
+    slug
+    title
+    timestamp(formatString: "MMMM Do YYYY")
+    description
+    blogImage {
+     title
+     fluid {
+      ...GatsbyContentfulFluid
+     }
     }
+    author {
+     bio
+     name
+     avatar {
+      title
+      fluid {
+       ...GatsbyContentfulFluid
+      }
+     }
+    }
+   }
   }
+  site: site {
+   siteMetadata {
+    siteUrl
+   }
+  }
+ }
 `
 
 export default TagPage
@@ -113,6 +125,11 @@ TagPage.propTypes = {
  data: PropTypes.shape({
   allRelatedPosts: PropTypes.shape({
    nodes: PropTypes.arrayOf(PropTypes.object),
+  }),
+  site: PropTypes.shape({
+   siteMetadata: PropTypes.shape({
+    siteUrl: PropTypes.string,
+   }),
   }),
  }),
  pageContext: PropTypes.shape({

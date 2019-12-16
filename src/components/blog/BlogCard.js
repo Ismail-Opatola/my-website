@@ -87,20 +87,20 @@ const useStyles = makeStyles(theme => ({
   },
  },
  li_twitter: {
-    background: `linear-gradient(to bottom, #41b7d8 0%, #2bacd0 100%)`,
-    borderColor: `#238caa`,
+  background: `linear-gradient(to bottom, #41b7d8 0%, #2bacd0 100%)`,
+  borderColor: `#238caa`,
   "&:hover ": {
-    background: `linear-gradient(to bottom, #2bacd0 0%, #2bacd0 100%)`,
+   background: `linear-gradient(to bottom, #2bacd0 0%, #2bacd0 100%)`,
   },
-  "&:active":{
-    backgroundColor: `#269abb`
-  }
+  "&:active": {
+   backgroundColor: `#269abb`,
+  },
  },
  li_reddit: {
-    background: `linear-gradient(to bottom, #ff5700 0%, #e04b00 100%)`,
-    borderColor: `#b33b00`,
+  background: `linear-gradient(to bottom, #ff5700 0%, #e04b00 100%)`,
+  borderColor: `#b33b00`,
   "&:hover ": {
-    background: `linear-gradient(to bottom, #e04b00 0%, #e04b00 100%)`,
+   background: `linear-gradient(to bottom, #e04b00 0%, #e04b00 100%)`,
   },
   "&:active": {
    backgroundColor: `#c73f00`,
@@ -118,7 +118,7 @@ const useStyles = makeStyles(theme => ({
  },
 }))
 
-export default function BlogCard({ post }) {
+export default function BlogCard({ post, siteUrl }) {
  const classes = useStyles()
 
  return (
@@ -168,14 +168,14 @@ export default function BlogCard({ post }) {
       <MuiLink
        target="_blank"
        rel="noopener noreferrer"
-       href={`https://www.linkedin.com/shareArticle?mini=true&url=https://ismailopatola.io/${post.slug}&title=${post.title}&source=${post.title}`}
+       href={`https://www.linkedin.com/shareArticle?mini=true&url=${siteUrl}/${post.slug}&title=${post.title}&source=${post.title}`}
       >
        <FaLinkedin size={23} color="#fff" />
       </MuiLink>
      </ListItem>
      <ListItem className={clsx(classes.li, classes.li_twitter)} key="twitter">
       <MuiLink
-       href={`https://twitter.com/intent/tweet/?text=${post.title}&url=https://ismailopatola.io/${post.slug}%2F&via=opatolaismail`}
+       href={`https://twitter.com/intent/tweet/?text=${post.title}&url=${siteUrl}/${post.slug}%2F&via=opatolaismail`}
        rel="noopener noreferrer"
        target="_blank"
       >
@@ -184,7 +184,7 @@ export default function BlogCard({ post }) {
      </ListItem>
      <ListItem className={clsx(classes.li, classes.li_reddit)} key="reddit">
       <MuiLink
-       href={`http://reddit.com/submit?url=https://ismailopatola.io/${post.slug}&title=${post.title}`}
+       href={`http://reddit.com/submit?url=${siteUrl}/${post.slug}&title=${post.title}`}
        rel="noopener noreferrer"
        target="_blank"
       >
@@ -226,4 +226,5 @@ BlogCard.propTypes = {
   timestamp: PropTypes.string,
   description: PropTypes.string.isRequired,
  }).isRequired,
+ siteUrl: PropTypes.string,
 }

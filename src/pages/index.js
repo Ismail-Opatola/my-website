@@ -145,7 +145,7 @@ export default function IndexPage(props) {
 
  return (
   <Layout>
-   <SEO title="Home" slug={"/"} />
+   <SEO title="Home" />
    <>
     <Box className={classes.section1} component="section">
      <Box className={classes.innerBox1}>
