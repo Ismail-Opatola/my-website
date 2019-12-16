@@ -148,13 +148,14 @@ li_reddit: {
    "& > code": {
     width: "100% !important",
     [theme.breakpoints.down("xs")]: {
-     marginRight: "0px !important",
+    //  marginRight: "0px !important",
+     margin: "4rem auto !important",
      paddingRight: "0px !important",
     },
    },
 
    [theme.breakpoints.down("xs")]: {
-    fontSize: theme.typography.fontSize - 4,
+    fontSize: theme.typography.fontSize - 5,
     paddingRight: "0px !important",
    },
   },
