@@ -121,7 +121,7 @@ module.exports = {
   {
    resolve: "gatsby-plugin-sitemap",
    options: {
-    output: "/some-other-sitemap.xml",
+    output: "/sitemap.xml",
 
     /*
      * Exclude specific pages or groups of pages using glob parameters
