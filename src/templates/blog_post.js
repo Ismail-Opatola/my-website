@@ -172,6 +172,10 @@ li_reddit: {
  Skeleton: {
   backgroundColor: lighten(theme.palette.background.default, 0.1),
  },
+ post_article: {
+   width: "100%",
+   boxSizing: "border-box",
+ }
 }))
 
 // ========================================
@@ -184,7 +188,6 @@ export function Post(props) {
 
  return loading ? (
   <Box className={classes.root} component="section">
-   {" "}
    <Typography variant="h1">{post.title}</Typography>
    <Typography component="small">{post.timestamp}</Typography>
    <Box className={classes.author_box}>
@@ -238,7 +241,7 @@ export function Post(props) {
    <Paper className={classes.blogImage}>
     <Img alt={post.blogImage.title} fluid={post.blogImage.fluid} />
    </Paper>
-   <Box component="article">
+   <Box component="article" className={classes.post_article}>
     {documentToReactComponents(post.body.json, options)}
    </Box>
   </Box>
@@ -373,8 +376,6 @@ export default function BlogPost(props) {
    post,
   },
  } = props
-
- console.log(props)
 
  //@determine which prism to render based on tags
  let language = "javascript"
