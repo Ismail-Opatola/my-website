@@ -73,10 +73,10 @@ const projects = [
    links: {
     sourceCode: "https://github.com/Ismail-Opatola/my-website",
     websiteUrl: "https://ismailopatola.netlify.com",
-    youtubeDemo: "",
+    youtubeDemo: "https://www.youtube.com/embed/f6IHLuFVa0o",
    },
-   gifSrcUrl: undefined,
-   videoSrcUrl: undefined,
+   gifSrcUrl: "mywebsite",
+   videoSrcUrl: "https://www.youtube.com/embed/f6IHLuFVa0o",
   },
   {
    title: "WUR",

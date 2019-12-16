@@ -185,7 +185,7 @@ const Footer = props => {
      <List>
       <ListItem className={classes.li}>
        <MuiLink
-        href="https://www.linkedin.com"
+        href="https://www.linkedin.com/in/ismail-opatola/"
         target="_blank"
         rel="noopener noreferrer"
         className="linkedin"
@@ -218,7 +218,7 @@ const Footer = props => {
       </ListItem>
       <ListItem className={classes.li}>
        <MuiLink
-        href="https://www.youtube.com"
+        href="https://www.youtube.com/channel/UCF-bh85fWL3VtXCxFK4XqOQ/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Ismail's youtube account"
