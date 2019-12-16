@@ -27,7 +27,6 @@ TODO
 + axe-core assessibility checks before final deployment
 
 + add cypress, Travis CI - Continuous Integration 
-+ remove email verification requirement on disqus
 + footer youtube link is not pointing to my account
 + Read.md documentation
 + replace google form with netlify-custom-form
@@ -35,6 +34,7 @@ TODO
 + analytics
 + try gatsby-remark-responsive-iframe on google_form
 + add utm parameters to shared site home link on socail media
++ Netlify VGS add-on
 
 =======
 issues
