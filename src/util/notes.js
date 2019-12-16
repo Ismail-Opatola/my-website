@@ -72,7 +72,7 @@ const projects = [
    ],
    links: {
     sourceCode: "https://github.com/Ismail-Opatola/my-website",
-    websiteUrl: "",
+    websiteUrl: "https://ismailopatola.netlify.com",
     youtubeDemo: "",
    },
    gifSrcUrl: undefined,
@@ -127,7 +127,7 @@ const projects = [
    links: {
     sourceCode: "https://github.com/Ismail-Opatola/fit_tracker_app-",
     websiteUrl: "https://expo.io/@turfff/fit_tracker",
-    youtubeDemo:"https://www.youtube.com/embed/cq1pXukBJHU",
+    youtubeDemo: "https://www.youtube.com/embed/cq1pXukBJHU",
    },
    gifSrcUrl: "fit_tracker",
    videoSrcUrl: "https://www.youtube.com/embed/cq1pXukBJHU",
