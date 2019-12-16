@@ -91,6 +91,10 @@ function SEO({ description, lang, meta, title, ogpImage, slug }) {
      content: title,
     },
     {
+     name: "twitter:creator",
+     content: site.siteMetadata.twitterUsername,
+    },
+    {
      name: `twitter:description`,
      content: metaDescription,
     },
