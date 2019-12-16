@@ -156,7 +156,7 @@ module.exports = {
   {
    resolve: "gatsby-plugin-robots-txt",
    options: {
-    query: `{
+    /*  query: `{
           site {
             siteMetadata {
               siteUrl
@@ -164,8 +164,9 @@ module.exports = {
           }
         }`,
     host: ({ site }) => `${site.siteMetadata.siteUrl}`,
-    // sitemap: ({ site }) => `${site.siteMetadata.siteUrl}/sitemap.xml`,
-    // ResolveEnv: () => process.env.GATSBY_ENV,
+    sitemap: ({ site }) => `${site.siteMetadata.siteUrl}/sitemap.xml`,
+    ResolveEnv: () => process.env.GATSBY_ENV,
+  */
     resolveEnv: () => NETLIFY_ENV,
     env: {
      development: {
