@@ -38,7 +38,7 @@ const typoWrapper = responsiveFontSizes(
  })
 )
 
-const useStyles = makeStyles( theme => ({
+const useStyles = makeStyles(theme => ({
  section1: {
   margin: 0,
   height: "100%",
@@ -66,7 +66,6 @@ const useStyles = makeStyles( theme => ({
   boxShadow: "-0 20px 25px -5px #100E17",
   background: "#181a1b",
  },
-
  textIntro: {
   fontFamily: '"Source Sans Pro", sans-serif',
   fontWeight: 900,
@@ -125,109 +124,102 @@ const useStyles = makeStyles( theme => ({
  },
 }))
 
-export default function IndexPage (props) {
-  const classes = useStyles()
- 
+export default function IndexPage(props) {
+ const classes = useStyles()
+
  //  fetchImg = (imgData, imgNodes) =>
  //   imgNodes.nodes.find(im =>
  //    im.childImageSharp.fluid.src.includes(imgData.imageUrl)
  //   ).childImageSharp.fluid
 
-  const {
-   data: {
-    profileImg,
-    notes: {
-     fields: {
-      notes: { skills, projects },
-     },
+ const {
+  data: {
+   profileImg,
+   notes: {
+    fields: {
+     notes: { skills, projects },
     },
    },
-  } = props
+  },
+ } = props
 
-  return (
-   <Layout>
-    <SEO title="Home" />
-    <>
-     <Box className={classes.section1} component="section">
-      <Box className={classes.innerBox1}>
-       <Typography className={clsx(classes.textIntro)} component="q">
-        Long Live The World Wide Web!!!
-       </Typography>
-       <Typography className={classes.textIntroII} paragraph>
-        Hello, my name is <span>Ismail</span>. I&#39;m a Frontend / Fullstack React
-        Developer living in bustling Lagos, Nigeria. I enjoy building performant
-        mobile & web apps with React, Nodejs and Firebase. What are your
-        formulas?
-       </Typography>
-      </Box>
-
-      <Paper square className={classes.profile_image_box} elevation={6}>
-       <Img
-        fluid={profileImg.childImageSharp.fluid}
-        className="profile_image"
-       />
-      </Paper>
+ return (
+  <Layout>
+   <SEO title="Home" slug={"/"} />
+   <>
+    <Box className={classes.section1} component="section">
+     <Box className={classes.innerBox1}>
+      <Typography className={clsx(classes.textIntro)} component="q">
+       Long Live The World Wide Web!!!
+      </Typography>
+      <Typography className={classes.textIntroII} paragraph>
+       Hello, my name is <span>Ismail</span>. I&#39;m a Frontend / Fullstack
+       React Developer living in bustling Lagos, Nigeria. I enjoy building
+       performant mobile & web apps with React, Nodejs and Firebase. What are
+       your formulas?
+      </Typography>
      </Box>
 
-     <Box
-      id="work"
-      className={clsx(classes.section2, classes.sectionWidth)}
-      component="section"
-     >
-      <MuiThemeProvider theme={typoWrapper}>
-       <Typography
-        variant="h3"
-        align="center"
-        gutterBottom
-        className={classes.section2Heading}
-       >
-        Some of my work
-       </Typography>
-      </MuiThemeProvider>
-      {projects &&
-       projects.map((project, i) => {
-        if (i !== projects.length - 1) {
-         return (
-          <>
-           <Project project={project} key={project.title + i} />
-           <Divider className={classes.project_box_divider} />
-          </>
-         )
-        }
-        return <Project project={project} key={project.title} />
-       })}
-      <Box className={classes.section2_github_btn}>
-       <Button
-        component="a"
-        href="https://github.com/Ismail-Opatola/"
-        target="_blank"
-        rel="noopener noreferrer"
-        startIcon={<FaGithubAlt size={45} />}
-        fullWidth
-        color="secondary"
-       >
-        See GitHub For More
-       </Button>
-      </Box>
-     </Box>
+     <Paper square className={classes.profile_image_box} elevation={6}>
+      <Img fluid={profileImg.childImageSharp.fluid} className="profile_image" />
+     </Paper>
+    </Box>
 
-     <Box className={classes.sectionWidth} component="section">
-      <Education />
+    <Box
+     id="work"
+     className={clsx(classes.section2, classes.sectionWidth)}
+     component="section"
+    >
+     <MuiThemeProvider theme={typoWrapper}>
+      <Typography
+       variant="h3"
+       align="center"
+       gutterBottom
+       className={classes.section2Heading}
+      >
+       Some of my work
+      </Typography>
+     </MuiThemeProvider>
+     {projects &&
+      projects.map((project, i) => {
+       if (i !== projects.length - 1) {
+        return (
+         <>
+          <Project project={project} key={project.title + i} />
+          <Divider className={classes.project_box_divider} />
+         </>
+        )
+       }
+       return <Project project={project} key={project.title} />
+      })}
+     <Box className={classes.section2_github_btn}>
+      <Button
+       component="a"
+       href="https://github.com/Ismail-Opatola/"
+       target="_blank"
+       rel="noopener noreferrer"
+       startIcon={<FaGithubAlt size={45} />}
+       fullWidth
+       color="secondary"
+      >
+       See GitHub For More
+      </Button>
      </Box>
-     <Box className={classes.sectionWidth} component="section">
-      {skills && <Skills skills={skills} />}
-     </Box>
-     <Box
-      id="contact-form"
-      className={classes.sectionWidth}
-      component="section"
-     >
-      <Form />
-     </Box>
-    </>
-    <Toolbar />
-   </Layout>
-  );
+    </Box>
+
+    <Box className={classes.sectionWidth} component="section">
+     <Education />
+    </Box>
+    <Box className={classes.sectionWidth} component="section">
+     {skills && <Skills skills={skills} />}
+    </Box>
+    <Box id="contact-form" className={classes.sectionWidth} component="section">
+     <Form />
+    </Box>
+   </>
+   <Toolbar />
+  </Layout>
+ )
 }
 
 export const indexQuery = graphql`
@@ -296,4 +288,3 @@ IndexPage.propTypes = {
   }).isRequired,
  }).isRequired,
 }
-

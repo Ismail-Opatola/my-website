@@ -77,8 +77,8 @@ const Education = () => {
               with a friend. While taking this course I built three capstone projects -
               {' '}
               <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="https://would-you-rather-app-c5895.firebaseapp.com">Would-You-Rather app</MuiLink>
-,
-              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="/#">Fit-Tracker</MuiLink>
+,            {' '}
+              <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="https://expo.io/@turfff/fit_tracker">Fit-Tracker</MuiLink>
 ,
               {' '}
               <MuiLink color="textSecondary" target="_blank" rel="noopener noreferrer" href="https://myreads-app-v0.netlify.com/">Book-Reads</MuiLink>
