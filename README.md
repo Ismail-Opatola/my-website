@@ -1,1 +1,1 @@
-My professional website
+My professional Frontend portfolio and blogging website
