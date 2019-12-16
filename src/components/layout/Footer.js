@@ -46,6 +46,10 @@ const useStyles = makeStyles(theme => ({
   alignItems: "center",
   flexWrap: "wrap",
  },
+ social_link_list: {
+  margin: "0 auto",
+  textAlign: "center",
+ },
  li: {
   display: "inline-block",
   backgroundColor: lighten("#000", 0.2),
@@ -182,7 +186,7 @@ const Footer = props => {
     </Box>
     <Box className={classes.footer}>
      <Typography>SOCIAL CONNECTS!</Typography>
-     <List>
+     <List class={classes.social_link_list}>
       <ListItem className={classes.li}>
        <MuiLink
         href="https://www.linkedin.com/in/ismail-opatola/"
