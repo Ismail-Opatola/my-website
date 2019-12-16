@@ -5,6 +5,7 @@ import clsx from "clsx"
 import myreads from "../../assets/myreads.gif"
 import wur from "../../assets/wur.gif"
 import fit_tracker from "../../assets/fit_tracker.gif"
+import mywebsite from "../../assets/mywebsite.gif"
 import dummyGif from "../../assets/test.gif"
 
 import { makeStyles, fade } from "@material-ui/core/styles"
@@ -25,7 +26,8 @@ const giphy = {
  myreads: myreads,
  wur: wur,
  fit_tracker: fit_tracker,
-//  dummyGif: dummyGif,
+ mywebsite: mywebsite,
+ //  dummyGif: dummyGif,
 }
 
 const useStyles = makeStyles(theme => ({
