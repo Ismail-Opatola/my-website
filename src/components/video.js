@@ -8,6 +8,8 @@ import Slide from "@material-ui/core/Slide"
 import Dialog from '@material-ui/core/Dialog'
 import Box from "@material-ui/core/Box"
 
+const dummyvideoSrcUrl = "https://www.youtube.com/embed/ff4fgQxPaO0"
+
 const useStyles = makeStyles(theme => ({
  root: {
   minHeight: "auto",
@@ -55,9 +57,9 @@ export default function Video({ open, close, title, videoSrcUrl }) {
       className={classes.videoWrapper}
    >
     <iframe
-     src={videoSrcUrl}
+     src={videoSrcUrl || dummyvideoSrcUrl}
      title={title}
-     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"
      frameBorder="0"
      webkitallowfullscreen="true"
      mozallowfullscreen="true"
@@ -73,12 +75,12 @@ export default function Video({ open, close, title, videoSrcUrl }) {
 Video.defaultProps = {
  open: false,
  title: "demo",
- videoSrcUrl: "https://www.youtube.com/embed/ff4fgQxPaO0",
+//  videoSrcUrl: "https://www.youtube.com/embed/ff4fgQxPaO0",
 }
 
 Video.propTypes = {
  open: PropTypes.bool.isRequired,
  close: PropTypes.func,
  title: PropTypes.string.isRequired,
- videoSrcUrl: PropTypes.string.isRequired,
+ videoSrcUrl: PropTypes.string,
 }

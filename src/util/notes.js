@@ -48,7 +48,8 @@ const projects = [
   // },
   {
    title: "ISMAILOPATOLA.IO",
-   description: "My professional potfolio and blogging website",
+   description:
+    "My professional frontend developer portfolio and blogging website",
    techStack: [
     "React",
     "Gatsby",
@@ -67,15 +68,15 @@ const projects = [
     "AXE Accessibility Test",
     "Linting",
     "Social Share",
-    "Social Comment with Discus"
+    "Social Comment with Discus",
    ],
    links: {
     sourceCode: "https://github.com/Ismail-Opatola/my-website",
     websiteUrl: "",
     youtubeDemo: "",
    },
-   gifSrcUrl: "",
-   videoSrcUrl: "",
+   gifSrcUrl: undefined,
+   videoSrcUrl: undefined,
   },
   {
    title: "WUR",
@@ -104,68 +105,75 @@ const projects = [
    links: {
     sourceCode: "https://github.com/Ismail-Opatola/wur-react-firebase-client",
     websiteUrl: "https://would-you-rather-app-c5895.firebaseapp.com",
-    youtubeDemo: "",
+    youtubeDemo: "https://www.youtube.com/embed/P-AXYkmut_M",
    },
-   gifSrcUrl: "",
-   videoSrcUrl: "",
+   gifSrcUrl: "wur",
+   videoSrcUrl: "https://www.youtube.com/embed/P-AXYkmut_M",
   },
   {
    title: "Fit Tracker",
-   description: "A Fitness Tracking Mobile App built with React Native.",
+   description:
+    "A Triathlon, Fitness Tracking mobile app built with React Native.",
    techStack: ["React", "React-Native", "Expo", "Redux"],
    features: [
-    "Foot-Tracking",
-    "Daily Routin Check",
+    "Daily Routine Check",
+    "Record workout, meal & sleep routine",
+    "Real-Time Speed Tracking",
+    "Real-Time Distance Tracking",
     "Navigation Compass",
-    "Distance Calculation",
+    "Calender",
     "Push Notification",
    ],
    links: {
     sourceCode: "https://github.com/Ismail-Opatola/fit_tracker_app-",
-    websiteUrl: "",
-    youtubeDemo: "",
+    websiteUrl: "https://expo.io/@turfff/fit_tracker",
+    youtubeDemo:"https://www.youtube.com/embed/cq1pXukBJHU",
    },
-   gifSrcUrl: "",
-   videoSrcUrl: "",
+   gifSrcUrl: "fit_tracker",
+   videoSrcUrl: "https://www.youtube.com/embed/cq1pXukBJHU",
   },
-  {
-   title: "Estatement",
-   description:
-    "A demo - real estate management and architectural business website built with Gatsby and Netlify service.",
-   techStack: [
-    "Gatsby",
-    "React",
-    "Markdown",
-    "Reactstrap",
-    "Bootstrap",
-    "Netlify",
-   ],
-   features: ["Responsive UI", "SEO", "LazyLoad Image"],
-   links: {
-    sourceCode: "https://github.com/Ismail-Opatola/estatement_website",
-    websiteUrl: "https://inspiring-gates-7b3e39.netlify.com/",
-    youtubeDemo: "",
-   },
-   gifSrcUrl: "",
-   videoSrcUrl: "",
-  },
+  // {
+  //  title: "Estatement",
+  //  description:
+  //   "A demo - real estate management and architectural business website built with Gatsby and Netlify service.",
+  //  techStack: [
+  //   "Gatsby",
+  //   "React",
+  //   "Markdown",
+  //   "Reactstrap",
+  //   "Bootstrap",
+  //   "Netlify",
+  //  ],
+  //  features: ["Responsive UI", "SEO", "LazyLoad Image"],
+  //  links: {
+  //   sourceCode: "https://github.com/Ismail-Opatola/estatement_website",
+  //   websiteUrl: "https://inspiring-gates-7b3e39.netlify.com/",
+  //   youtubeDemo: "",
+  //  },
+  //  gifSrcUrl: "",
+  //  videoSrcUrl: "",
+  // },
   {
    title: "MyReads",
    description:
     "A Book listing app which pulls data from Google Books API. A project Inspired by Udacity's React Developer Nano Degree programe. This app was part of the capstone projects.",
-   techStack: [
-    "React",
-    "Google Books API",
-    "Netlify",
+   techStack: ["React", "Google Books API", "Netlify"],
+   features: [
+    "Book Search",
+    "Book list Categories",
+    "Book Search filter",
+    "Responsive UI",
+    "SEO",
+    "LazyLoad Image",
+    "API-Request",
    ],
-   features: ["Book Search", "Book list Categories", "Book Search filter", "Responsive UI", "SEO", "LazyLoad Image", "API-Request"],
    links: {
     sourceCode: "https://github.com/Ismail-Opatola/react-project-myreads-app",
     websiteUrl: "https://myreads-app-v0.netlify.com/",
-    youtubeDemo: "",
+    youtubeDemo: "https://www.youtube.com/embed/knhODYnXX30",
    },
-   gifSrcUrl: "",
-   videoSrcUrl: "",
+   gifSrcUrl: "myreads",
+   videoSrcUrl: "https://www.youtube.com/embed/knhODYnXX30",
   },
  ],
  skills = {
@@ -191,8 +199,9 @@ const projects = [
    "Vscode",
    "Adobe XD 100%",
    "Inkscape 70%",
-   "Vim 40%",
+   "Vim 50%",
    "Genymotion",
+   "Bluestack",
    "VirtualBox",
    "Axe-Accessibilty",
    "Postman",
@@ -200,7 +209,6 @@ const projects = [
    "Google Analytics 50%",
    "SEMrush",
    "Mailchimp",
-   "Moosend",
   ],
  }
 

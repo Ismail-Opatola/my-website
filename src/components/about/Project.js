@@ -2,6 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import clsx from "clsx"
 
+import myreads from "../../assets/myreads.gif"
+import wur from "../../assets/wur.gif"
+import fit_tracker from "../../assets/fit_tracker.gif"
+import dummyGif from "../../assets/test.gif"
+
 import { makeStyles, fade } from "@material-ui/core/styles"
 import MuiLink from "@material-ui/core/Link"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
@@ -14,8 +19,14 @@ import Typography from "@material-ui/core/Typography"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 
-import dummyGif from '../../assets/test.gif'
 import Video from "../video"
+
+const giphy = {
+ myreads: myreads,
+ wur: wur,
+ fit_tracker: fit_tracker,
+//  dummyGif: dummyGif,
+}
 
 const useStyles = makeStyles(theme => ({
  project_info_section: {
@@ -23,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   marginBottom: theme.spacing(10),
  },
  project_image_box: {
-  maxWidth: 620,
+  maxWidth: 600,
   minHeight: "auto",
   margin: "auto",
   marginBottom: theme.spacing(8),
@@ -37,22 +48,22 @@ const useStyles = makeStyles(theme => ({
   },
 
   "& .project_image": {
-    width: '100%',
-    // height: '100%',
+   width: "100%",
+   // height: '100%',
   },
-  position: 'relative'
+  position: "relative",
  },
  demo_btn: {
-   position: 'absolute',
-   right: 0,
-   bottom: 0,
+  position: "absolute",
+  right: 0,
+  bottom: 0,
   borderRadius: 0,
   fontWeight: "bold",
   background: theme.palette.background.default,
   color: fade(theme.palette.action.active, 0.8),
   "&:hover": {
-    background: theme.palette.background.default,
-   }
+   background: theme.palette.background.default,
+  },
  },
  project_info_box: {
   color: "#c5c1b9",
@@ -91,28 +102,49 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Project = ({
- project: { title, description, techStack, features, links, videoSrcUrl, gifSrcUrl },
+ project: {
+  title,
+  description,
+  techStack,
+  features,
+  links,
+  videoSrcUrl,
+  gifSrcUrl,
+ },
 }) => {
  const classes = useStyles()
  const xtra_sm = useMediaQuery(theme => theme.breakpoints.down("xs"))
- const [open, setOpen] = React.useState(false);
+ const [open, setOpen] = React.useState(false)
 
  const handleOpen = () => {
-   setOpen(true);
- };
+  setOpen(true)
+ }
 
  const handleClose = () => {
-   setOpen(false);
- };
+  setOpen(false)
+ }
 
  return (
   <>
    <Box className={classes.project_info_section} component="article">
-    <Paper className={classes.project_image_box} elevation={5} onClick={handleOpen}>
-     <img src={dummyGif} alt={`${title}-project-gif`} className="project_image" />
-     <Button fullWidth 
-    //  onClick={handleOpen} 
-     className={classes.demo_btn} color="textPrimary">view demo</Button>
+    <Paper
+     className={classes.project_image_box}
+     elevation={5}
+     onClick={handleOpen}
+    >
+     <img
+      src={giphy[gifSrcUrl] || dummyGif}
+      alt={`${title}-project-gif`}
+      className="project_image"
+     />
+     <Button
+      fullWidth
+      //  onClick={handleOpen}
+      className={classes.demo_btn}
+      color="secondary"
+     >
+      view demo
+     </Button>
     </Paper>
 
     <Box className={classes.project_info_box}>
@@ -203,12 +235,12 @@ const Project = ({
       )}
      </ButtonGroup>
     </Box>
-     <Video
-      close={handleClose}
-      open={open}
-      title={title} 
-      // videoSrcUrl={videoSrcUrl} 
-     />
+    <Video
+     close={handleClose}
+     open={open}
+     title={title}
+     videoSrcUrl={videoSrcUrl}
+    />
    </Box>
   </>
  )
@@ -216,11 +248,11 @@ const Project = ({
 
 export default Project
 
-Project.defaultProps = {
-  project: {
-    gifSrcUrl: dummyGif
-  }
-}
+// Project.defaultProps = {
+//  project: {
+//   // gifSrcUrl: "dummyGif",
+//  },
+// }
 
 Project.propTypes = {
  classes: PropTypes.object,
@@ -238,4 +270,9 @@ Project.propTypes = {
   videoSrcUrl: PropTypes.string,
  }).isRequired,
  projectImg: PropTypes.object,
+ giphy: PropTypes.shape({
+  myreads: PropTypes.string,
+  fit_tracker: PropTypes.string,
+  wur: PropTypes.string,
+ }),
 }
