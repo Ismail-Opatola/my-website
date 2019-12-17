@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
    color: "#c5c1b9",
   },
   "& pre": {
-   fontSize: theme.typography.fontSize,
+   fontSize: theme.typography.fontSize - 5,
    backgroundColor: `${darken("#1F2123", 0.1)} !important`,
   },
  },
@@ -89,23 +89,23 @@ const useStyles = makeStyles(theme => ({
  li_twitter: {
   background: `linear-gradient(to bottom, #41b7d8 0%, #2bacd0 100%)`,
   borderColor: `#238caa`,
-"&:hover ": {
-  background: `linear-gradient(to bottom, #2bacd0 0%, #2bacd0 100%)`,
-},
-"&:active":{
-  backgroundColor: `#269abb`
-}
-},
-li_reddit: {
+  "&:hover ": {
+   background: `linear-gradient(to bottom, #2bacd0 0%, #2bacd0 100%)`,
+  },
+  "&:active": {
+   backgroundColor: `#269abb`,
+  },
+ },
+ li_reddit: {
   background: `linear-gradient(to bottom, #ff5700 0%, #e04b00 100%)`,
   borderColor: `#b33b00`,
-"&:hover ": {
-  background: `linear-gradient(to bottom, #e04b00 0%, #e04b00 100%)`,
-},
-"&:active": {
- backgroundColor: `#c73f00`,
-},
-},
+  "&:hover ": {
+   background: `linear-gradient(to bottom, #e04b00 0%, #e04b00 100%)`,
+  },
+  "&:active": {
+   backgroundColor: `#c73f00`,
+  },
+ },
  li_linkedin: {
   backgroundColor: "rgb(0, 119, 181)",
   "&:hover ": {
@@ -148,8 +148,8 @@ li_reddit: {
    "& > code": {
     width: "100% !important",
     [theme.breakpoints.down("xs")]: {
-    //  marginRight: "0px !important",
-     margin: "4rem auto !important",
+     marginRight: "0px !important",
+     //  margin: "4rem auto !important",
      paddingRight: "0px !important",
     },
    },
@@ -174,9 +174,9 @@ li_reddit: {
   backgroundColor: lighten(theme.palette.background.default, 0.1),
  },
  post_article: {
-   width: "100%",
-   boxSizing: "border-box",
- }
+  width: "100%",
+  boxSizing: "border-box",
+ },
 }))
 
 // ========================================
@@ -348,14 +348,14 @@ Post.propTypes = {
    bio: PropTypes.string,
    name: PropTypes.string.isRequired,
    avatar: PropTypes.shape({
-     title: PropTypes.string,
-     fluid: PropTypes.shape(PropTypes.any).isRequired,
-    }).isRequired,
+    title: PropTypes.string,
+    fluid: PropTypes.shape(PropTypes.any).isRequired,
+   }).isRequired,
   }).isRequired,
   body: PropTypes.shape({
-    json: PropTypes.shape(PropTypes.any).isRequired,
+   json: PropTypes.shape(PropTypes.any).isRequired,
   }),
-}),
+ }),
  siteUrl: PropTypes.string,
  options: PropTypes.object.isRequired,
  loading: PropTypes.bool.isRequired,
@@ -382,15 +382,15 @@ export default function BlogPost(props) {
  let language = "javascript"
 
  post.tags.map(tag => {
-   if (tag.slug === "ruby") {
-    language = "ruby"
-   }
-   if (tag.slug === "java") {
-    language = "java"
-   }
-   if (tag.slug === "c++") {
-    language = "c++"
-   }
+  if (tag.slug === "ruby") {
+   language = "ruby"
+  }
+  if (tag.slug === "java") {
+   language = "java"
+  }
+  if (tag.slug === "c++") {
+   language = "c++"
+  }
  })
 
  const options = {

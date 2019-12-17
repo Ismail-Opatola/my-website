@@ -11,7 +11,9 @@ export default function CodeHighlighter ({code, language}) {
         <SyntaxHighlighter
           language={language}
           style={okaidia}
-
+          // customStyle={{}}
+          useInlineStyles
+          showLineNumbers
         >
           {codeString}
         </SyntaxHighlighter>
