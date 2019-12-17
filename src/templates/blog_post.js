@@ -137,8 +137,8 @@ const useStyles = makeStyles(theme => ({
   listStyle: "disc inside none",
  },
  blockCode: {
-   display: "block",
-   "& > pre": {
+  display: "block",
+  "& > pre": {
    maxWidth: "620px !important",
    width: "100% !important",
    height: "auto",
@@ -445,7 +445,7 @@ export default function BlogPost(props) {
     if (code_text_value) {
      return (
       <Box className={classes.blockCode}>
-       <CodeHighlighter language={language} code={code_text_value} />
+       <CodeHighlighter language={language} code={code_text_value} isBlock />
       </Box>
      )
     }
