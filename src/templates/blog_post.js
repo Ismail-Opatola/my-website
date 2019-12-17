@@ -151,6 +151,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
      marginRight: "0px !important",
      //  margin: "4rem auto !important",
+     margin: 0,
      paddingRight: "0px !important",
     },
    },
