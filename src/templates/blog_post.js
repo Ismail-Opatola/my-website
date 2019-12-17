@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
    color: "#c5c1b9",
   },
   "& pre": {
-   fontSize: theme.typography.fontSize - 5,
+   fontSize: theme.typography.fontSize - 1,
    backgroundColor: `${darken("#1F2123", 0.1)} !important`,
   },
  },
@@ -137,7 +137,8 @@ const useStyles = makeStyles(theme => ({
   listStyle: "disc inside none",
  },
  blockCode: {
-  "& > pre": {
+   display: "block",
+   "& > pre": {
    maxWidth: "620px !important",
    width: "100% !important",
    height: "auto",
