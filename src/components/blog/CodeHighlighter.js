@@ -13,7 +13,7 @@ export default function CodeHighlighter({ code, language, isBlock }) {
     style={okaidia}
     // customStyle={{}}
     useInlineStyles
-    showLineNumbers={isBlock}
+    // showLineNumbers={isBlock}
    >
     {codeString}
    </SyntaxHighlighter>
