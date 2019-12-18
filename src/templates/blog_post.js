@@ -165,19 +165,6 @@ const useStyles = makeStyles(theme => ({
 
     //  test-code
     counterReset: "line",
-
-    "& .code-line": {
-     counterIncrement: "line",
-     position: "relative",
-     display: "block",
-     marginLeft: "1.5rem",
-
-     "&:before": {
-      content: "counter(line)",
-      position: "absolute",
-      marginLeft: "-1.5rem",
-     },
-    },
    },
 
    //  [theme.breakpoints.down("xs")]: {
