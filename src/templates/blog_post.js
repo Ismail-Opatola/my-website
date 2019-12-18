@@ -2,6 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+// Runkit
+import Embed from "react-runkit"
+import useScript from "../hooks/useScript"
+// import { Helmet } from "react-helmet"
+
 // CONTENTFUL
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -368,6 +373,9 @@ Post.propTypes = {
 // ============================================
 
 export default function BlogPost(props) {
+ const embedRunkit = "https://embed.runkit.com"
+ useScript(embedRunkit)
+
  const classes = useStyles()
  const {
   pageContext: { previousPost, nextPost },
@@ -444,8 +452,11 @@ export default function BlogPost(props) {
     // @return code Component: if true
     if (code_text_value) {
      return (
+      // <Box className={classes.blockCode}>
+      //  <CodeHighlighter language={language} code={code_text_value} isBlock />
+      // </Box>
       <Box className={classes.blockCode}>
-       <CodeHighlighter language={language} code={code_text_value} isBlock />
+       <Embed source={code_text_value} />
       </Box>
      )
     }
@@ -504,6 +515,9 @@ export default function BlogPost(props) {
     ogpImage={post.blogImage}
     slug={post.slug}
    />
+   {/* <Helmet>
+     <script src={embedRunkit} />
+   </Helmet> */}
    <BlogLayout {...props}>
     <Post post={post} options={options} loading siteUrl={siteUrl} />
     <Paginate previousPost={previousPost} nextPost={nextPost} blog_post />

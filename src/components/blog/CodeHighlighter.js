@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism"
 
-export default function CodeHighlighter({ code, language, isBlock }) {
+export default function CodeHighlighter({ code, language }) {
  const codeString = `${code}`
  return (
   <>
