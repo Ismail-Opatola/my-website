@@ -52,8 +52,11 @@ const useStyles = makeStyles(theme => ({
    color: "#c5c1b9",
   },
   "& pre": {
-   fontSize: theme.typography.fontSize - 1,
+   fontSize: theme.typography.fontSize,
    backgroundColor: `${darken("#1F2123", 0.1)} !important`,
+   [theme.breakpoints.down("xs")]: {
+    fontSize: theme.typography.fontSize - 3,
+   }
   },
  },
  author_box: {
@@ -373,8 +376,8 @@ Post.propTypes = {
 // ============================================
 
 export default function BlogPost(props) {
-//  const embedRunkit = "https://embed.runkit.com"
-//  useScript(embedRunkit)
+ //  const embedRunkit = "https://embed.runkit.com"
+ //  useScript(embedRunkit)
 
  const classes = useStyles()
  const {
