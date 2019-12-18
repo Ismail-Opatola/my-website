@@ -39,14 +39,14 @@ const useStyles = makeStyles(theme => ({
   },
   [theme.breakpoints.down("md")]: {
    maxWidth: "650px",
-   gridTemplateColumns: "1fr",
+   gridTemplateColumns: "100%",
   },
   [theme.breakpoints.down("sm")]: {
    maxWidth: "500px",
-   gridTemplateColumns: "1fr",
+   gridTemplateColumns: "100%",
   },
   [theme.breakpoints.down("xs")]: {
-   gridTemplateColumns: "1fr",
+   gridTemplateColumns: "100%",
    gridColumnGap: theme.spacing(0),
   },
  },
