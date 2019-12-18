@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 // Runkit
-import Embed from "react-runkit"
-import useScript from "../hooks/useScript"
+// import Embed from "react-runkit"
+// import useScript from "../hooks/useScript"
 // import { Helmet } from "react-helmet"
 
 // CONTENTFUL
@@ -373,8 +373,8 @@ Post.propTypes = {
 // ============================================
 
 export default function BlogPost(props) {
- const embedRunkit = "https://embed.runkit.com"
- useScript(embedRunkit)
+//  const embedRunkit = "https://embed.runkit.com"
+//  useScript(embedRunkit)
 
  const classes = useStyles()
  const {
@@ -452,12 +452,12 @@ export default function BlogPost(props) {
     // @return code Component: if true
     if (code_text_value) {
      return (
-      // <Box className={classes.blockCode}>
-      //  <CodeHighlighter language={language} code={code_text_value} isBlock />
-      // </Box>
       <Box className={classes.blockCode}>
-       <Embed source={code_text_value} />
+       <CodeHighlighter language={language} code={code_text_value} isBlock />
       </Box>
+      // <Box className={classes.blockCode}>
+      //  <Embed source={code_text_value} />
+      // </Box>
      )
     }
 
