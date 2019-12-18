@@ -12,7 +12,7 @@ export default function CodeHighlighter({ code, language }) {
     language={language}
     style={okaidia}
     lineProps={{ className: "code-line" }}
-    // showLineNumbers={true}
+    showLineNumbers={true}
     customStyle={{
      margin: 0,
      wordBreak: "break-all",
