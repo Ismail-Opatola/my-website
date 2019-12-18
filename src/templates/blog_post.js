@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
    backgroundColor: `${darken("#1F2123", 0.1)} !important`,
    [theme.breakpoints.down("xs")]: {
     fontSize: theme.typography.fontSize - 3,
-   }
+   },
   },
  },
  author_box: {
@@ -156,18 +156,34 @@ const useStyles = makeStyles(theme => ({
 
    "& > code": {
     width: "100% !important",
-    [theme.breakpoints.down("xs")]: {
-     marginRight: "0px !important",
-     //  margin: "4rem auto !important",
-     margin: 0,
-     paddingRight: "0px !important",
+    // [theme.breakpoints.down("xs")]: {
+    //  marginRight: "0px !important",
+    //  //  margin: "4rem auto !important",
+    //  margin: 0,
+    //  paddingRight: "0px !important",
+    // },
+
+    //  test-code
+    counterReset: "line",
+
+    "& .code-line": {
+     counterIncrement: "line",
+     position: "relative",
+     display: "block",
+     marginLeft: "1.5rem",
+
+     "&:before": {
+      content: "counter(line)",
+      position: "absolute",
+      marginLeft: "-1.5rem",
+     },
     },
    },
 
-   [theme.breakpoints.down("xs")]: {
-    fontSize: theme.typography.fontSize - 5,
-    paddingRight: "0px !important",
-   },
+   //  [theme.breakpoints.down("xs")]: {
+   //   fontSize: theme.typography.fontSize - 5,
+   //   paddingRight: "0px !important",
+   //  },
   },
  },
  inlineCode: {

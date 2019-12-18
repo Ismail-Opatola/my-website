@@ -11,8 +11,9 @@ export default function CodeHighlighter({ code, language }) {
    <SyntaxHighlighter
     language={language}
     style={okaidia}
+    lineProps={{ className: "code-line" }}
     // customStyle={{}}
-    useInlineStyles
+    // useInlineStyles
     // showLineNumbers={isBlock}
    >
     {codeString}
