@@ -12,7 +12,20 @@ export default function CodeHighlighter({ code, language }) {
     language={language}
     style={okaidia}
     lineProps={{ className: "code-line" }}
-    // customStyle={{}}
+    // showLineNumbers={true}
+    customStyle={{
+     margin: 0,
+     wordBreak: "break-all",
+     whiteSpace: "pre-wrap",
+     boxShadow: "0px 2px 4px rgba(50,50,93,.1)",
+    }}
+    // lineNumberStyle={{
+    //  color: "#5dc79e",
+    //  textAlign: "right",
+    //  marginLeft: "-0.5em",
+    //  background: "#f2feef",
+    //  padding: "0 10px 0 10px",
+    // }}
     // useInlineStyles
     // showLineNumbers={isBlock}
    >
