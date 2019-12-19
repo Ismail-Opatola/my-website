@@ -55,6 +55,18 @@ function SEO({ description, lang, meta, title, ogpImage, slug }) {
      property: `og:image`,
      content: ogpImage && `${ogpImage}`,
     },
+    // {
+    //  property: `og:image:type`,
+    //  content: `image/png`,
+    // },
+    {
+     property: `og:image:width`,
+     content: `1200`,
+    },
+    {
+     property: `og:image:height`,
+     conten: `630`,
+    },
     {
      property: `og:url`,
      content: slug
@@ -83,7 +95,7 @@ function SEO({ description, lang, meta, title, ogpImage, slug }) {
     },
     {
      name: `twitter:creator`,
-     content: site.siteMetadata.developer,
+     content: `${site.siteMetadata.twitterUsername}`,
     },
     { name: `twitter:site`, content: `${site.siteMetadata.twitterUsername}` },
     {
