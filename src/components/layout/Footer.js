@@ -89,6 +89,9 @@ const useStyles = makeStyles(theme => ({
  fab: {
   backgroundColor: darken(theme.palette.background.default, 0.2),
  },
+ italicise: {
+  fontStyle: "italic",
+ },
 }))
 
 function ScrollTop(props) {
@@ -243,6 +246,14 @@ const Footer = props => {
        </MuiLink>
       </ListItem>
      </List>
+    </Box>
+    <Box className={classes.footer}>
+     <Typography className={classes.span}>PHONE</Typography>
+     <Typography className={classes.italicise}>+2348139178642</Typography>
+     <Typography className={classes.span}>EMAIL</Typography>
+     <Typography className={classes.italicise}>
+      opatolamails@gmail.com
+     </Typography>
     </Box>
    </Box>
   </Box>
