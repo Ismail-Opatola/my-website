@@ -89,8 +89,12 @@ const useStyles = makeStyles(theme => ({
  fab: {
   backgroundColor: darken(theme.palette.background.default, 0.2),
  },
+ greenbg: {
+  background: "darkslategrey",
+ },
  italicise: {
   fontStyle: "italic",
+  padding: ".33rem",
  },
 }))
 
@@ -246,14 +250,12 @@ const Footer = props => {
        </MuiLink>
       </ListItem>
      </List>
-     <Typography>PHONE</Typography>
-     <Typography>+2348139178642</Typography>
-     <Typography>EMAIL</Typography>
-     <Typography>opatolamails@gmail.com</Typography>
     </Box>
-    <Box className={classes.footer}>
+    <Box className={clsx(classes.footer, classes.greenbg)}>
      <Typography className={classes.span}>PHONE</Typography>
-     <Typography className={classes.italicise}>+234 813 917 8642</Typography>
+     <Typography className={classes.italicise} gutterBottom>
+      +234 813 917 8642
+     </Typography>
      <Typography className={classes.span}>EMAIL</Typography>
      <Typography className={classes.italicise}>
       opatolamails@gmail.com
