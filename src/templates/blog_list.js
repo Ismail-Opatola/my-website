@@ -25,10 +25,10 @@ const useStyles = makeStyles(theme => ({
    backgroundColor: "inherit",
    color: "#c5c1b9",
   },
-  [theme.breakpoints.dowm("xs")]: {
-    gridTemplateColumns: "100%",
-    gridColumnGap: theme.spacing(0),
-  }
+  [theme.breakpoints.down("xs")]: {
+   gridTemplateColumns: "100%",
+   gridColumnGap: theme.spacing(0),
+  },
  },
 }))
 
