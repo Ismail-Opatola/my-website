@@ -501,6 +501,7 @@ export default function BlogPost(props) {
          height: "auto",
          margin: "4rem auto",
         }}
+        elevation={0}
        >
         <img alt={title && t} src={f} width="100%" />
        </Paper>

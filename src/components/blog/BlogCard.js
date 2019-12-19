@@ -28,8 +28,8 @@ const useStyles = makeStyles(theme => ({
   },
   "& h2": {
    lineHeight: 1.2,
-   fontSize: 30,
-   fontWeight: 800,
+   //    fontSize: 30,
+   //    fontWeight: 800,
    margin: theme.spacing(4, 0, 1, 0),
    color: "#c5c1b9",
   },
@@ -137,7 +137,7 @@ export default function BlogCard({ post, siteUrl }) {
      height="140"
      src={post.blogImage.fluid.src}
     />
-    <Typography component="h2">{post.title}</Typography>
+    <Typography variant="h2">{post.title}</Typography>
     <Typography gutterBottom component="small" className={classes.small}>
      {post.timestamp}.
     </Typography>

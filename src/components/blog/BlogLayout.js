@@ -48,10 +48,11 @@ const useStyles = makeStyles(theme => ({
   [theme.breakpoints.down("xs")]: {
    gridTemplateColumns: "100%",
    gridColumnGap: theme.spacing(0),
+   padding: theme.spacing(8, 2),
   },
  },
  h4: {
-   marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(2),
  },
  aside: {
   position: "relative",
@@ -74,7 +75,6 @@ export default function BlogLayout({ children }) {
    }
   }
  `)
- 
 
  return (
   <Grid className={classes.root} component="section">
@@ -82,7 +82,9 @@ export default function BlogLayout({ children }) {
 
    <Grid component="aside" className={classes.aside}>
     {/* <Searchbar /> */}
-    <Typography variant="h4" align={"center"} className={classes.h4}>Filter by categories</Typography>
+    <Typography variant="h4" align={"center"} className={classes.h4}>
+     Filter by categories
+    </Typography>
     {data.allTags.nodes.map(
      tag => tag.blog_post !== null && <Tags tag={tag} />
     )}
