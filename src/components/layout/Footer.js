@@ -95,6 +95,7 @@ const useStyles = makeStyles(theme => ({
  italicise: {
   fontStyle: "italic",
   padding: ".33rem",
+  fontSize: "inherit",
  },
 }))
 
@@ -252,11 +253,11 @@ const Footer = props => {
      </List>
     </Box>
     <Box className={clsx(classes.footer, classes.greenbg)}>
-     <Typography className={classes.span}>PHONE</Typography>
+     <Typography className={classes.span}>Phone</Typography>
      <Typography className={classes.italicise} gutterBottom>
       +234 813 917 8642
      </Typography>
-     <Typography className={classes.span}>EMAIL</Typography>
+     <Typography className={classes.span}>Email</Typography>
      <Typography className={classes.italicise}>
       opatolamails@gmail.com
      </Typography>
