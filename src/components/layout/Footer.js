@@ -246,6 +246,10 @@ const Footer = props => {
        </MuiLink>
       </ListItem>
      </List>
+     <Typography>PHONE</Typography>
+     <Typography>+2348139178642</Typography>
+     <Typography>EMAIL</Typography>
+     <Typography>opatolamails@gmail.com</Typography>
     </Box>
     <Box className={classes.footer}>
      <Typography className={classes.span}>PHONE</Typography>
