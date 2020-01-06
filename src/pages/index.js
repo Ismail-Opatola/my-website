@@ -80,7 +80,7 @@ const useStyles = makeStyles(theme => ({
   },
  },
  textIntroII: {
-  fontSize: theme.typography.fontSize,
+  //   fontSize: theme.typography.fontSize,
   lineHeight: 1.4,
   textAlign: "center",
   // color: '#c5c1b9',
@@ -215,7 +215,7 @@ export default function IndexPage(props) {
        href="https://drive.google.com/open?id=1Hw0NWBlscTQvwsgWniO-tbxR-tu8P-JNrQgEgNwg8GE"
        target="_blank"
        rel="noopener noreferrer"
-    //    startIcon={<FaGithubAlt size={45} />}
+       //    startIcon={<FaGithubAlt size={45} />}
        fullWidth
        color="secondary"
       >

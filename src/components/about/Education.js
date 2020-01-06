@@ -75,7 +75,16 @@ const Education = () => {
 
     <List className={classes.section3_ul}>
      <ListItem className={classes.section3_li}>
-      <Typography component="h4">React Nanodegree Program - 2019</Typography>
+      <Typography component="h4">
+       <MuiLink
+        color="textSecondary"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.udacity.com/course/react-nanodegree--nd019"
+       >
+        React Nanodegree Program - 2019
+       </MuiLink>
+      </Typography>
       <Typography component="h5">Udacity</Typography>
       <Typography paragraph>
        Project-focused intensive program with emphasis on building declarative
