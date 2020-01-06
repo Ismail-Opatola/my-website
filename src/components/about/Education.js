@@ -119,11 +119,11 @@ const Education = () => {
        programming languages, web application security, Relational and
        Non-relational database.
       </Typography>
-      <Typography>
+      <Typography paragraph>
        Developed a blog application from scratch using Express, MongoDB, and
        Semantic UI
       </Typography>
-      <Typography>
+      <Typography paragraph>
        Developed a full-stack web app{" "}
        <MuiLink
         color="textSecondary"
