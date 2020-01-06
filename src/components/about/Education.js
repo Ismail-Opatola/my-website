@@ -75,13 +75,14 @@ const Education = () => {
 
     <List className={classes.section3_ul}>
      <ListItem className={classes.section3_li}>
-      <Typography component="h4">
-       React developer nano degree program - 2019
-      </Typography>
+      <Typography component="h4">React Nanodegree Program - 2019</Typography>
+      <Typography component="h5">Udacity</Typography>
       <Typography paragraph>
-       Learnt React Framework in 2019 after sharing this Udacity Course Material
-       for free with a friend. While taking this course I built three capstone
-       projects -{" "}
+       Project-focused intensive program with emphasis on building declarative
+       user interfaces for the web with React, and for iOS and Android with
+       React Native. Learnt React and React Native Framework in 2019 after
+       sharing this Udacity Course Material with a friend. While taking this
+       course I built three capstone projects -{" "}
        <MuiLink
         color="textSecondary"
         target="_blank"
@@ -112,16 +113,26 @@ const Education = () => {
       </Typography>
      </ListItem>
      <ListItem className={classes.section3_li}>
-      <Typography component="h4">The Web Developer Bootcamp - 2018</Typography>
+      <Typography component="h4">
+       <MuiLink
+        color="textSecondary"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.udemy.com/certificate/UC-DH5115PC/"
+       >
+        The Web Developer Bootcamp - 2018
+       </MuiLink>
+      </Typography>
+      <Typography component="h5">Udemy</Typography>
       <Typography paragraph>
        The foundation of my web development skills. Taking this Udemy course I
        was introduced to how the web works, computer science concepts,
-       programming languages, web application security, Relational and
-       Non-relational database.
+       programming languages, web application security, relational and
+       non-relational database management.
       </Typography>
       <Typography paragraph>
-       Developed a blog application from scratch using Express, MongoDB, and
-       Semantic UI
+       Developed a blog application from scratch using NodeJs, Express, MongoDB,
+       and Semantic UI
       </Typography>
       <Typography paragraph>
        Developed a full-stack web app{" "}
@@ -142,16 +153,36 @@ const Education = () => {
      </ListItem>
      <ListItem className={classes.section3_li}>
       <Typography component="h4">
-       Diploma in Digital Marketing - 2016
+       <MuiLink
+        color="textSecondary"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://drive.google.com/open?id=0B58IqhEn2uwsNERlRkV3cklMUXM"
+       >
+        Professional Diploma in Digital Marketing - 2016
+       </MuiLink>
       </Typography>
+      <Typography component="h5">Shaw Online Academy</Typography>
       <Typography paragraph>
-       The foundation of my digital marketing skills. Taking this Shaw Academy
-       course I was introduce to Search Marketing, Search Engine Optimization,
-       Digital marketing ecosystem.
+       The course help laid a solid foundation for my digital marketing and
+       performance marketing skills. Taking this Shaw Academy course I was
+       introduced to Search Engine Marketing, Social Media Marketing, Search
+       Eengine Optimization, content, strategy and campaign creation and
+       optimisation.
       </Typography>
      </ListItem>
      <ListItem className={classes.section3_li}>
-      <Typography component="h4">BSc Accounting - 2013</Typography>
+      <Typography component="h4">
+       <MuiLink
+        color="textSecondary"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://drive.google.com/open?id=1p_b4iTXSp85RUeJIfrM4ziGP2wXtSMyL"
+       >
+        B.Sc. Accounting - 2013
+       </MuiLink>
+      </Typography>
+      <Typography component="h5">Osun State University</Typography>
       <Typography paragraph>
        Yep, I&apos;m an Accounting graduate turned developer !
       </Typography>
