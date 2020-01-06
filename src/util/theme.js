@@ -36,7 +36,7 @@ let theme = createMuiTheme({
   maxWidth: 640,
   fontWeightLight: 300,
   // fontSize: '100%/1.5',
-  fontSize: 16,
+  fontSize: 15,
   h1: {
    lineHeight: 1.2,
    fontSize: 2,
