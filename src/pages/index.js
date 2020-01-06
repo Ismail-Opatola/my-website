@@ -209,6 +209,19 @@ export default function IndexPage(props) {
 
     <Box className={classes.sectionWidth} component="section">
      <Education />
+     <Box className={classes.section2_github_btn}>
+      <Button
+       component="a"
+       href="https://drive.google.com/open?id=1Hw0NWBlscTQvwsgWniO-tbxR-tu8P-JNrQgEgNwg8GE"
+       target="_blank"
+       rel="noopener noreferrer"
+    //    startIcon={<FaGithubAlt size={45} />}
+       fullWidth
+       color="secondary"
+      >
+       view cv
+      </Button>
+     </Box>
     </Box>
     <Box className={classes.sectionWidth} component="section">
      {skills && <Skills skills={skills} />}

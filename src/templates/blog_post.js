@@ -419,32 +419,32 @@ export default function BlogPost(props) {
   },
   renderNode: {
    [BLOCKS.HEADING_1]: (node, children) => (
-    <Typography variant="h1" paragraph>
+    <Typography variant="h1">
      {children}
     </Typography>
    ),
    [BLOCKS.HEADING_2]: (node, children) => (
-    <Typography variant="h2" paragraph>
+    <Typography variant="h2">
      {children}
     </Typography>
    ),
    [BLOCKS.HEADING_3]: (node, children) => (
-    <Typography variant="h3" paragraph>
+    <Typography variant="h3">
      {children}
     </Typography>
    ),
    [BLOCKS.HEADING_4]: (node, children) => (
-    <Typography variant="h4" paragraph>
+    <Typography variant="h4">
      {children}
     </Typography>
    ),
    [BLOCKS.HEADING_5]: (node, children) => (
-    <Typography variant="h5" paragraph>
+    <Typography variant="h5">
      {children}
     </Typography>
    ),
    [BLOCKS.HEADING_6]: (node, children) => (
-    <Typography variant="h6" paragraph>
+    <Typography variant="h6">
      {children}
     </Typography>
    ),

@@ -49,7 +49,7 @@ const projects = [
   {
    title: "ISMAILOPATOLA.IO",
    description:
-    "My professional frontend developer portfolio and blogging website",
+    "My professional frontend web developement portfolio and blogging website",
    techStack: [
     "React",
     "Gatsby",
@@ -81,7 +81,7 @@ const projects = [
   {
    title: "WUR",
    description:
-    "Would-You-Rather App. A project Inspired by Udacity's React Developer Nano Degree programe. This app was part of the capstone projects.",
+    "Leveraged the strengths of Redux to build a 'Would You Rather' application where users are given questions and must choose one of them. I built this dynamic application from scratch while combining the state management features of Redux and component model of React, Material-UI on the frontend. The backend, was built using Express, Node, Firebase Storage and Cloud Functions. Users are able to create their own sets of questions, choose between them, and keep track of question popularity.",
    techStack: [
     "Firebase Auth",
     "React",
@@ -113,7 +113,7 @@ const projects = [
   {
    title: "Fit Tracker",
    description:
-    "A Triathlon, Fitness Tracking mobile app built with React Native.",
+    "Used React Native to build a mobile Triathlon fitness tracker. Users are able to record daily workout routine, monitor live navigation and speed update while jogging or cycling, set up notifications reminding them to enter daily completed millstone. I leveraged React Native components, AsyncStorage, proper styling, as well as device APIs to create a fully dynamic experience.",
    techStack: ["React", "React-Native", "Expo", "Redux"],
    features: [
     "Daily Routine Check",
@@ -156,7 +156,7 @@ const projects = [
   {
    title: "MyReads",
    description:
-    "A Book listing app which pulls data from Google Books API. A project Inspired by Udacity's React Developer Nano Degree programe. This app was part of the capstone projects.",
+    "Created a virtual bookcase to store my books and track what I'm reading. Using the Google Books API, user could search for books, add them to a bookshelf, move books from one shelf to another.",
    techStack: ["React", "Google Books API", "Netlify"],
    features: [
     "Book Search",
@@ -177,18 +177,23 @@ const projects = [
   },
  ],
  skills = {
-  programming: ["Javascript 100%", "Typescripts 60%", "HTML 100%", "CSS 100%"],
+  programming: [
+   "Javascript 100%",
+   "NodeJs 100%",
+   "Typescripts 90%",
+   "HTML 100%",
+   "CSS 100%",
+   "GraphQL 90%",
+   "SCSS 90%",
+  ],
   techStack: [
    "React 100%",
    "React Native 80%",
-   "Nodejs 90%",
-   "MongoDB 80%",
-   "Express 90%",
-   "Firebase 90%",
    "Gatsby 90%",
    "Nextjs 80%",
-   "GraphQL 70%",
-   "SCSS 90%",
+   "Express 90%",
+   "Firebase 90%",
+   "MongoDB 80%",
    "Material-UI 90%",
    "Contentful",
    "Shopify",
@@ -205,6 +210,7 @@ const projects = [
    "VirtualBox",
    "Axe-Accessibilty",
    "Postman",
+   "Openssl",
    "Google Web Console",
    "Google Analytics 50%",
    "SEMrush",
