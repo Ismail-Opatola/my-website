@@ -258,7 +258,15 @@ const Footer = props => {
      </Typography>
      <Typography className={classes.span}>Email</Typography>
      <Typography className={classes.italicise}>
-      opatolamails@gmail.com
+      <MuiLink
+        href="mailto:opatolamails@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="medium"
+        aria-label="Send mail"
+       >
+       opatolamails@gmail.com
+       </MuiLink>
      </Typography>
     </Box>
    </Box>
