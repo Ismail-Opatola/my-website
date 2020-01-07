@@ -257,7 +257,7 @@ const Footer = props => {
       +234 813 917 8642
      </Typography>
      <Typography className={classes.span}>Email</Typography>
-     <Typography className={classes.italicise}>
+     <Typography className={classes.italicise} color="textPrimary">
       <MuiLink
         href="mailto:opatolamails@gmail.com"
         target="_blank"
