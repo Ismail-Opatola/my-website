@@ -253,20 +253,28 @@ const Footer = props => {
     </Box>
     <Box className={clsx(classes.footer, classes.greenbg)}>
      <Typography className={classes.span}>Phone</Typography>
-     <Typography className={classes.italicise} gutterBottom>
-      +234 813 917 8642
+     <Typography className={classes.italicise} gutterBottom color="textPrimary">
+      <MuiLink
+       href="tel:+234-813-917-642"
+       target="_blank"
+       rel="noopener noreferrer"
+       //   className="medium"
+       aria-label="Make a direct call to Ismail"
+      >
+       +234 813 917 8642
+      </MuiLink>
      </Typography>
      <Typography className={classes.span}>Email</Typography>
      <Typography className={classes.italicise} color="textPrimary">
       <MuiLink
-        href="mailto:opatolamails@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="medium"
-        aria-label="Send mail"
-       >
+       href="mailto:opatolamails@gmail.com"
+       target="_blank"
+       rel="noopener noreferrer"
+       //   className="medium"
+       aria-label="Send mail"
+      >
        opatolamails@gmail.com
-       </MuiLink>
+      </MuiLink>
      </Typography>
     </Box>
    </Box>
