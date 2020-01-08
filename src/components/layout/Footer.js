@@ -255,7 +255,7 @@ const Footer = props => {
      <Typography className={classes.span}>Phone</Typography>
      <Typography className={classes.italicise} gutterBottom color="textPrimary">
       <MuiLink
-       href="tel:+234-813-917-642"
+       href="tel:+234-813-917-8642"
        target="_blank"
        rel="noopener noreferrer"
        //   className="medium"
