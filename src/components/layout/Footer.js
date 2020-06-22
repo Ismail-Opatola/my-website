@@ -8,10 +8,10 @@ import clsx from "clsx"
 
 import {
  FaTwitter,
- FaMedium,
  FaYoutube,
  FaLinkedin,
  FaGithubAlt,
+ FaDev
 } from "react-icons/fa"
 // MUI
 import { makeStyles, darken } from "@material-ui/core/styles"
@@ -240,13 +240,13 @@ const Footer = props => {
       </ListItem>
       <ListItem className={classes.li}>
        <MuiLink
-        href="https://medium.com/@opatolamails"
+        href="https://dev.to/ismailopatola"
         target="_blank"
         rel="noopener noreferrer"
         className="medium"
-        aria-label="Ismail's medium account"
+        aria-label="Ismail Opatola's DEV Profile"
        >
-        <FaMedium size={23} />
+        <FaDev size={23} />
        </MuiLink>
       </ListItem>
      </List>

@@ -153,10 +153,9 @@ export default function IndexPage(props) {
        Long Live The World Wide Web!!!
       </Typography>
       <Typography className={classes.textIntroII} paragraph>
-       Hello, my name is <span>Ismail</span>. I&#39;m a Frontend / Fullstack
-       React Developer living in bustling Lagos, Nigeria. I enjoy building
-       performant mobile & web apps with React, Nodejs and Firebase. What are
-       your formulas?
+       Hello, my name is <span>Ismail</span>. I&#39;m a Javascript Developer living in bustling Lagos, Nigeria. I enjoy building
+       performant mobile & web apps with Javascript and Nodejs. What are
+       your formula ?
       </Typography>
      </Box>
 
