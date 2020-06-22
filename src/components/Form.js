@@ -99,7 +99,6 @@ const Form = () => {
 
  const handleClose = () => {
   setState({ open: false })
-  clearState()
  }
 
  const handleSubmit = event => {
