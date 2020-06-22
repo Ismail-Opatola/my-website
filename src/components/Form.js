@@ -214,6 +214,7 @@ const Form = () => {
        fullWidth
        onChange={event => handleChange(event)}
        id="email"
+       name="email"
        label="Business email"
        type="email"
        placeholder="enter your prefered email"
@@ -227,6 +228,7 @@ const Form = () => {
        required
        onChange={event => handleChange(event)}
        id="name"
+       name="name"
        label="Business name"
        placeholder="enter your business name"
        variant="filled"
@@ -239,6 +241,7 @@ const Form = () => {
        required
        onChange={event => handleChange(event)}
        id="message"
+       name="message"
        label="Description"
        multiline
        variant="filled"
@@ -251,6 +254,7 @@ const Form = () => {
        fullWidth
        onChange={event => handleChange(event)}
        id="tel"
+       name="tel"
        label="Phone number (optional)"
        placeholder="+234 000 000 0000"
        variant="filled"
