@@ -30,7 +30,7 @@
     "gatsby-remark-images-contentful": "^2.1.23",
     "gatsby-source-contentful": "^2.1.57",
     "gatsby-source-filesystem": "^2.1.9",
-    "gatsby-transformer-remark": "^2.6.12",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.4",
     "gatsby-transformer-sqip": "^2.1.42",
     "intersection-observer": "^0.7.0",
